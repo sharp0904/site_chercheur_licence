@@ -25,6 +25,12 @@ class Menu extends \yii\db\ActiveRecord
         return 'menu';
     }
 
+	public function getId()
+	{
+	return $this->id;
+	}
+	
+	
     /**
      * @inheritdoc
      */
