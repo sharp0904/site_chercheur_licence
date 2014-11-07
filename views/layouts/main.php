@@ -53,22 +53,13 @@ AppAsset::register($this);
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
-<<<<<<< HEAD
-					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
-					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
-					
-					['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-						'url' => ['/site/logout'],
-						'linkOptions' => ['data-method' => 'post']],
-=======
-                       
+        
 					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
 					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
 						
 						['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
->>>>>>> 66347e1d1cf0fced84a5cd270c71274d18b1645c
                 ],
             ]);
             NavBar::end();

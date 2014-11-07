@@ -6,7 +6,6 @@ use Yii;
 use app\models\Rubrique;
 use app\models\RubriquesSearch;
 use yii\data\ActiveDataProvider;
->>>>>>> 66347e1d1cf0fced84a5cd270c71274d18b1645c
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
