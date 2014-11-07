@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+use yii\ckeditor\ckeditor;
+
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Menu */
 /* @var $form yii\widgets\ActiveForm */

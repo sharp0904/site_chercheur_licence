@@ -1,3 +1,5 @@
+
+<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 <?php
 
 use yii\helpers\Html;

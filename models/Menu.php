@@ -25,6 +25,7 @@ class Menu extends \yii\db\ActiveRecord
         return 'menu';
     }
 
+
     /**
      * @inheritdoc
      */

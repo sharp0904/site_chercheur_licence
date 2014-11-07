@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Menu;
 use app\models\MenuSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,6 +38,7 @@ class MenuController extends Controller
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -81,7 +83,9 @@ class MenuController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+        if ($model->load(Yii::$app->request->post())) {
+		$model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

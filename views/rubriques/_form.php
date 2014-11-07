@@ -11,6 +11,7 @@ use yii\helpers\ArrayHelper;
 ?>
 <script src="<?php echo '/site_chercheur_licence/ckeditor/ckeditor.js'; ?>"></script>
 
+
 <div class="rubrique-form">
 
     <?php $form = ActiveForm::begin(); ?>
