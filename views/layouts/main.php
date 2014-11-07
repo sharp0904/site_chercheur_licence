@@ -53,11 +53,9 @@ AppAsset::register($this);
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
-                   
                        
-                       
-						['label' => 'Gestion Menu', 'url' => ['/menu']],
-						['label' => 'Gestion Rubriques', 'url' => ['/rubriques']], 
+					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
+					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
 						
 						['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
