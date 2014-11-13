@@ -13,10 +13,19 @@ if (isset($_GET["page"])) {
 }
 
 	
-function getRubriqueParid($id)
+function getRubriqueParid($id, $locale = 'fr')
 {
+
 $rubrique = Rubrique::find()->where(['menu_id' => $id])->one();
-echo $rubrique->content_fr;
+
+if($locale == 'en')
+{
+	echo $rubrique->content_en;
+}
+elseif($locale == 'fr')
+{
+	echo $rubrique->content_fr;
+}
 }
 ?>
 <div class="site-index">

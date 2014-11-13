@@ -34,6 +34,7 @@ class SiteController extends Controller
         ];
     }
 
+	
     public function actions()
     {
         return [

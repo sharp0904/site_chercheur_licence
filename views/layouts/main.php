@@ -13,8 +13,10 @@ use app\models\Menu;
 
 AppAsset::register($this);
 
+function getMenus($locale = 'fr')
+{
 $list = Menu::find()->where(['actif' => '1'])->all();
-
+		
 		$rs=array();
 		foreach($list as $item){
 		//process each item here
@@ -22,6 +24,10 @@ $list = Menu::find()->where(['actif' => '1'])->all();
 
 		}
 		
+		return $rs;
+}
+
+
 function listerRubriques($rs,$id)
 {
 $res;
@@ -36,6 +42,9 @@ function getIdParTitreFR($titreFR)
 $rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
 return $rubrique->id;
 }
+
+$rs = getMenus();
+
 ?>
 <?php $this->beginPage() ?>
 
