@@ -17,7 +17,9 @@ $this->title = 'Site enseignant chercheur';
 if (isset($_GET["page"])) {
     $idPage = $_GET["page"];
 }
-
+if (isset($_GET["locale"])) {
+    $session->set('language', $_GET["locale"]);
+}
 	
 function getRubriqueParid($id, $locale = 'fr')
 {
@@ -35,7 +37,9 @@ elseif($locale == 'fr')
 }
 ?>
 <div class="site-index">
-
+<a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
+<a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a> 
+</br></br></br>
 <?php
 
 if(isset($idPage))

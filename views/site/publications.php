@@ -18,6 +18,9 @@ $this->title = 'Site enseignant chercheur';
 
 ?>
 <div class="site-index">
+<a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
+<a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a> 
+</br></br></br>
 <table cellspacing="0" cellpadding="0" style="width: 90%;background-color:white;">
 <tbody><tr>
 <td align="left" style="vertical-align: top;">
