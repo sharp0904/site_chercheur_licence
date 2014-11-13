@@ -5,6 +5,16 @@ use app\models\Rubrique;
 use yii\helpers\Url;
 use app\models\Publication;
 
+
+$session = Yii::$app->session;
+if (isset($_GET["locale"])) {
+    $session->set('language', $_GET["locale"]);
+}
+
+$language = $session->get('language');
+
+
+
 function getPublications()
 {
 $list = Publication::find()->orderBy(['date' => SORT_DESC])->all();

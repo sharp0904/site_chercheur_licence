@@ -6,7 +6,9 @@ use yii\helpers\Url;
 
 
 $session = Yii::$app->session;
-
+if (isset($_GET["locale"])) {
+    $session->set('language', $_GET["locale"]);
+}
 
 $language = $session->get('language');
 
@@ -17,9 +19,7 @@ $this->title = 'Site enseignant chercheur';
 if (isset($_GET["page"])) {
     $idPage = $_GET["page"];
 }
-if (isset($_GET["locale"])) {
-    $session->set('language', $_GET["locale"]);
-}
+
 	
 function getRubriqueParid($id, $locale = 'fr')
 {
@@ -54,7 +54,7 @@ if(isset($idPage))
 }
 else
 {
-	getRubriqueParid(1);
+	getRubriqueParid(1,$language);
 }
 
 ?>   
