@@ -5,6 +5,17 @@ use app\models\Rubrique;
 use yii\helpers\Url;
 
 
+$session = Yii::$app->session;
+
+
+$language = $session->get('language');
+
+
+
+
+
+
+
 /* @var $this yii\web\View */
 $this->title = 'Site enseignant chercheur';
 
@@ -35,12 +46,11 @@ elseif($locale == 'fr')
 if(isset($idPage))
 {
 	try{
-		getRubriqueParid($idPage);
+		getRubriqueParid($idPage, $language);
 	}
 	catch(Exception $e)
 	{
 		echo "page inexistante";
-		echo "id page ".$idPage;
 	}
 }
 else

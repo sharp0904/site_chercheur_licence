@@ -13,27 +13,48 @@ use app\models\Menu;
 
 AppAsset::register($this);
 
+
+
 function getMenus($locale = 'fr')
 {
-$list = Menu::find()->where(['actif' => '1'])->all();
+$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])->all();
 		
 		$rs=array();
+		if($locale == 'fr')
+		{
 		foreach($list as $item){
 		//process each item here
 		$rs[]=$item['titre_fr'];
 
+		}
+		}
+		elseif($locale == 'en')
+		{
+		foreach($list as $item){
+		//process each item here
+		$rs[]=$item['titre_en'];
+
+		}
 		}
 		
 		return $rs;
 }
 
 
-function listerRubriques($rs,$id)
+function listerRubriques($rs,$id,$locale='fr')
 {
 $res;
-
+if($locale == 'fr')
+{
 $url = '/site/index&page='.getIdParTitreFR($rs[$id-1]);
 		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+}
+elseif($locale == 'en')
+{
+$url = '/site/index&page='.getIdParTitreEN($rs[$id-1]);
+		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+}
+
 	return $res;
 }
 	
@@ -43,7 +64,34 @@ $rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
 return $rubrique->id;
 }
 
-$rs = getMenus();
+function getIdParTitreEN($titreEN)
+{
+$rubrique = Menu::find()->where(['titre_en' => $titreEN])->one();
+return $rubrique->id;
+}
+
+$session = Yii::$app->session;
+if ($session->isActive)
+{
+$session->open();
+$language = $session->get('language');
+}
+else
+{
+$session->open();
+$session->set('language', 'fr');
+$language = $session->get('language');
+}
+
+
+
+
+
+
+
+
+
+$rs = getMenus($language);
 
 ?>
 <?php $this->beginPage() ?>
@@ -73,7 +121,6 @@ $rs = getMenus();
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     ['label' => 'Login', 'url' => ['/site/login']],
@@ -81,16 +128,35 @@ $rs = getMenus();
 
                 ],
             ]);
-			foreach($rs as $test)
+			if($language == 'fr')
 			{
-			echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                   
-				listerRubriques($rs, getIdParTitreFR($test))
-                ],
-            ]);
-				
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-right'],
+					'items' => [
+					
+					listerRubriques($rs, getIdParTitreFR($titre), $language)
+
+					],
+				]);
+					
+				}
+			}
+			elseif($language =='en')
+			{
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-right'],
+					'items' => [					
+					
+					listerRubriques($rs, getIdParTitreEN($titre), $language)
+					
+					],
+				]);
+					
+				}
 			}
             NavBar::end();
 			}
@@ -99,7 +165,6 @@ $rs = getMenus();
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
 					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
