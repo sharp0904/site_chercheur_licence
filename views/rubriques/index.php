@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Rubrique', ['create'], ['class' => 'btn btn-success']) ?>
+         <?= Html::a('Create Rubrique', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'date_modification',
             'content_fr:ntext',
             'content_en:ntext',
-            // 'menu_id',
+            'menu_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

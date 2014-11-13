@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Rubrique;
 use app\models\RubriquesSearch;
+use app\models\Menu;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -41,7 +42,18 @@ class RubriquesController extends Controller
         ]);
     }
 
-    /**
+	/** Met à jour l'id_menu de Rubriques renvoi sur cette rubrique */
+    public function actionMaj($id, $menu_id)
+    {
+		$modelR = $this->findModel($id);
+		$modelR->attributes=array('menu_id'=>$menu_id);
+		$modelR->save();
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+    
+	/**
      * Displays a single Rubrique model.
      * @param integer $id
      * @return mixed
@@ -52,6 +64,7 @@ class RubriquesController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+    
 
     /**
      * Creates a new Rubrique model.
@@ -60,13 +73,16 @@ class RubriquesController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Rubrique();
+        $modelR = new Rubrique();
+        $modelM = new Menu();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($modelR->load(Yii::$app->request->post()) && $modelR->save() && $modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+            
+            $this->redirect(['maj', 'id' => $modelR->id, 'menu_id' => $modelM->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'modelR' => $modelR,
+                'modelM' => $modelM,
             ]);
         }
     }
@@ -79,13 +95,16 @@ class RubriquesController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $modelR = $this->findModel($id);
+        $modelM = MenuController::findModel($modelR->menu_id);
+        
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($modelR->load(Yii::$app->request->post()) && $modelR->save() && $modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+            return $this->redirect(['maj', 'id' => $modelR->id, 'menu_id' => $modelM->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'modelR' => $modelR,
+                'modelM' => $modelM,
             ]);
         }
     }

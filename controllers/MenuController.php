@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Menu;
+use app\models\Rubrique;
 use app\models\MenuSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -60,13 +61,13 @@ class MenuController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Menu();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $modelM = new Menu();        
+        if ($modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+			
+			return $this->redirect(['view', 'id' => $modelM->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'modelM' => $modelM,
             ]);
         }
     }
@@ -79,13 +80,13 @@ class MenuController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $modelM = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+            return $this->redirect(['view', 'id' => $modelM->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'modelM' => $modelM,
             ]);
         }
     }
@@ -110,7 +111,7 @@ class MenuController extends Controller
      * @return Menu the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    public function findModel($id)
     {
         if (($model = Menu::findOne($id)) !== null) {
             return $model;
