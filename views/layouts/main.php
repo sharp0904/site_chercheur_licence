@@ -1,17 +1,44 @@
+<!DOCTYPE html>
+
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\Menu;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
+
+$list = Menu::find()->where(['actif' => '1'])->all();
+
+		$rs=array();
+		foreach($list as $item){
+		//process each item here
+		$rs[]=$item['titre_fr'];
+
+		}
+		
+function listerRubriques($rs,$id)
+{
+$res;
+
+$url = '/site/index&page='.getIdParTitreFR($rs[$id-1]);
+		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+	return $res;
+}
+	
+function getIdParTitreFR($titreFR)
+{
+$rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
+return $rubrique->id;
+}
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
+
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
@@ -41,8 +68,21 @@ AppAsset::register($this);
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     ['label' => 'Login', 'url' => ['/site/login']],
+					
+
                 ],
             ]);
+			foreach($rs as $test)
+			{
+			echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                   
+				listerRubriques($rs, getIdParTitreFR($test))
+                ],
+            ]);
+				
+			}
             NavBar::end();
 			}
 			else
@@ -53,7 +93,6 @@ AppAsset::register($this);
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
-        
 					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
 					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
 						
@@ -62,6 +101,17 @@ AppAsset::register($this);
                             'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
+			foreach($rs as $test)
+			{
+			echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                   
+				listerRubriques($rs, getIdParTitreFR($test))
+                ],
+            ]);
+				
+			}
             NavBar::end();
 			}
 			
