@@ -11,11 +11,6 @@ $session = Yii::$app->session;
 $language = $session->get('language');
 
 
-
-
-
-
-
 /* @var $this yii\web\View */
 $this->title = 'Site enseignant chercheur';
 

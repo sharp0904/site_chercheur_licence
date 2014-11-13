@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+
 class SiteController extends Controller
 {
     public function behaviors()
@@ -51,6 +52,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+	
+	public function actionPublications()
+    {
+        return $this->render('publications');
     }
 
     public function actionLogin()

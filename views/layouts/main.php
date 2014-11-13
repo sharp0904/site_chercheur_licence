@@ -121,8 +121,9 @@ $rs = getMenus($language);
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
+					['label' => 'Publications', 'url' => ['/site/publications']],
+
                     ['label' => 'Login', 'url' => ['/site/login']],
 					
 
@@ -165,8 +166,8 @@ $rs = getMenus($language);
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
+				    ['label' => 'Contact', 'url' => ['/site/contact']],
+					['label' => 'Publications', 'url' => ['/site/publications']],
 					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
 					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
 						
