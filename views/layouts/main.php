@@ -17,7 +17,7 @@ AppAsset::register($this);
 
 function getMenus($locale = 'fr')
 {
-$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])->all();
+$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_DESC])->all();
 		
 		$rs=array();
 		if($locale == 'fr')
@@ -133,7 +133,7 @@ $rs = getMenus($language);
 				foreach($rs as $titre)
 				{
 				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-right'],
+					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [
 					
 					listerRubriques($rs, getIdParTitreFR($titre), $language)
@@ -148,7 +148,7 @@ $rs = getMenus($language);
 				foreach($rs as $titre)
 				{
 				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-right'],
+					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [					
 					
 					listerRubriques($rs, getIdParTitreEN($titre), $language)
@@ -175,16 +175,35 @@ $rs = getMenus($language);
                             'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
-			foreach($rs as $test)
+			if($language == 'fr')
 			{
-			echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                   
-				listerRubriques($rs, getIdParTitreFR($test))
-                ],
-            ]);
-				
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [
+					
+					listerRubriques($rs, getIdParTitreFR($titre), $language)
+
+					],
+				]);
+					
+				}
+			}
+			elseif($language =='en')
+			{
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [					
+					
+					listerRubriques($rs, getIdParTitreEN($titre), $language)
+					
+					],
+				]);
+					
+				}
 			}
             NavBar::end();
 			}
