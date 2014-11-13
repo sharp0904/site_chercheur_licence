@@ -2,12 +2,15 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\models\Menu
+use app\models\Menu;
+use yii\helpers\ArrayHelper;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Rubrique */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<script src="<?php echo '/basicTest/ckeditor/ckeditor.js'; ?>"></script>
+<script src="<?php echo '/site_chercheur_licence/ckeditor/ckeditor.js'; ?>"></script>
+
 
 <div class="rubrique-form">
 
@@ -23,14 +26,12 @@ use app\models\Menu
 	
     <?= $form->field($model, 'content_en')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'menu_id')->textInput() ?>
 
 	<?php 
 // listName est le nom de la balise, 1 est le option selected et array on aura une focntion qui récupèrera la liste des clefs 
 // etrangères et on les ajoutera a un tableau qu'on passera en paramètre
-	echo Html::dropDownList('listname', '1',
-
-	Menu::model()->findAll());?>
+	echo Html::activeDropDownList($model, 'menu_id', ArrayHelper::map(Menu::find()->all(), 'id','titre_fr')); 
+	?>
 	</br></br>
 	
     <div class="form-group">

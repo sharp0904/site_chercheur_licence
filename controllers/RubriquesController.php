@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Rubrique;
+use app\models\RubriquesSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -32,11 +33,12 @@ class RubriquesController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Rubrique::find(),
-        ]);
+        $searchModel = new RubriquesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+
             'dataProvider' => $dataProvider,
         ]);
     }

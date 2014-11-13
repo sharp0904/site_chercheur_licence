@@ -8,6 +8,9 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    background-image: url(images/bg_page.png);
+    background-repeat: repeat-x;
+
 }
 
 .wrap > .container {
@@ -35,6 +38,9 @@ body {
     color: #c55;
     font-style: italic;
 }
+
+
+
 
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
@@ -88,4 +94,682 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+
+
+
+
+
+/* Ecrasement design balises bootstrap  */
+
+.navbar-inverse {
+  background-image: url('images/menu_bg.png');
+  border-color: #080808;
+  color:white;
+  border-radius:0px 0px 20px 20px;
+}
+
+
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:active {
+  color: blue;
+  background-color: white;
+  border-radius:10px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: white;
+  background-image: URL('images/menu_bg_active.png');
+  border-radius:10px;
+}
+
+
+
+@charset "utf-8";
+/* CSS Document */
+
+*
+{
+     margin: 0;
+     padding: 0;
+}
+
+body
+{    
+    font-family: Tahoma, Geneva, sans-serif;
+
+    background-image: url(images/bg_page.png);
+    background-repeat: repeat-x;
+    background-color: #FFF;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+a:active
+{
+	color: white;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #585858;
+	text-decoration: none;
+}
+
+.float-left
+{
+    float: left;
+}
+
+.cursor-pointer
+{
+    cursor: pointer;
+}
+
+.error-msg
+{
+    color: #b40000;
+    font-size: 12px;
+}
+
+.logo
+{
+    width: 348px;
+    height: 100px;
+
+
+    background-image: url(images/logo.png);
+    background-repeat: no-repeat;
+}
+
+.icons-contener
+{
+       position: absolute;
+       top: 40px;
+       right: 0px;
+}
+
+.flag-en
+{
+    width: 50px;
+    height: 25px;
+
+    background-image: url(images/flag-en.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon
+{
+    float: right;
+    margin-right: 40px;
+}
+
+.flag-fr
+{
+    width: 50px;
+    height: 25px;
+
+    background-image: url(images/flag-fr.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.home-icon
+{
+    width: 50px;
+    height: 25px;
+
+    background-image: url(images/icon-home.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-text
+{
+    width: 50px;
+
+    text-align: center;
+    font-size: 13px;
+
+    color: #001e3b;
+}
+
+.site-content 
+{
+    
+    width: 90%;
+    min-width: 750px;
+
+    margin: auto;
+    margin-bottom: 30px;
+
+    text-align: left;
+}
+
+.site-index 
+{
+    
+    width: 100%;
+}
+
+.menu-button-list
+{
+    position: relative;
+    height: 49px;
+    left: 30px;
+    margin-right: 60px;
+
+    background-image: url(images/menu_bg.png);
+    background-repeat: repeat-x;
+}
+
+.menu-corner-left
+{
+    position: absolute;
+
+    left: 0px;
+    width: 30px;
+    height: 49px;
+
+    background-image: url(images/menu-corner-left.png);
+    background-repeat: no-repeat;
+}
+
+.menu-corner-right
+{
+   position: absolute;
+
+    width: 30px;
+    height: 49px;
+    right: 0px;
+
+    background-image: url(images/menu-corner-right.png);
+    background-repeat: no-repeat;
+}
+
+.menu-separator
+{
+    float: left;
+
+    width: 2px;
+    height: 49px;
+
+    background-image: url(images/menu_separator.png);
+    background-repeat: no-repeat;
+}
+
+.menu-item
+{
+    float: left;
+
+    min-width: 84px;
+    height: 49px;
+    line-height: 49px;
+    vertical-align: middle;
+
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+
+    font-size: 15px;
+    color: #FFF;
+    cursor: pointer;
+    
+    background-image: url(images/menu_bg.png);
+    background-repeat: repeat-x;
+}
+
+.menu-item-selected
+{
+    float: left;
+
+    min-width: 84px;
+    height: 49px;
+    line-height: 49px;
+    vertical-align: middle;
+
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+
+    font-size: 15px;
+    color: #FFF;
+
+    background-image: url(images/menu_bg_active.png);
+    background-repeat: repeat-x;
+}
+
+
+
+.text-border-right
+{
+    float: right;
+    bottom: 0px;
+
+    width: 25px;
+    
+    border-top: 1px solid #b1cbe4;
+
+    background-image: url(images/text-border-right.png);
+    background-repeat: repeat-y;
+}
+
+.footer-middle
+{
+    position: relative;
+    height: 35px;
+    left: 30px;
+    margin-right: 60px;
+
+    background-image: url(images/footer-middle.png);
+    background-repeat: repeat-x;
+}
+
+.footer-corner-left
+{
+    position: absolute;
+
+    left: 0px;
+    width: 30px;
+    height: 35px;
+
+    background-image: url(images/footer-corner-left.png);
+    background-repeat: no-repeat;
+}
+
+.footer-corner-right
+{
+    position: absolute;
+
+    width: 30px;
+    height: 35px;
+    right: 0px;
+
+    background-image: url(images/footer-corner-right.png);
+    background-repeat: no-repeat;
+}
+
+.bottom-panel
+{
+    width: 100%;
+    height: 22px;
+
+    right: 30px;
+    
+    font-size: 12px;
+}
+
+.auth-panel
+{
+    width: 92px;
+    height: 22px;
+
+    float: right;
+
+    text-align: center;
+
+    background-image: url(images/bg-signInOut-tab.png);
+    background-repeat: no-repeat;
+}
+
+.auth-label
+{
+    margin-top: 2px;
+
+    color: #888;
+    cursor: pointer;
+}
+
+.admin-menu
+{
+    text-align: left;
+
+    height: 24px;
+
+    background-image: url(images/bg-admin-menu.png);
+    background-repeat: repeat-x;
+}
+
+.admin-menu-item
+{
+    float: left;
+    margin-top: 3px;
+    margin-left: 10px;
+
+    color: #34699F;
+
+    cursor: pointer;
+}
+
+.border-simple
+{
+    border: 1px solid #000;
+}
+
+.admin-form
+{
+   border: 1px solid #3882c1;
+   background-color: #eef5ff;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-bottom: 15px;
+}
+
+.admin-form-invisible-input
+{
+    background-color: #eef5ff;
+    border: 0px;
+}
+
+.admin-form-bibtex
+{
+    margin: 5px;
+}
+
+.ibtn
+{
+    width: 170px;
+    height: 22px;
+
+    margin: auto;
+    padding-top: 4px;
+    font-size: 12px;
+}
+
+.ibtn-lbl
+{
+    float: left;
+    margin-left: 4px;
+
+    cursor: pointer;
+}
+
+.login-wrap
+{
+    width: 340px;
+    height: 161px;
+    margin: auto;
+
+    background-image: url(images/bg-login.png);
+    background-repeat: no-repeat;
+}
+
+.login-panel
+{
+    margin-top: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.login-btn
+{
+    margin-left: 120px;
+}
+
+.publications-contener
+{
+    width: 100%;
+    border-bottom: 1px solid #A6ABB4;
+    border-left: 1px solid #A6ABB4;
+    border-right: 1px solid #A6ABB4;
+}
+
+.publications-section
+{
+    width: 100%;
+    height: 25px;
+
+    border-top: 1px solid #A6ABB4;
+    
+    background-image: url(images/bg-publications-section.png);
+    background-repeat: repeat-x;
+}
+
+.publications-section-title
+{
+    margin-top: 5px;
+    margin-left: 15px;
+    
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.publications-items
+{
+    width: 100%;
+    
+    margin-top: 3px;
+}
+
+.publications-item
+{
+    width: 100%;
+
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+.publication-filter-panel
+{
+    width: 400px;
+    margin: auto;
+}
+
+.frame-upload
+{
+    display: none;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+.publi-ref
+{
+    color: #3593dd;
+}
+
+.publi-authors
+{
+    
+}
+
+.publi-titre
+{
+    font-style: italic;
+}
+
+.publi-booktitle
+{
+    font-weight: bold;
+}
+
+.publi-editor
+{
+    
+}
+
+.publi-volume
+{
+    
+}
+
+.publi-number
+{
+    
+}
+
+.publi-series
+{
+    
+}
+
+.publi-pages
+{
+    
+}
+
+.publi-publisher
+{
+    
+}
+
+.publi-date
+{
+    
+}
+
+.publi-address
+{
+    
+}
+
+.publi-note
+{
+    
+}
+
+.publi-abstract
+{
+    border: 1px dashed #ddd;
+    background-color: #f9f9f9;
+    padding: 2px;
+    display: inline-block;
+    width: 99%;
+}
+
+.publi-keywords
+{
+    font-size: 10px;
+}
+
+.bibtex-panel
+{
+    text-align: left;
+
+    margin: 10px;
+}
+
+/******************************************************/
+
+.gwt-DialogBox .Caption {
+  background: #e3e8f3 url(images/hborder.png) repeat-x 0px -2003px;
+  padding: 4px 4px 4px 8px;
+  cursor: default;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 5px solid #d0e4f6;
+}
+
+.gwt-DialogBox .dialogContent {
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+
+.gwt-DialogBox .dialogBottomCenter {
+  background: url(images/hborder.png) repeat-x 0px -4px;
+  -background: url(images/hborder_ie6.png) repeat-x 0px -4px;
+}
+
+.gwt-DialogBox .dialogMiddleLeft {
+  background: url(images/vborder.png) repeat-y;
+}
+
+.gwt-DialogBox .dialogMiddleRight {
+  background: url(images/vborder.png) repeat-y -4px 0px;
+  -background: url(images/vborder_ie6.png) repeat-y -4px 0px;
+}
+
+.gwt-DialogBox .dialogTopLeftInner {
+  width: 5px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogTopRightInner {
+  width: 8px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomRightInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogTopLeft {
+  background: url(images/corner.png) no-repeat -13px 0px;
+  -background: url(images/corner_ie6.png) no-repeat -13px 0px;
+}
+
+.gwt-DialogBox .dialogTopRight {
+  background: url(images/corner.png) no-repeat -18px 0px;
+  -background: url(images/corner_ie6.png) no-repeat -18px 0px;
+}
+
+.gwt-DialogBox .dialogBottomLeft {
+  background: url(images/corner.png) no-repeat 0px -15px;
+  -background: url(images/corner_ie6.png) no-repeat 0px -15px;
+}
+
+.gwt-DialogBox .dialogBottomRight {
+  background: url(images/corner.png) no-repeat -5px -15px;
+  -background: url(images/corner_ie6.png) no-repeat -5px -15px;
+}
+
+html>body .gwt-DialogBox {
+}
+
+* html .gwt-DialogBox .dialogTopLeftInner {
+  width: 5px;
+  overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogTopRightInner {
+  width: 8px;
+  overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogBottomRightInner {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.cw-DialogBox {
 }

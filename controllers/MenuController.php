@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Menu;
+use app\models\MenuSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -32,11 +33,12 @@ class MenuController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Menu::find(),
-        ]);
+        $searchModel = new MenuSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -80,6 +82,7 @@ class MenuController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+
 
         if ($model->load(Yii::$app->request->post())) {
 		$model->save();
