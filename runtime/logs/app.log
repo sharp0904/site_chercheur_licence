@@ -19013,3 +19013,296 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1415891080.018
     'REQUEST_TIME' => 1415891080
 ]
+2014-11-14 08:52:12 [127.0.0.1][100][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'The requested page does not exist.' in /var/www/html/site_chercheur_licence-master/controllers/RubriquesController.php:140
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/controllers/RubriquesController.php(123): app\controllers\RubriquesController->findModel(90)
+#1 [internal function]: app\controllers\RubriquesController->actionDelete('66')
+#2 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('delete', Array)
+#5 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('rubriques/delet...', Array)
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2014-11-14 08:52:12 [127.0.0.1][100][-][info][application] $_GET = [
+    'id' => '66'
+]
+
+$_POST = [
+    '_csrf' => 'MEhLVi5VNFNHOy4fTQJdImM5ChNCAUY0ZDASLFQeXBVbOn4bfgJ/Pw=='
+]
+
+$_COOKIE = [
+    '_csrf' => '0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s:32:\"wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl\";'
+    'PHPSESSID' => 'kab1vjlh7cd29844kuu56of0d7'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '100'
+    '__captcha/site/captcha' => 'tuagdyd'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '68'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php/rubriques/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s%3A32%3A%22wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl%22%3B; PHPSESSID=kab1vjlh7cd29844kuu56of0d7; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '48604'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=66'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php/rubriques/delete?id=66'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PATH_INFO' => '/rubriques/delete'
+    'PATH_TRANSLATED' => '/var/www/html/rubriques/delete'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php/rubriques/delete'
+    'REQUEST_TIME_FLOAT' => 1415955132.106
+    'REQUEST_TIME' => 1415955132
+]
+2014-11-14 08:55:24 [127.0.0.1][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: app\controllers\RubriquesController::findModel()' in /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Component.php:282
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/controllers/MenuController.php(102): yii\base\Component->__call('findModel', Array)
+#1 /var/www/html/site_chercheur_licence-master/controllers/MenuController.php(102): app\controllers\RubriquesController->findModel(97)
+#2 /var/www/html/site_chercheur_licence-master/controllers/RubriquesController.php(123): app\controllers\MenuController->actionDelete(97)
+#3 [internal function]: app\controllers\RubriquesController->actionDelete('71')
+#4 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#5 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('delete', Array)
+#7 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('rubriques/delet...', Array)
+#8 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#10 {main}
+2014-11-14 08:55:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => '71'
+]
+
+$_POST = [
+    '_csrf' => 'azg3VU5EZGkcS1IcLRMNGDhJdhAiEBYOP0BuLzQPDC8ASgIYHhMvBQ=='
+]
+
+$_COOKIE = [
+    '_csrf' => '0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s:32:\"wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl\";'
+    'PHPSESSID' => 'kab1vjlh7cd29844kuu56of0d7'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php/rubriques/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s%3A32%3A%22wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl%22%3B; PHPSESSID=kab1vjlh7cd29844kuu56of0d7; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '48620'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=71'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php/rubriques/delete?id=71'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PATH_INFO' => '/rubriques/delete'
+    'PATH_TRANSLATED' => '/var/www/html/rubriques/delete'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php/rubriques/delete'
+    'REQUEST_TIME_FLOAT' => 1415955324.795
+    'REQUEST_TIME' => 1415955324
+]
+2014-11-14 08:56:15 [127.0.0.1][100][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "r".' in /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('r', Array)
+#1 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request "r".' in /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2014-11-14 08:56:15 [127.0.0.1][100][-][info][application] $_COOKIE = [
+    '_csrf' => '0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s:32:\"wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl\";'
+    'PHPSESSID' => 'kab1vjlh7cd29844kuu56of0d7'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '100'
+    '__captcha/site/captcha' => 'tuagdyd'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s%3A32%3A%22wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl%22%3B; PHPSESSID=kab1vjlh7cd29844kuu56of0d7; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '48640'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php/r'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PATH_INFO' => '/r'
+    'PATH_TRANSLATED' => '/var/www/html/r'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php/r'
+    'REQUEST_TIME_FLOAT' => 1415955375.04
+    'REQUEST_TIME' => 1415955375
+]
+2014-11-14 09:38:37 [127.0.0.1][-][-][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`webchercheur`.`rubrique`, CONSTRAINT `rubrique_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`))' in /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/Command.php:768
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/Command.php(768): PDOStatement->execute()
+#1 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/ActiveRecord.php(254): yii\db\Command->execute()
+#2 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/ActiveRecord.php(610): yii\db\ActiveRecord::deleteAll(Array)
+#3 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\ActiveRecord->deleteInternal()
+#4 /var/www/html/site_chercheur_licence-master/controllers/RubriquesController.php(121): yii\db\ActiveRecord->delete()
+#5 [internal function]: app\controllers\RubriquesController->actionDelete('72')
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('delete', Array)
+#9 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('rubriques/delet...', Array)
+#10 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`webchercheur`.`rubrique`, CONSTRAINT `rubrique_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`))
+The SQL being executed was: DELETE FROM `menu` WHERE `id`=98' in /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/Command.php(776): yii\db\Schema->convertException(Object(PDOException), 'DELETE FROM `me...')
+#1 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/ActiveRecord.php(254): yii\db\Command->execute()
+#2 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/ActiveRecord.php(610): yii\db\ActiveRecord::deleteAll(Array)
+#3 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\ActiveRecord->deleteInternal()
+#4 /var/www/html/site_chercheur_licence-master/controllers/RubriquesController.php(121): yii\db\ActiveRecord->delete()
+#5 [internal function]: app\controllers\RubriquesController->actionDelete('72')
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('delete', Array)
+#9 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('rubriques/delet...', Array)
+#10 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1451
+    [2] => Cannot delete or update a parent row: a foreign key constraint fails (`webchercheur`.`rubrique`, CONSTRAINT `rubrique_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`))
+)
+
+2014-11-14 09:38:37 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => '72'
+]
+
+$_POST = [
+    '_csrf' => 'b0RmZ3pfWjMYNwMuGQgzQjw1JyIWCyhUOzw/HQAUMnUENlMqKggRXw=='
+]
+
+$_COOKIE = [
+    '_csrf' => '0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s:32:\"wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl\";'
+    'PHPSESSID' => 'kab1vjlh7cd29844kuu56of0d7'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '68'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php/rubriques/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=0afc55bcebceebaebf159f088794c7714bba6d038cd81decec876f7417a87fa8s%3A32%3A%22wseIcWiqSqAElTrgTxYzzKhFkr5MPWKl%22%3B; PHPSESSID=kab1vjlh7cd29844kuu56of0d7; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '48712'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=72'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php/rubriques/delete?id=72'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PATH_INFO' => '/rubriques/delete'
+    'PATH_TRANSLATED' => '/var/www/html/rubriques/delete'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php/rubriques/delete'
+    'REQUEST_TIME_FLOAT' => 1415957917.783
+    'REQUEST_TIME' => 1415957917
+]

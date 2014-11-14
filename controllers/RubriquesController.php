@@ -117,7 +117,11 @@ class RubriquesController extends Controller
      */
     public function actionDelete($id)
     {
+		$modelR = $this->findModel($id);
+		$modelM = MenuController::findModel($modelR->menu_id);
+        $idMenu = $modelM->id;
         $this->findModel($id)->delete();
+        MenuController::findModel($idMenu)->delete();
 
         return $this->redirect(['index']);
     }
@@ -129,7 +133,7 @@ class RubriquesController extends Controller
      * @return Rubrique the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected static function findModel($id)
     {
         if (($model = Rubrique::findOne($id)) !== null) {
             return $model;
