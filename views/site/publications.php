@@ -18,7 +18,7 @@ $language = $session->get('language');
 function getPublications()
 {
 $list = Publication::find()->orderBy(['date' => SORT_DESC])->all();
-return $list;	
+return $list;
 }
 
 $rs = getPublications();

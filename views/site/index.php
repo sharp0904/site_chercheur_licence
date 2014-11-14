@@ -19,6 +19,7 @@ $this->title = 'Site enseignant chercheur';
 if (isset($_GET["page"])) {
     $idPage = $_GET["page"];
 }
+$rubrique = Rubrique::find()->one();
 
 	
 function getRubriqueParid($id, $locale = 'fr')
@@ -54,7 +55,7 @@ if(isset($idPage))
 }
 else
 {
-	getRubriqueParid(1,$language);
+	getRubriqueParid($rubrique->id,"fr");
 }
 
 ?>   

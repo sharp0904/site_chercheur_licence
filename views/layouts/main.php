@@ -71,17 +71,15 @@ return $rubrique->id;
 }
 
 $session = Yii::$app->session;
-if ($session->isActive)
-{
+
 $session->open();
 $language = $session->get('language');
-}
-else
+
+if(!isset($language))
 {
-$session->open();
-$session->set('language', 'fr');
-$language = $session->get('language');
+$language='fr';
 }
+
 
 
 
