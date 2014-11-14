@@ -8,6 +8,8 @@ use app\models\PublicationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+
 
 /**
  * PublicationController implements the CRUD actions for Publication model.
@@ -25,7 +27,7 @@ class PublicationController extends Controller
             ],
         ];
     }
-
+	
     /**
      * Lists all Publication models.
      * @return mixed
@@ -62,14 +64,27 @@ class PublicationController extends Controller
     {
         $model = new Publication();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+		     
+		
+		 
+        if ($model->load(Yii::$app->request->post())) {
+		
+		if (Yii::$app->request->isPost) {
+            $model->pdf = UploadedFile::getInstance($model, 'pdf');
+                $model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+        }
+		$model->attributes=array('pdf'=>$model->pdf->baseName);
+
+		 $model->save();
             return $this->redirect(['view', 'id' => $model->ID]);
+			
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
     }
+	
 
     /**
      * Updates an existing Publication model.

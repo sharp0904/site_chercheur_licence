@@ -32,7 +32,7 @@ class Rubrique extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date_creation', 'date_modification', 'menu_id'], 'required'],
+            [['date_creation', 'date_modification'], 'required'],
             [['date_creation', 'date_modification'], 'safe'],
             [['content_fr', 'content_en'], 'string'],
             [['menu_id'], 'integer']
@@ -61,4 +61,12 @@ class Rubrique extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Menu::className(), ['id' => 'menu_id']);
     }
+    
+	public function relations()
+	{
+		return array(
+		'menu'    =>  array(self::BELONGS_TO,'Menu','menu_id'),
+		);
+	}
+
 }

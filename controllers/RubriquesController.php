@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Rubrique;
 use app\models\RubriquesSearch;
+use app\models\Menu;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -38,12 +39,22 @@ class RubriquesController extends Controller
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-
             'dataProvider' => $dataProvider,
         ]);
     }
 
-    /**
+	/** Met à jour l'id_menu de Rubriques renvoi sur cette rubrique */
+    public function actionMaj($id, $menu_id)
+    {
+		$modelR = $this->findModel($id);
+		$modelR->attributes=array('menu_id'=>$menu_id);
+		$modelR->save();
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+    
+	/**
      * Displays a single Rubrique model.
      * @param integer $id
      * @return mixed
@@ -55,6 +66,7 @@ class RubriquesController extends Controller
         ]);
     }
 
+
     /**
      * Creates a new Rubrique model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -62,13 +74,17 @@ class RubriquesController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Rubrique();
+        $modelR = new Rubrique();
+        $modelM = new Menu();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($modelR->load(Yii::$app->request->post()) && $modelR->save() && $modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+            
+            $this->redirect(['maj', 'id' => $modelR->id, 'menu_id' => $modelM->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'modelR' => $modelR,
+                'modelM' => $modelM,
+
             ]);
         }
     }
@@ -81,13 +97,16 @@ class RubriquesController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $modelR = $this->findModel($id);
+        $modelM = MenuController::findModel($modelR->menu_id);
+        
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($modelR->load(Yii::$app->request->post()) && $modelR->save() && $modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+            return $this->redirect(['maj', 'id' => $modelR->id, 'menu_id' => $modelM->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'modelR' => $modelR,
+                'modelM' => $modelM,
             ]);
         }
     }
@@ -100,7 +119,11 @@ class RubriquesController extends Controller
      */
     public function actionDelete($id)
     {
+		$modelR = $this->findModel($id);
+		$modelM = MenuController::findModel($modelR->menu_id);
+        $idMenu = $modelM->id;
         $this->findModel($id)->delete();
+        MenuController::findModel($idMenu)->delete();
 
         return $this->redirect(['index']);
     }
@@ -112,7 +135,7 @@ class RubriquesController extends Controller
      * @return Rubrique the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected static function findModel($id)
     {
         if (($model = Rubrique::findOne($id)) !== null) {
             return $model;

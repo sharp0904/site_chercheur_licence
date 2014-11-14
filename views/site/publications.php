@@ -97,7 +97,7 @@ if($publication->pdf != null)
 echo"<tr><td align='left' style='vertical-align: top;'><table cellspacing='0' cellpadding='0'>";
 echo"<tbody><tr><td align='left' style='vertical-align: top;'>";
 echo"<img src='images/icon-tex.png' class='cursor-pointer'></td>";
-echo"<td align='left' style='vertical-align: top;'><a href='uploads/files/".$publication->pdf.".pdf'><img border='0' src='images/icon-pdf.png' alt='Download PDF'></a></td>";
+echo"<td align='left' style='vertical-align: top;'><a href='uploads/".$publication->pdf.".pdf'><img border='0' src='images/icon-pdf.png' alt='Download PDF'></a></td>";
 }
 echo"</div></div></td></tr>";
 

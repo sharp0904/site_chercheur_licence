@@ -114,7 +114,7 @@ class MenuController extends Controller
      * @return Menu the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    public static function findModel($id)
     {
         if (($model = Menu::findOne($id)) !== null) {
             return $model;
