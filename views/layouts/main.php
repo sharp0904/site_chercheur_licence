@@ -13,7 +13,15 @@ use app\models\Menu;
 
 AppAsset::register($this);
 
+$session = Yii::$app->session;
 
+$session->open();
+$language = $session->get('language');
+
+if(!isset($language))
+{
+$language='fr';
+}
 
 function getMenus($locale = 'fr')
 {
@@ -69,21 +77,6 @@ function getIdParTitreEN($titreEN)
 $rubrique = Menu::find()->where(['titre_en' => $titreEN])->one();
 return $rubrique->id;
 }
-
-$session = Yii::$app->session;
-
-$session->open();
-$language = $session->get('language');
-
-if(!isset($language))
-{
-$language='fr';
-}
-
-
-
-
-
 
 
 
