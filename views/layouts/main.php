@@ -49,18 +49,18 @@ $list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_DESC]
 }
 
 
-function listerRubriques($rs,$id,$locale='fr')
+function listerRubriques($rs,$titre,$locale='fr')
 {
 $res;
 if($locale == 'fr')
 {
-$url = '/site/index&page='.getIdParTitreFR($rs[$id-1]);
-		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+$url = '/site/index&page='.getIdParTitreFR($titre);
+		$res = ['label' => $titre, 'url' => [$url]];
 }
 elseif($locale == 'en')
 {
-$url = '/site/index&page='.getIdParTitreEN($rs[$id-1]);
-		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+$url = '/site/index&page='.getIdParTitreEN($titre);
+		$res = ['label' => $titre, 'url' => [$url]];
 }
 
 	return $res;
@@ -128,7 +128,7 @@ $rs = getMenus($language);
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [
 					
-					listerRubriques($rs, getIdParTitreFR($titre), $language)
+					listerRubriques($rs, $titre, $language)
 
 					],
 				]);
@@ -143,7 +143,7 @@ $rs = getMenus($language);
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [					
 					
-					listerRubriques($rs, getIdParTitreEN($titre), $language)
+					listerRubriques($rs, $titre, $language)
 					
 					],
 				]);
@@ -175,7 +175,7 @@ $rs = getMenus($language);
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [
 					
-					listerRubriques($rs, getIdParTitreFR($titre), $language)
+					listerRubriques($rs, $titre, $language)
 
 					],
 				]);
@@ -190,7 +190,7 @@ $rs = getMenus($language);
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [					
 					
-					listerRubriques($rs, getIdParTitreEN($titre), $language)
+					listerRubriques($rs, $titre, $language)
 					
 					],
 				]);
