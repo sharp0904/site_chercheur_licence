@@ -101,6 +101,19 @@ a.desc:after {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Ecrasement design balises bootstrap  */
 
 .navbar-inverse {
@@ -108,6 +121,20 @@ a.desc:after {
   border-color: #080808;
   color:white;
   border-radius:0px 0px 20px 20px;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;
+  
+}
+.container
+{
+text-align:center;
+width:90%;
+
+}
+.form-horizontal
+{
+text-align:center;
 }
 
 
@@ -140,8 +167,22 @@ a.desc:after {
 
 
 
-@charset "utf-8";
-/* CSS Document */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *
 {

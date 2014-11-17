@@ -25,7 +25,7 @@ $language='fr';
 
 function getMenus($locale = 'fr')
 {
-$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_DESC])->all();
+$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])->all();
 		
 		$rs=array();
 		if($locale == 'fr')
@@ -109,17 +109,7 @@ $rs = getMenus($language);
             ]);
 			if(Yii::$app->user->isGuest)
 			{
-			echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-					['label' => 'Publications', 'url' => ['/site/publications']],
-
-                    ['label' => 'Login', 'url' => ['/site/login']],
-					
-
-                ],
-            ]);
+			
 			if($language == 'fr')
 			{
 				foreach($rs as $titre)
@@ -150,14 +140,54 @@ $rs = getMenus($language);
 					
 				}
 			}
+			echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-left'],
+                'items' => [
+					['label' => 'Publications', 'url' => ['/site/publications']],
+
+                    ['label' => 'Login', 'url' => ['/site/login']],
+					
+
+                ],
+            ]);
             NavBar::end();
 			}
 			else
 			{
+			
+			if($language == 'fr')
+			{
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [
+					
+					listerRubriques($rs, $titre, $language)
+
+					],
+				]);
+					
+				}
+			}
+			elseif($language =='en')
+			{
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [					
+					
+					listerRubriques($rs, $titre, $language)
+					
+					],
+				]);
+					
+				}
+			}
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-				    ['label' => 'Contact', 'url' => ['/site/contact']],
 					['label' => 'Publications', 'url' => ['/site/publications']],
 					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
 					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
@@ -167,36 +197,6 @@ $rs = getMenus($language);
                             'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
-			if($language == 'fr')
-			{
-				foreach($rs as $titre)
-				{
-				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-left'],
-					'items' => [
-					
-					listerRubriques($rs, $titre, $language)
-
-					],
-				]);
-					
-				}
-			}
-			elseif($language =='en')
-			{
-				foreach($rs as $titre)
-				{
-				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-left'],
-					'items' => [					
-					
-					listerRubriques($rs, $titre, $language)
-					
-					],
-				]);
-					
-				}
-			}
             NavBar::end();
 			}
 			
