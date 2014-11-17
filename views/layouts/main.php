@@ -31,7 +31,6 @@ $list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])
 		if($locale == 'fr')
 		{
 		foreach($list as $item){
-		//process each item here
 		$rs[]=$item['titre_fr'];
 
 		}
@@ -39,7 +38,6 @@ $list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])
 		elseif($locale == 'en')
 		{
 		foreach($list as $item){
-		//process each item here
 		$rs[]=$item['titre_en'];
 
 		}
