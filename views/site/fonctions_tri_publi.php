@@ -13,10 +13,39 @@ function getCategories()
 	return $list;
 }
 
+function getAnnees()
+{
+	$list = Publication::find()->orderBy(['date' => SORT_DESC])->all();
+	$annee = array();
+	foreach($list as $publi)
+	{
+		$t = $publi->date;
+		$t = substr($t,0,4);
+		$annee[] = $t;
+	}
+	$tabSansDoublon= array();
+	foreach ($annee as $dates) 
+	{
+	   if (!in_array($dates, $tabSansDoublon))
+	   {
+		$tabSansDoublon[]=$dates;
+	   }
+	}
+
+	return $tabSansDoublon;
+	
+}
 
 function getPubliByCateg($idCateg)
 {
 	$list = Publication::find()->where(['categorie_id' => $idCateg])->orderBy(['categorie_id' => SORT_DESC])->all();
+	return $list;
+}
+
+function getPubliByAnnee($annee)
+{
+
+	$list = Publication::find()->where(['like', 'date', $annee])->orderBy(['date' => SORT_DESC])->all();
 	return $list;
 }
 
@@ -100,15 +129,15 @@ function triPubliParCategorie($rs)
 
 function triPubliParDate($rs)
 {
-	$categories = getCategories();
+	$annees = GetAnnees();
 	$publiByCateg= array();
-	foreach ($categories as $c)
+	foreach ($annees as $a)
 	{
 		echo"<tr><td align='left' style='vertical-align: top;'>";
 		echo"<div class='publications-section' style='position: relative; overflow: hidden;'>";
-		echo"<div class='publications-section-title'>".$c->name_fr."</div></div></td></tr>";
-		$publiByCateg = getPubliByCateg($c->ID);
-		foreach($publiByCateg as $publication)
+		echo"<div class='publications-section-title'>".$a."</div></div></td></tr>";
+		$publiByAnnee = getPubliByAnnee($a);
+		foreach($publiByAnnee as $publication)
 		{
 		
 			echo"<tbody><tr><td align='left' style='vertical-align: top;'><table cellspacing='0' cellpadding='0' class='publications-item'>";

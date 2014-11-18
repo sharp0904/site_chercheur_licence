@@ -15,6 +15,25 @@ if (isset($_GET["locale"])) {
 
 $language = $session->get('language');
 
+if (isset($_GET["tri"])) {
+    if($_GET['tri'] == 'cat')
+	{
+		$tri = 'cat';
+	}
+	elseif($_GET['tri'] == 'date')
+	{
+		$tri = 'date';
+	}
+	else
+	{
+		$tri = 'cat';
+	}
+}
+else
+{
+	$tri = 'cat';
+}
+
 
 
 
@@ -34,11 +53,25 @@ $this->title = 'Site enseignant chercheur';
 <div class="site-index">
 <a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
 <a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a> 
-</br></br></br>
+</br>
+<a href="?r=site/publications&tri=cat"><img src="images/icon-sort.png" /></a> 
+<a href="?r=site/publications&tri=date"><img src="images/icon-sort-date.png" /></a> 
+</br></br>
 <table cellspacing="0" cellpadding="0" style="width: 90%;background-color:white;">
 <tbody><tr>
 <?php
-triPubliParCategorie($rs);
+if($tri == 'cat')
+{
+	triPubliParCategorie($rs);
+}
+elseif($tri== 'date')
+{
+	triPubliParDate($rs);
+}
+else
+{
+echo 'veuillez choisir une méthode de tri des publications';
+}
 ?>
 <td align="left" style="vertical-align: top;">
 <table cellspacing="0" cellpadding="0" class="publications-items" style="width: 100%;">
