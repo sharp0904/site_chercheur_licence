@@ -76,7 +76,14 @@ if(isset($idPage))
 }
 else
 {
-	getRubriqueParid($rubrique->id,"fr");
+	if(isset($language))
+	{
+	getRubriqueParid($rubrique->menu_id,$language);
+	}
+	else
+	{
+	getRubriqueParid($rubrique->menu_id,'fr');
+	}
 }
 
 ?>   
