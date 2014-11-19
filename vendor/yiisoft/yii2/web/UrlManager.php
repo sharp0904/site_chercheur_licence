@@ -48,7 +48,7 @@ class UrlManager extends Component
      * and can thus produce more user-friendly URLs, such as "/news/Yii-is-released", instead of
      * "/index.php?r=news/view&id=100".
      */
-    public $enablePrettyUrl = true;
+    public $enablePrettyUrl = false;
     /**
      * @var boolean whether to enable strict parsing. If strict parsing is enabled, the incoming
      * requested URL must match at least one of the [[rules]] in order to be treated as a valid request.
@@ -332,7 +332,7 @@ class UrlManager extends Component
 
             return "$baseUrl/{$route}{$anchor}";
         } else {
-            $url = "$baseUrl?{$this->routeParam}=" . urlencode($route);
+            $url = "$baseUrl?{$this->routeParam}=" . $route;
             if (!empty($params) && ($query = http_build_query($params)) !== '') {
                 $url .= '&' . $query;
             }

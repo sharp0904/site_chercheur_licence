@@ -31,7 +31,7 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titre_fr', 'titre_en', 'actif'], 'required'],
+            [['titre_fr', 'titre_en', 'actif', 'position'], 'required'],
             [['actif', 'position'], 'integer'],
             [['titre_fr', 'titre_en'], 'string', 'max' => 20]
         ];

@@ -61,13 +61,5 @@ class Rubrique extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Menu::className(), ['id' => 'menu_id']);
     }
-    
-	public function relations()
-	{
-		return array(
-		'menu'    =>  array(self::BELONGS_TO,'Menu','menu_id'),
-		);
-	}
-    
-
+	
 }
