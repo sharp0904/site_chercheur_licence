@@ -37,11 +37,17 @@ $rubrique = Rubrique::find()->where(['menu_id' => $id])->one();
 
 if($locale == 'en')
 {
+echo"<p>";
+
 	echo $rubrique->content_en;
+	echo"</p>";
+
 }
 elseif($locale == 'fr')
 {
+echo"<p>";
 	echo $rubrique->content_fr;
+	echo"</p>";
 }
 }
 ?>
@@ -58,7 +64,14 @@ if(isset($idPage))
 	}
 	catch(Exception $e)
 	{
-		echo "page inexistante";
+		if($language=='fr')
+		{
+			echo "page inexistante";
+		}
+		else
+		{
+			echo "Not found";
+		}
 	}
 }
 else

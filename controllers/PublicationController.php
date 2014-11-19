@@ -138,4 +138,59 @@ class PublicationController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+	
+	
+	/**
+     * Cette action permet d'uploader un fichier bibtex afin de créer une ou plusieurs
+     * publications à partir des données du fichier.
+     *
+     * @param FILE uploadbibtex Le fichier bibtex uploadé.
+     */
+	 /*
+    public function uploadBibtex()
+    {
+            // Validation du fichier bibtex
+            // On verifie que le fichier uploadé est un fichier bibtex.
+            $valid_file = new Validation($_FILES);
+            $valid_file->add_rules('uploadbibtex', 'upload::valid', 'upload::required', 'upload::type[bib]');
+            if( ! $valid_file->validate() )
+            {
+                throw new Exception(Kohana::lang('exception.0009'), 0009);
+            }
+
+            // On récupère les données
+            $uploadfile = '../useruploads/bibtex/'.basename($_FILES['uploadbibtex']['name']);
+
+            // On déplace le fichier dans le dossier d'upload
+            if (move_uploaded_file($_FILES['uploadbibtex']['tmp_name'], $uploadfile))
+            {
+                // On charge le fichier bibtex
+                $bibtex = new Structures_BibTex_Core();
+                $ret    = $bibtex->loadFile($uploadfile);
+                if (PEAR::isError($ret))
+                {
+                    throw new Exception(Kohana::lang('exception.0010'), 0010);
+                }
+                
+                // On parse le fichier bibtex afin de remplir la structure.
+                $bibtex->parse();
+                
+                $mdl = new Publication_Model();
+                foreach ($bibtex->data as $datas)
+                {
+                    // On créer un objet Publication à partir des données bibtex
+                    $publication = new Publication_Metier();
+                    $publication = Publication_Metier::mappingBibtex($datas);
+                    $mdl->createPublication($publication);
+                }     
+            }
+            else
+            {
+                throw new Exception(Kohana::lang('exception.0007'), 0007);
+            }
+    }
+
+	*/
+	
+	
 }
