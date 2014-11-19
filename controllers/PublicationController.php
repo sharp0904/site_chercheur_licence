@@ -5,10 +5,13 @@ namespace app\controllers;
 use Yii;
 use app\models\Publication;
 use app\models\PublicationSearch;
+use app\librairies\Structures_BibTex;
+use app\librairies\Validation;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+
 
 
 /**
@@ -79,7 +82,7 @@ class PublicationController extends Controller
             
         }
 		
-
+		
 		 $model->save();
             return $this->redirect(['view', 'id' => $model->ID]);
 			
@@ -147,6 +150,12 @@ class PublicationController extends Controller
      * @param FILE uploadbibtex Le fichier bibtex uploadé.
      */
 	 /*
+	 
+	 
+	 //$model->setAttribute("pdf","test");
+	 
+	 
+	 
     public function uploadBibtex()
     {
             // Validation du fichier bibtex
