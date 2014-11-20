@@ -64,13 +64,20 @@ if(isset($idPage))
 	}
 	catch(Exception $e)
 	{
-		if($language=='fr')
+		if(isset($language))
 		{
-			echo "page inexistante";
+			if($language=='fr')
+			{
+				echo "page inexistante";
+			}
+			else
+			{
+				echo "Not found";
+			}
 		}
 		else
 		{
-			echo "Not found";
+			echo "page inexistante";
 		}
 	}
 }
