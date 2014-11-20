@@ -43,6 +43,7 @@ class Menu extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+
             'titre_fr' => 'Titre Fr',
             'titre_en' => 'Titre En',
             'actif' => 'Actif',
@@ -57,11 +58,5 @@ class Menu extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Rubrique::className(), ['menu_id' => 'id']);
     }
-    
-    public function relations()
-	{
-		return array(
-		'rubriques'    =>  array(self::HAS_MANY,'Rubriques','menu_id'),
-		);
-	}
+
 }

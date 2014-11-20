@@ -6,6 +6,7 @@ use Yii;
 use app\models\Rubrique;
 use app\models\RubriquesSearch;
 use app\models\Menu;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -64,7 +65,7 @@ class RubriquesController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-    
+
 
     /**
      * Creates a new Rubrique model.
@@ -141,6 +142,5 @@ class RubriquesController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
-    
+
 }

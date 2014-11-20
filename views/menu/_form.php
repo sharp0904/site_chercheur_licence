@@ -27,10 +27,5 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
-    
-    <script>     
-                CKEDITOR.replace( 'rubrique-content_fr' );
-                CKEDITOR.replace( 'rubrique-content_en' );
-	</script>
 
 </div>

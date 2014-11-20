@@ -1,3 +1,5 @@
+
+<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 <?php
 
 use yii\helpers\Html;
@@ -6,7 +8,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Rubrique */
 
-$this->title = 'Création d\'une Rubrique';
+
+$this->title = 'Create Rubrique';
 $this->params['breadcrumbs'][] = ['label' => 'Rubriques', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

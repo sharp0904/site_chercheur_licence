@@ -6,6 +6,7 @@ use Yii;
 use app\models\Menu;
 use app\models\Rubrique;
 use app\models\MenuSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -87,6 +88,7 @@ class MenuController extends Controller
         } else {
             return $this->render('update', [
                 'modelM' => $modelM,
+
             ]);
         }
     }

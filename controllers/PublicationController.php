@@ -67,13 +67,18 @@ class PublicationController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 		
 		if (Yii::$app->request->isPost) {
-            $model->pdf = UploadedFile::getInstance($model, 'pdf');
-			$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+		if(($model->pdf != null))
+		{
+		$model->pdf = UploadedFile::getInstance($model, 'pdf');
+                $model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+				$model->attributes=array('pdf'=>$model->pdf->baseName);
+		}
+            
         }
-		$model->attributes=array('pdf'=>$model->pdf->baseName);
+		
 
-		$model->save();
-		return $this->redirect(['view', 'id' => $model->ID]);
+		 $model->save();
+            return $this->redirect(['view', 'id' => $model->ID]);
 			
         } else {
             return $this->render('create', [

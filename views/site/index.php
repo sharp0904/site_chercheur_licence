@@ -33,7 +33,7 @@ $rubrique = Rubrique::find(array('order'=>'menu_id ASC'))->one();
 function getRubriqueParid($id, $locale = 'fr')
 {
 
-$rubrique = Rubrique::find(array('where'=>'menu_id = $id'))->one();
+$rubrique = Rubrique::find()->where(['menu_id' => $id])->one();
 
 if($locale == 'en')
 {
@@ -51,10 +51,15 @@ elseif($locale == 'fr')
 </br></br></br>
 <?php
 
+
 if(isset($idPage))
 {
 	try{
+		
+		echo '<div class="text-contener" >';
+		echo '<div class="text-content" >';
 		getRubriqueParid($idPage, $language);
+		echo '</div></div>';
 	}
 	catch(Exception $e)
 	{
@@ -63,7 +68,10 @@ if(isset($idPage))
 }
 else
 {
-	getRubriqueParid($rubrique->id,"fr");
+	echo '<div class="text-contener" >';
+	echo '<div class="text-content" >';
+	getRubriqueParid($rubrique->menu_id,$language);
+	echo '</div></div>';
 }
 
 ?>   

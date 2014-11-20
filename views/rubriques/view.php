@@ -24,7 +24,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
-    <?php echo($model->content_fr); ?>
-
+		<?php echo($model->content_fr); ?>
 </div>

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\Menu;
 
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\RubriquesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -27,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'content_fr:html' => array('label'=>'Contenu Fr',
 			 
 			 'value'=>function($data) {
-                return (substr((strip_tags(html_entity_decode($data->content_fr))), 0, 50));
+                return (substr((strip_tags(html_entity_decode($data->content_fr))), 0, 50).'...');
 				//strip_tags: supprime toute les balises html
 				//html_entity_decode: (necessaire pour certaines balises)
             }),
@@ -36,7 +37,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-    
-    
 
 </div>
