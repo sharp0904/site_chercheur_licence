@@ -45,7 +45,6 @@ use yii\helpers\ArrayHelper;
 	
     <div class="form-group">
         <?= Html::submitButton($modelR->isNewRecord ? 'Create' : 'Update', ['class' => $modelR->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -67,9 +67,6 @@ class PublicationController extends Controller
     {
         $model = new Publication();
 
-		     
-		
-		 
         if ($model->load(Yii::$app->request->post())) {
 		
 		if (Yii::$app->request->isPost) {

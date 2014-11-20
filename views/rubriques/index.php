@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Menu;
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\RubriquesSearch */
@@ -17,24 +19,21 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
          <?= Html::a('Create Rubrique', ['create'], ['class' => 'btn btn-success']) ?>
-
     </p>
-
+    
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
+			'content_fr:html' => array('label'=>'Contenu Fr',
+			 
+			 'value'=>function($data) {
+                return (substr((strip_tags(html_entity_decode($data->content_fr))), 0, 50).'...');
+				//strip_tags: supprime toute les balises html
+				//html_entity_decode: (necessaire pour certaines balises)
+            }),
             'date_creation',
             'date_modification',
-            'content_fr:html',
-            'content_en:html',
-            'menu_id',
-
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

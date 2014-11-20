@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'titre')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
+    <?= $form->field($model, 'date')->widget(yii\jui\DatePicker::className(), ['dateFormat' => 'yyyy-M-d']) ?>
 
     <?= $form->field($model, 'journal')->textarea(['rows' => 6]) ?>
 

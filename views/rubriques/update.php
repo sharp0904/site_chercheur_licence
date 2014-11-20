@@ -8,7 +8,6 @@ use yii\helpers\Html;
 $this->title = 'Update Rubrique: ' . ' ' . $modelR->id;
 $this->params['breadcrumbs'][] = ['label' => 'Rubriques', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $modelR->id, 'url' => ['view', 'id' => $modelR->id]];
-
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="rubrique-update">
@@ -18,7 +17,6 @@ $this->params['breadcrumbs'][] = 'Update';
     <?= $this->render('_form', [
         'modelR' => $modelR,
         'modelM' => $modelM,
-
     ]) ?>
 
 </div>

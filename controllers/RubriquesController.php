@@ -84,7 +84,6 @@ class RubriquesController extends Controller
             return $this->render('create', [
                 'modelR' => $modelR,
                 'modelM' => $modelM,
-
             ]);
         }
     }
@@ -143,4 +142,5 @@ class RubriquesController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }

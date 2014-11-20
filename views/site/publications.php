@@ -5,6 +5,8 @@ use app\models\Rubrique;
 use yii\helpers\Url;
 use app\models\Publication;
 use app\models\Categorie;
+use yii\jui\Dialog;
+
 
 include('fonctions_tri_publi.php');
 
@@ -14,6 +16,17 @@ if (isset($_GET["locale"])) {
 }
 
 $language = $session->get('language');
+
+
+function getPublications()
+{
+	$list = Publication::find()->orderBy(['date' => SORT_DESC])->all();
+	return $list;
+}
+
+
+$rs = getPublications();
+$tex = "";
 
 if (isset($_GET["tri"])) {
     if($_GET['tri'] == 'cat')
@@ -36,20 +49,11 @@ else
 
 
 
-
-
-function getPublications()
-{
-$list = Publication::find()->orderBy(['categorie_id' => SORT_DESC])->all();
-return $list;
-}
-
-$rs = getPublications();
-
 /* @var $this yii\web\View */
 $this->title = 'Site enseignant chercheur';
 
 ?>
+
 <div class="site-index">
 <a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
 <a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a> 
@@ -78,6 +82,19 @@ echo 'veuillez choisir une méthode de tri des publications';
 <?php 
 
 ?></table></table>
+<?php Dialog::begin([
+	'id' => 'dial-tex',
+    'clientOptions' => [
+		'title'=>'BibTeX',
+		'autoOpen'=>false,
+		'modal'=>true,
+		'width' => 'auto',
+		'height' => 'auto',
+    ],
+]);
+
+
+Dialog::end();   ?>
 </div>
 </div>
 

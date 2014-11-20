@@ -57,10 +57,15 @@ echo"<p>";
 </br></br></br>
 <?php
 
+
 if(isset($idPage))
 {
 	try{
+		
+		echo '<div class="text-contener" >';
+		echo '<div class="text-content" >';
 		getRubriqueParid($idPage, $language);
+		echo '</div></div>';
 	}
 	catch(Exception $e)
 	{
@@ -91,6 +96,7 @@ else
 	{
 	getRubriqueParid($rubrique->menu_id,'fr');
 	}
+
 }
 
 ?>   

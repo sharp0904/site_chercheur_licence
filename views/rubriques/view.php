@@ -24,17 +24,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'date_creation',
-            'date_modification',
-            'content_fr:ntext',
-            'content_en:ntext',
-            'menu_id',
-        ],
-    ]) ?>
-
+		<?php echo($model->content_fr); ?>
 </div>

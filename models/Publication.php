@@ -45,9 +45,10 @@ class Publication extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['reference', 'auteurs', 'titre', 'date'], 'required'],
+            [['reference', 'auteurs', 'titre', 'date', 'categorie_id'], 'required'],
             [['reference', 'auteurs', 'titre', 'journal', 'volume', 'number', 'pages', 'note', 'abstract', 'keywords', 'series', 'localite', 'publisher', 'editor', 'pdf', 'date_display'], 'string'],
             [['date'], 'safe'],
+			[['date'], 'date', 'format'=>'yyyy-M-d'],
             [['categorie_id'], 'integer']
         ];
     }

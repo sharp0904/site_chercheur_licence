@@ -25,22 +25,21 @@ $language='fr';
 
 function getMenus($locale = 'fr')
 {
+
 $list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])->all();
 		
 		$rs=array();
 		if($locale == 'fr')
 		{
-		foreach($list as $item){
-		$rs[]=$item['titre_fr'];
-
-		}
+			foreach($list as $item){
+				$rs[]=$item['titre_fr'];
+			}
 		}
 		elseif($locale == 'en')
 		{
-		foreach($list as $item){
-		$rs[]=$item['titre_en'];
-
-		}
+			foreach($list as $item){
+				$rs[]=$item['titre_en'];
+			}
 		}
 		
 		return $rs;
@@ -52,13 +51,13 @@ function listerRubriques($rs,$titre,$locale='fr')
 $res;
 if($locale == 'fr')
 {
-$url = '/site/index&page='.getIdParTitreFR($titre);
-		$res = ['label' => $titre, 'url' => [$url]];
+	$url = '/site/index&page='.getIdParTitreFR($titre);
+	$res = ['label' => $titre, 'url' => [$url]];
 }
 elseif($locale == 'en')
 {
-$url = '/site/index&page='.getIdParTitreEN($titre);
-		$res = ['label' => $titre, 'url' => [$url]];
+	$url = '/site/index&page='.getIdParTitreEN($titre);
+	$res = ['label' => $titre, 'url' => [$url]];
 }
 
 	return $res;
@@ -66,14 +65,14 @@ $url = '/site/index&page='.getIdParTitreEN($titre);
 	
 function getIdParTitreFR($titreFR)
 {
-$rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
-return $rubrique->id;
+	$rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
+	return $rubrique->id;
 }
 
 function getIdParTitreEN($titreEN)
 {
-$rubrique = Menu::find()->where(['titre_en' => $titreEN])->one();
-return $rubrique->id;
+	$rubrique = Menu::find()->where(['titre_en' => $titreEN])->one();
+	return $rubrique->id;
 }
 
 
@@ -92,6 +91,9 @@ $rs = getMenus($language);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+	<link rel="stylesheet" href="/site_chercheur_licence-master/web/css/pop-up.css">
+
 </head>
 <body>
 
@@ -102,53 +104,53 @@ $rs = getMenus($language);
                 'brandLabel' => 'Site enseignant chercheur',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-inverse',
                 ],
             ]);
 			if(Yii::$app->user->isGuest)
 			{
-			
-			if($language == 'fr')
-			{
-				foreach($rs as $titre)
+				if($language == 'fr')
 				{
+					foreach($rs as $titre)
+					{
+					echo Nav::widget([
+						'options' => ['class' => 'navbar-nav navbar-left'],
+						'items' => [
+						
+						listerRubriques($rs, $titre, $language)
+
+						],
+					]);
+						
+					}
+				}
+				elseif($language =='en')
+				{
+					foreach($rs as $titre)
+					{
+					echo Nav::widget([
+						'options' => ['class' => 'navbar-nav navbar-left'],
+						'items' => [					
+						
+						listerRubriques($rs, $titre, $language)
+						
+						],
+					]);
+						
+					}
+				}
+
 				echo Nav::widget([
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [
-					
-					listerRubriques($rs, $titre, $language)
+						['label' => 'Publications', 'url' => ['/site/publications']],
+
+						['label' => 'Login', 'url' => ['/site/login']],
+						
 
 					],
 				]);
-					
-				}
-			}
-			elseif($language =='en')
-			{
-				foreach($rs as $titre)
-				{
-				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-left'],
-					'items' => [					
-					
-					listerRubriques($rs, $titre, $language)
-					
-					],
-				]);
-					
-				}
-			}
-			echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-left'],
-                'items' => [
-					['label' => 'Publications', 'url' => ['/site/publications']],
-
-                    ['label' => 'Login', 'url' => ['/site/login']],
-					
-
-                ],
-            ]);
-            NavBar::end();
+				NavBar::end();
 			}
 			else
 			{
@@ -183,11 +185,11 @@ $rs = getMenus($language);
 					
 				}
 			}
+
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
 					['label' => 'Publications', 'url' => ['/site/publications']],
-					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
 					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
 						
 						['label' => 'Logout (' . Yii::$app->user->identity->username . ')',

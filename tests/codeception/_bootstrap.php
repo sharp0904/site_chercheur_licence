@@ -13,3 +13,5 @@ $_SERVER['SCRIPT_NAME'] = YII_TEST_ENTRY_URL;
 $_SERVER['SERVER_NAME'] = 'localhost';
 
 Yii::setAlias('@tests', dirname(__DIR__));
+
+
