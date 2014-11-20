@@ -63,16 +63,20 @@ class PublicationController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+     public function actionCreate()
     {
         $model = new Publication();
 
+		     
+		
+		 
         if ($model->load(Yii::$app->request->post())) {
 		
 		if (Yii::$app->request->isPost) {
-		if(($model->pdf != null))
+				$model->pdf = UploadedFile::getInstance($model, 'pdf');
+
+		if(isset($model->pdf->baseName))
 		{
-		$model->pdf = UploadedFile::getInstance($model, 'pdf');
                 $model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
 				$model->attributes=array('pdf'=>$model->pdf->baseName);
 		}
