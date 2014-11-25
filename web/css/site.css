@@ -3,6 +3,17 @@ body {
     height: 100%;
 }
 
+#selecBib {
+}
+
+#validerUpBib {
+	visibility:hidden;
+}
+
+.fileInput {
+	visibility : hidden;
+	display: inline-block;
+}
 
 .text-contener {
 border: 1px solid #b1cbe4;
@@ -23,6 +34,14 @@ padding-left: 25px;
 background-color: #FFF;
 background-image: url(images/text-border-left.png);
 background-repeat: repeat-y;
+}
+
+table
+{
+	width: 90%;
+	background-color: white;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .wrap {
@@ -598,21 +617,12 @@ a:hover
     color: #333333;
 }
 
-.publications-items
-{
-    width: 100%;
-    
-    margin-top: 3px;
-}
-
 .publications-item
 {
-    width: 100%;
-
     margin-top: 3px;
     margin-bottom: 10px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 12px;
 }
 
@@ -646,9 +656,14 @@ a:hover
     font-style: italic;
 }
 
-.publi-booktitle
+.publi-journal
 {
     font-weight: bold;
+}
+
+.publi-cat
+{
+	display:none;
 }
 
 .publi-editor
@@ -693,7 +708,8 @@ a:hover
 
 .publi-note
 {
-    
+max-height: 50px;
+overflow: hidden;
 }
 
 .publi-abstract

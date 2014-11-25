@@ -5,11 +5,11 @@ namespace app\controllers;
 use Yii;
 use app\models\Publication;
 use app\models\PublicationSearch;
+use app\models\Bibtex;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
-
 
 /**
  * PublicationController implements the CRUD actions for Publication model.
@@ -34,13 +34,24 @@ class PublicationController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new PublicationSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+		$searchModel = new PublicationSearch();
+		$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		$model = new Bibtex();
+		
+			if (Yii::$app->request->isPost) {
+				$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
+				if(isset($model->Bibtex))
+				{
+					$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
+				}
+				
+				PublicationController::uploadBibtex($model->Bibtex);
+			}		
+			return $this->render('index', [
+			'searchModel' => $searchModel,
+			'dataProvider' => $dataProvider,
+			'model' => $model,
+			]);	
     }
 
     /**
@@ -62,23 +73,19 @@ class PublicationController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Publication();
+        $model = new Publication(); 
+        if ($model->load(Yii::$app->request->post())) {		
+			if (Yii::$app->request->isPost) {
+				$model->pdf = UploadedFile::getInstance($model, 'pdf');
+				if(isset($model->pdf->baseName))
+				{
+					$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+					$model->attributes=array('pdf'=>$model->pdf->baseName);
+				}
+			}
 
-        if ($model->load(Yii::$app->request->post())) {
-		
-		if (Yii::$app->request->isPost) {
-		if(($model->pdf != null))
-		{
-		$model->pdf = UploadedFile::getInstance($model, 'pdf');
-                $model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
-				$model->attributes=array('pdf'=>$model->pdf->baseName);
-		}
-            
-        }
-		
-
-		 $model->save();
-            return $this->redirect(['view', 'id' => $model->ID]);
+			$model->save();
+			return $this->redirect(['view', 'id' => $model->ID]);
 			
         } else {
             return $this->render('create', [
@@ -98,7 +105,17 @@ class PublicationController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+			if (Yii::$app->request->isPost) {
+				$model->pdf = UploadedFile::getInstance($model, 'pdf');
+				if(isset($model->pdf->baseName))
+				{
+					$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+					$model->attributes=array('pdf'=>$model->pdf->baseName);
+				}
+			}
+
+			$model->save();
             return $this->redirect(['view', 'id' => $model->ID]);
         } else {
             return $this->render('update', [
@@ -134,5 +151,140 @@ class PublicationController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    
+    public function uploadBibtex($fichier)
+    {
+        
+            // On récupère les données
+            $uploadfile = 'uploads/bibtex/'.$fichier;
+            // On déplace le fichier dans le dossier d'upload
+            if (1 == 1)
+            {
+                // On charge le fichier bibtex
+                $bibtex = new Structures_BibTex_Core();
+                $ret = $bibtex->loadFile($uploadfile);
+                
+                
+                // On parse le fichier bibtex afin de remplir la structure.
+                $bibtex->parse();
+                
+                $model ;
+                foreach ($bibtex->data as $datas)
+                {
+                    // On créé un objet Publication à partir des données bibtex
+                   
+                    $model = $this->mappingBibtex($datas);
+                    $model->save();
+                    
+                }     
+                
+            }
+            else
+            {
+               // throw new Exception(Kohana::lang('exception.0007'), 0007);
+            }
+    }
+	
+	
+	public static function mappingBibtex($tableau)
+    {
+        // On initialise les variables 
+        $date = "";
+        $date_display = "";
+        $journal = "";
+        $volume = "";
+        $number = "";
+        $pages = "";
+        $note = "";
+        $abstract = "";
+        $keywords = "";
+        $series = "";
+        $localite = "";
+        $publisher = "";
+        $editor = "";
+        $categorie = "";
+        $date_display = "";
+        // Champs obligatoire
+        $reference = $tableau["cite"];
+        $auteurs = substr($tableau["author"], 1 ,-1);
+        $titre = substr($tableau["title"], 1 ,-1);
+        
+        // On formate la date
+        if( array_key_exists('year', $tableau) )
+        {
+            $date = substr($tableau["year"],1 ,-1);
+            $date_display = substr($tableau["year"], 1, -1);                
+            if(array_key_exists('month', $tableau) && $tableau["month"] != "")
+            {
+                $date .= '-'.substr($tableau["month"], 1, -1).'-01';
+                $date_display .= substr($tableau["month"], 1, -1).' '.$date_display;
+            }
+            else
+            {
+                $date .= "-01-01";
+            }
+        }
+        
+        // On récupère les autres données et on supprimme les { } des données
+        foreach ($tableau as $key => $value)
+        {
+            if(!in_array($key, array('cite','author','title','year','month')))
+            {
+				if($key != 'entryType')
+				{
+					$$key = substr($value, 1, -1);
+				}
+				else{
+					$$key = $value;
+				}
+            }
+        }
+        // On fait correspondre les variables du fichier bibtex et les attributs
+        // de la publication
+        if(isset($booktitle))
+        {
+            $journal = $booktitle;
+		}
+        if(isset($address))
+        {
+            $localite = $address;
+		}
+		
+        // On defini la categorie
+		if( in_array($entryType, array('article')))
+            $categ_id = "1";
+        else if( in_array($entryType, array('inproceedings')))
+            $categ_id = "2";
+        else if( in_array($entryType, array('techreport')))
+            $categ_id = "3";
+        else if( in_array($entryType, array('phdthesis')))
+            $categ_id = "4";
+        else
+            $categ_id = "5";
+       
+        
+        // On créer la publication et on attribut les values
+        $publication = new Publication();
+		$publication->reference=$reference;
+		$publication->auteurs=$auteurs;
+		$publication->titre=$titre;
+		$publication->date=$date;
+		$publication->journal=$journal;
+		$publication->volume=$volume;
+		$publication->number=$number;
+		$publication->pages=$pages;
+		$publication->note=$note;
+		$publication->abstract=$abstract;
+		$publication->keywords=$keywords;
+		$publication->series=$series;
+		$publication->localite=$localite;
+		$publication->publisher=$publisher;
+		$publication->editor=$editor;
+		$publication->pdf=null;
+		$publication->date_display=date('Y-m-d');
+		$publication->categorie_id = $categ_id;
+        return $publication;
     }
 }

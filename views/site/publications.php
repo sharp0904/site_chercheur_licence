@@ -76,12 +76,8 @@ else
 {
 echo 'veuillez choisir une méthode de tri des publications';
 }
-?>
-<td align="left" style="vertical-align: top;">
-<table cellspacing="0" cellpadding="0" class="publications-items" style="width: 100%;">
-<?php 
-
-?></table></table>
+?></tr>
+</tbody></table>
 <?php Dialog::begin([
 	'id' => 'dial-tex',
     'clientOptions' => [
@@ -90,10 +86,26 @@ echo 'veuillez choisir une méthode de tri des publications';
 		'modal'=>true,
 		'width' => 'auto',
 		'height' => 'auto',
+		'show' => 'blind',
+		'hide' => 'blind',
     ],
 ]);
+Dialog::end();
+?>
 
-
+<?php
+Dialog::begin([
+	'id' => 'detail-publi',
+    'clientOptions' => [
+		'title'=>'Détails',
+		'autoOpen'=>false,
+		'modal'=>true,
+		'width' => 'auto',
+		'height' => 'auto',
+		'show' => 'blind',
+		'hide' => 'blind',
+    ],
+]);
 Dialog::end();   ?>
 </div>
 </div>

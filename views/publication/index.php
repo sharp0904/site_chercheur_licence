@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\PublicationSearch */
@@ -10,6 +11,7 @@ use yii\grid\GridView;
 $this->title = 'Publications';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<script type="text/javascript" src="/site_chercheur_licence-master/vendor/bower/jquery/dist/jquery.js"></script>
 <div class="publication-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -17,8 +19,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Publication', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+        <div>
+			<?= Html::Button('Create Publication via bibtex' , ['class' => 'btn btn-success', 'id' => 'selecBib']) ?>
+		</div>
+        <div class="fileInput"><?= $form->field($model, 'Bibtex')->fileInput() ?>
+			<?= Html::submitButton('Valider' , ['class' => 'btn btn-primary', 'id' => 'validerUpBib']) ?>
+        </div>
+        <?php ActiveForm::end(); ?>
     </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -50,3 +59,19 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 </div>
+<script>
+	$(document).ready(function(){
+		$("#selecBib").click(function(){
+			if ($('#validerUpBib').css('visibility') == 'hidden')
+			{
+				$('.fileInput').css('visibility', 'visible');
+				$('#validerUpBib').css('visibility', 'visible');
+			}
+			else
+			{
+				$('.fileInput').css('visibility', 'hidden');
+				$('#validerUpBib').css('visibility', 'hidden');
+			}
+		});
+	});
+</script>

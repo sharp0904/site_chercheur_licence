@@ -92,7 +92,7 @@ $rs = getMenus($language);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
-	<link rel="stylesheet" href="/site_chercheur_licence-master/web/css/pop-up.css">
+	<link rel="stylesheet" href="../web/css/pop-up.css">
 
 </head>
 <body>
@@ -101,7 +101,7 @@ $rs = getMenus($language);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Site enseignant chercheur',
+                //'brandLabel' => 'Site enseignant chercheur',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse',
@@ -146,6 +146,8 @@ $rs = getMenus($language);
 						['label' => 'Publications', 'url' => ['/site/publications']],
 
 						['label' => 'Login', 'url' => ['/site/login']],
+						
+						['label' => 'Try', 'url' => ['/site/index&page=105']],
 						
 
 					],

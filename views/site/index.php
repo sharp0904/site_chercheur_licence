@@ -17,6 +17,7 @@ $language = $session->get('language');
 else
 {
     $session->set('language', 'fr');
+    $language = $session->get('language');
 }
 
 
