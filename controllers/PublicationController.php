@@ -160,7 +160,7 @@ class PublicationController extends Controller
             // On récupère les données
             $uploadfile = 'uploads/bibtex/'.$fichier;
             // On déplace le fichier dans le dossier d'upload
-            if (1 == 1)
+            if (file_exists($uploadfile))
             {
                 // On charge le fichier bibtex
                 $bibtex = new Structures_BibTex_Core();
