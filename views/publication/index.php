@@ -49,4 +49,12 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+<form enctype="multipart/form-data" action="/site-enseignant-chercheur/web/index.php?r=publication/bibtex" method="post">
+<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+<input type="hidden" name="_csrf" value="VWkweGZyVDkhHFoUKTQWThwjCSEyJmcNIQEHLxwdYBQQWEoRXzoWVQ==">
+<p>Uploader un BibTeX : <input type="file" name="uploadbibtex" /></p>
+<p><input type="submit" value="Envoyer le fichier"></p>
+</form>
+
+
 </div>

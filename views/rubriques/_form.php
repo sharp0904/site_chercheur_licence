@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
 /* @var $model app\models\Rubrique */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<script src="<?php echo '/site_chercheur_licence-master/ckeditor/ckeditor.js'; ?>"></script>
+<script src="<?php echo '/site-enseignant-chercheur/ckeditor/ckeditor.js'; ?>"></script>
 
 <div class="rubrique-form">
 		

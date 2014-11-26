@@ -190,7 +190,8 @@ $rs = getMenus($language);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
 					['label' => 'Publications', 'url' => ['/site/publications']],
-					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
+					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']],
+					['label' => 'Gestion Publications', 'url' => ['/publication/index']], 
 						
 						['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],

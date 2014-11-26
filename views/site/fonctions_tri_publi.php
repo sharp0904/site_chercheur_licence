@@ -45,7 +45,7 @@ function getAnnees()
 
 function getPubliByCateg($idCateg)
 {
-	$list = Publication::find()->where(['categorie_id' => $idCateg])->orderBy(['categorie_id' => SORT_DESC])->all();
+	$list = Publication::find()->where(['categorie_id' => $idCateg])->all();
 	return $list;
 }
 
@@ -141,11 +141,11 @@ function triPubliParCategorie($rs)
 			{
 				echo"<tr><td align='left' style='vertical-align: top;'><table cellspacing='0' cellpadding='0'>";
 				echo"<tbody><tr><td align='left' style='vertical-align: top;'>";
-				echo"<img src='images/icon-tex.png' class='cursor-pointer'></td>";
+				echo"</td>";
 				echo"<td align='left' style='vertical-align: top;'><a href='uploads/".$publication->pdf.".pdf'><img border='0' src='images/icon-pdf.png' alt='Download PDF'></a></td>";
 			}
 			echo '<br/>';
-			echo Html::a('BibTeX', '#', array(
+			echo Html::a('<img src="images/icon-tex.png" class="cursor-pointer">', '#', array(
 			   'onclick'=>$tex.'$("#dial-tex").append(",}");$("#dial-tex").dialog("open"); return false', 
 ));
 				echo"</div></div></td></tr>";
@@ -242,11 +242,11 @@ function triPubliParDate($rs)
 			{
 				echo"<tr><td align='left' style='vertical-align: top;'><table cellspacing='0' cellpadding='0'>";
 				echo"<tbody><tr><td align='left' style='vertical-align: top;'>";
-				echo"<img src='images/icon-tex.png' class='cursor-pointer'></td>";
+				echo"</td>";
 				echo"<td align='left' style='vertical-align: top;'><a href='uploads/".$publication->pdf.".pdf'><img border='0' src='images/icon-pdf.png' alt='Download PDF'></a></td>";
 			}
 			echo '<br/>';
-			echo Html::a('BibTeX', '#', array(
+			echo Html::a('<img src="images/icon-tex.png" class="cursor-pointer">', '#', array(
 			   'onclick'=>$tex.'$("#dial-tex").append(",}");$("#dial-tex").dialog("open"); return false', 
 ));
 				echo"</div></div></td></tr>";

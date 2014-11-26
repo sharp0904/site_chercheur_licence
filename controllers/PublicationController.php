@@ -5,8 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Publication;
 use app\models\PublicationSearch;
-use app\librairies\Structures_BibTex;
-use app\librairies\Validation;
+use app\librairies\Structures_BibTex_Core;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -69,7 +68,7 @@ class PublicationController extends Controller
 
 		     
 		
-		 
+		
         if ($model->load(Yii::$app->request->post())) {
 		
 		if (Yii::$app->request->isPost) {
@@ -153,19 +152,23 @@ class PublicationController extends Controller
 	 
 	 //$model->setAttribute("pdf","test");
 	 	 
-    public function uploadBibtex()
+    public function actionBibtex()
     {
+
+
+                if (Yii::$app->request->isPost) {
+
             // Validation du fichier bibtex
             // On verifie que le fichier uploadé est un fichier bibtex.
-            $valid_file = new Validation($_FILES);
-            $valid_file->add_rules('uploadbibtex', 'upload::valid', 'upload::required', 'upload::type[bib]');
-            if( ! $valid_file->validate() )
-            {
+            //$valid_file = new Validation($_FILES);
+            //$valid_file->add_rules('uploadbibtex', 'upload::valid', 'upload::required', 'upload::type[bib]');
+            //if( ! $valid_file->validate() )
+            //{
                // throw new Exception(Kohana::lang('exception.0009'), 0009);
-            }
+            //}
 
             // On récupère les données
-            $uploadfile = '/uploads/bibtex/'.basename($_FILES['uploadbibtex']['name']);
+            $uploadfile = 'uploads/bibtex/'.basename($_FILES['uploadbibtex']['name']);
 
             // On déplace le fichier dans le dossier d'upload
             if (move_uploaded_file($_FILES['uploadbibtex']['tmp_name'], $uploadfile))
@@ -182,15 +185,16 @@ class PublicationController extends Controller
                 foreach ($bibtex->data as $datas)
                 {
                     // On créé un objet Publication à partir des données bibtex
-                   
                     $model = $this->mappingBibtex($datas);
                     $model->save();
+
                 }     
             }
             else
             {
                // throw new Exception(Kohana::lang('exception.0007'), 0007);
             }
+        }
     }
 	
 	
@@ -213,6 +217,18 @@ class PublicationController extends Controller
         $categorie = "";
         $date_display = "";
 
+       
+
+
+
+
+        var_dump($tableau);
+
+
+
+
+
+        $entryType = utf8_encode($tableau["entryType"]);
         // Champs obligatoire
         $reference = utf8_encode($tableau["cite"]);
         $auteurs = utf8_encode($tableau["author"]);
@@ -249,7 +265,6 @@ class PublicationController extends Controller
             $journal = $booktitle;
         if(isset($address))
             $localite = $address;
-
         // On defini la categorie
         if( in_array($entryType, array('article','book','booklet','inbook','incollection')))
             $categ_id = "1";
@@ -283,7 +298,7 @@ class PublicationController extends Controller
 		$publication->setAttribute('editor',$editor);
 		$publication->setAttribute('pdf',null);
 		$publication->setAttribute('date_display',date('Y-m-d'));
-		$publication->setAttribute('categorie_id',$categorie);
+		$publication->setAttribute('categorie_id',$categ_id);
         return $publication;
     }
 
