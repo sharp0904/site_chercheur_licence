@@ -46,7 +46,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'editor')->textarea(['rows' => 6]) ?>
 
-<?= $form->field($model, 'pdf')->fileInput() ?>
+	<?= $form->field($model, 'pdf')->fileInput() ?>
 
     <?= $form->field($model, 'date_display')->textarea(['rows' => 6]) ?>
 

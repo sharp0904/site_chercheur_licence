@@ -6,6 +6,13 @@
 
 /* Layout helpers
 ----------------------------------*/
+
+
+#titre-content-popup {
+	font-weight: bold;
+	font-style: italic;
+}
+
 .ui-helper-hidden {
 	display: none;
 }

@@ -49,8 +49,8 @@ class RubriquesController extends Controller
 		$modelR = $this->findModel($id);
 		$modelR->attributes=array('menu_id'=>$menu_id);
 		$modelR->save();
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+        return $this->redirect(['view',
+            'id' => $modelR->id,
         ]);
     }
     

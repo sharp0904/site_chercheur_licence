@@ -101,7 +101,7 @@ $rs = getMenus($language);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Site enseignant chercheur',
+                //'brandLabel' => 'Site enseignant chercheur',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse',
@@ -145,8 +145,7 @@ $rs = getMenus($language);
 					'items' => [
 						['label' => 'Publications', 'url' => ['/site/publications']],
 
-						['label' => 'Login', 'url' => ['/site/login']],
-						
+						['label' => 'Login', 'url' => ['/site/login']],						
 
 					],
 				]);
