@@ -42,12 +42,11 @@ class PublicationController extends Controller
 		
 			if (Yii::$app->request->isPost) {
 				$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
-				if(isset($model->Bibtex))
+				if(isset($model->Bibtex) && $model->Bibtex->extension == 'bib')
 				{
 					$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
-				}
-				
-				PublicationController::uploadBibtex($model->Bibtex);
+					PublicationController::uploadBibtex($model->Bibtex);
+				}				
 			}		
 			return $this->render('index', [
 			'searchModel' => $searchModel,
@@ -160,8 +159,7 @@ class PublicationController extends Controller
     
     
     public function uploadBibtex($fichier)
-    {
-        
+    {    
             // On récupère les données
             $uploadfile = 'uploads/bibtex/'.$fichier;
             // On déplace le fichier dans le dossier d'upload
@@ -183,11 +181,9 @@ class PublicationController extends Controller
                     $model->save();
 
                 }     
+
             }
-            else
-            {
-               // throw new Exception(Kohana::lang('exception.0007'), 0007);
-            }
+            
         }
 
     

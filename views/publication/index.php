@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 $this->title = 'Publications';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<script type="text/javascript" src="/site_chercheur_licence-master/vendor/bower/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/site-enseignant-chercheur/vendor/bower/jquery/dist/jquery.js"></script>
 <div class="publication-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Publication', ['create'], ['class' => 'btn btn-success']) ?>
+        
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
         <div>
 			<?= Html::Button('Create Publication via bibtex' , ['class' => 'btn btn-success', 'id' => 'selecBib']) ?>
@@ -27,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?= Html::submitButton('Valider' , ['class' => 'btn btn-primary', 'id' => 'validerUpBib']) ?>
         </div>
         <?php ActiveForm::end(); ?>
+        
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -58,12 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-<form enctype="multipart/form-data" action="/site-enseignant-chercheur/web/index.php?r=publication/bibtex" method="post">
-<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-<input type="hidden" name="_csrf" value="VWkweGZyVDkhHFoUKTQWThwjCSEyJmcNIQEHLxwdYBQQWEoRXzoWVQ==">
-<p>Uploader un BibTeX : <input type="file" name="uploadbibtex" /></p>
-<p><input type="submit" value="Envoyer le fichier"></p>
-</form>
 
 
 </div>
