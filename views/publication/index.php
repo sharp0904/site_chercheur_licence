@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Publication', ['create'], ['class' => 'btn btn-success']) ?>
+        
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
         <div>
 			<?= Html::Button('Create Publication via bibtex' , ['class' => 'btn btn-success', 'id' => 'selecBib']) ?>
@@ -27,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?= Html::submitButton('Valider' , ['class' => 'btn btn-primary', 'id' => 'validerUpBib']) ?>
         </div>
         <?php ActiveForm::end(); ?>
+        
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

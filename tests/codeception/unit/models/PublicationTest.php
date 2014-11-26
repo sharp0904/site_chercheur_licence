@@ -3,6 +3,8 @@
 use Yii;
 use yii\codeception\TestCase;
 use app\models\Publication;
+use app\controllers\PublicationController;
+use app\models\Bibtex;
 use Codeception\Specify;
 
 class PublicationTest extends TestCase
@@ -15,6 +17,7 @@ class PublicationTest extends TestCase
 
     protected function _before()
     {
+		
     }
 
     protected function _after()
@@ -142,6 +145,13 @@ class PublicationTest extends TestCase
             $this->assertTrue($model->validate(['journal', 'volume', 'number', 'pages', 'note', 'abstract', 'keywords',
             'series', 'localite', 'publisher', 'editor', 'pdf', 'date_display']));
         });
+    }
+    
+    public function testUplaodBibtexNull()
+    {
+		$bib = new Bibtex();
+		$fichier = $bib->Bibtex;
+		$this->assertEquals(PublicationController::uploadBibtex($fichier), false);
     }
 
 }

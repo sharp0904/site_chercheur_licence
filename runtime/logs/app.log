@@ -48106,3 +48106,582 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1416920561.519
     'REQUEST_TIME' => 1416920561
 ]
+2014-11-26 10:38:54 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'array_keys() expects parameter 1 to be array, null given' in /var/www/html/site_chercheur_licence-master/controllers/Structures_BibTex_Core.php:527
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'array_keys() ex...', '/var/www/html/s...', 527, Array)
+#1 /var/www/html/site_chercheur_licence-master/controllers/Structures_BibTex_Core.php(527): array_keys(NULL)
+#2 /var/www/html/site_chercheur_licence-master/controllers/Structures_BibTex_Core.php(257): app\controllers\Structures_BibTex_Core->_checkAt('@?l.?YO$`????r?...')
+#3 /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php(171): app\controllers\Structures_BibTex_Core->parse()
+#4 /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php(48): app\controllers\PublicationController->uploadBibtex(Object(yii\web\UploadedFile))
+#5 [internal function]: app\controllers\PublicationController->actionIndex()
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#9 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('publication/ind...', Array)
+#10 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#12 {main}
+2014-11-26 10:38:54 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'publication/index'
+]
+
+$_POST = [
+    '_csrf' => 'V2tRUGMwRjMeMRs0Wn0rUB0SIj81ZitJPBojAgR3K3sDByEGWwkpew=='
+    'Bibtex' => [
+        'Bibtex' => ''
+    ]
+]
+
+$_FILES = [
+    'Bibtex' => [
+        'name' => [
+            'Bibtex' => 'gantt_projet.xlsx'
+        ]
+        'type' => [
+            'Bibtex' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        ]
+        'tmp_name' => [
+            'Bibtex' => '/tmp/phpMb7Bxv'
+        ]
+        'error' => [
+            'Bibtex' => 0
+        ]
+        'size' => [
+            'Bibtex' => 10718
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '6akiktlgf269471qrnvnfio0s0'
+    '_csrf' => '5d992692162b88e80354cc85b431f00cd81954cf886beb89a065a821e6534850s:32:\"IZJd9MmcJysoVVmzkqrRgGmHTlpV89oH\";'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '11223'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryyyq3fI3fu9ZisnOy'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=6akiktlgf269471qrnvnfio0s0; _csrf=5d992692162b88e80354cc85b431f00cd81954cf886beb89a065a821e6534850s%3A32%3A%22IZJd9MmcJysoVVmzkqrRgGmHTlpV89oH%22%3B; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '46084'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=publication/index'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1416998334.373
+    'REQUEST_TIME' => 1416998334
+]
+2014-11-26 10:53:21 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: error' in /var/www/html/site_chercheur_licence-master/views/publication/index.php:28
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/views/publication/index.php(28): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/var/www/html/s...', 28, Array)
+#1 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/s...')
+#2 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/s...', Array)
+#3 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/s...', Array, Object(app\controllers\PublicationController))
+#4 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(368): yii\base\View->render('index', Array, Object(app\controllers\PublicationController))
+#5 /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php(63): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\PublicationController->actionIndex()
+#7 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#10 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('publication/ind...', Array)
+#11 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2014-11-26 10:53:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'publication/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '6akiktlgf269471qrnvnfio0s0'
+    '_csrf' => '5d992692162b88e80354cc85b431f00cd81954cf886beb89a065a821e6534850s:32:\"IZJd9MmcJysoVVmzkqrRgGmHTlpV89oH\";'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=6akiktlgf269471qrnvnfio0s0; _csrf=5d992692162b88e80354cc85b431f00cd81954cf886beb89a065a821e6534850s%3A32%3A%22IZJd9MmcJysoVVmzkqrRgGmHTlpV89oH%22%3B; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '46232'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=publication/index'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1416999201.079
+    'REQUEST_TIME' => 1416999201
+]
+2014-11-26 12:54:52 [][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'PublicationController' not found' in /var/www/html/site_chercheur_licence-master/tests/codeception/unit/models/PublicationTest.php:153
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2014-11-26 12:54:52 [][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'XDG_SESSION_ID' => 'c2'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'SELINUX_INIT' => 'YES'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/rahmani'
+    'SESSION' => 'ubuntu'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-pO0MfP/gpg:0:1'
+    'TERM' => 'xterm'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '3409'
+    'WINDOWID' => '65011723'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/1859'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-pO0MfP'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'rahmani'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-pO0MfP/ssh'
+    'SESSION_MANAGER' => 'local/rahmani-HP-Pavilion-Sleekbook-15:@/tmp/.ICE-unix/1990,unix/rahmani-HP-Pavilion-Sleekbook-15:/tmp/.ICE-unix/1990'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'QT_IM_MODULE' => 'ibus'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'JOB' => 'dbus'
+    'PWD' => '/var/www/html/site_chercheur_licence-master/tests'
+    'XMODIFIERS' => '@im=ibus'
+    'GNOME_KEYRING_PID' => '1855'
+    'LANG' => 'fr_FR.UTF-8'
+    'GDM_LANG' => 'fr_FR'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'UBUNTU_MENUPROXY' => '1'
+    'IM_CONFIG_PHASE' => '1'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/rahmani'
+    'LANGUAGE' => 'fr_FR'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'LOGNAME' => 'rahmani'
+    'COMPIZ_BIN_PATH' => '/usr/bin/'
+    'QT4_IM_MODULE' => 'xim'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-hU3WQxt1uM'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'INSTANCE' => ''
+    'TEXTDOMAIN' => 'im-config'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'ibus'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'COLORTERM' => 'gnome-terminal'
+    'XAUTHORITY' => '/home/rahmani/.Xauthority'
+    'OLDPWD' => '/var/www/html/site_chercheur_licence-master'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'codecept.phar'
+    'SCRIPT_NAME' => '/index-test.php'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index-test.php'
+    'PATH_TRANSLATED' => 'codecept.phar'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1417006492.1924
+    'REQUEST_TIME' => 1417006492
+    'argv' => [
+        0 => 'codecept.phar'
+        1 => 'run'
+        2 => 'unit'
+        3 => 'models/PublicationTest.php'
+    ]
+    'argc' => 4
+    'SERVER_NAME' => 'localhost'
+]
+2014-11-26 12:57:56 [][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'app\controllers\Exception' not found' in /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php:185
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2014-11-26 12:57:56 [][-][-][info][application] $_SERVER = [
+    'XDG_VTNR' => '7'
+    'XDG_SESSION_ID' => 'c2'
+    'CLUTTER_IM_MODULE' => 'xim'
+    'SELINUX_INIT' => 'YES'
+    'XDG_GREETER_DATA_DIR' => '/var/lib/lightdm-data/rahmani'
+    'SESSION' => 'ubuntu'
+    'GPG_AGENT_INFO' => '/run/user/1000/keyring-pO0MfP/gpg:0:1'
+    'TERM' => 'xterm'
+    'SHELL' => '/bin/bash'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'VTE_VERSION' => '3409'
+    'WINDOWID' => '65011723'
+    'UPSTART_SESSION' => 'unix:abstract=/com/ubuntu/upstart-session/1000/1859'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring-pO0MfP'
+    'GTK_MODULES' => 'overlay-scrollbar:unity-gtk-module'
+    'USER' => 'rahmani'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+    'XDG_SESSION_PATH' => '/org/freedesktop/DisplayManager/Session0'
+    'XDG_SEAT_PATH' => '/org/freedesktop/DisplayManager/Seat0'
+    'SSH_AUTH_SOCK' => '/run/user/1000/keyring-pO0MfP/ssh'
+    'SESSION_MANAGER' => 'local/rahmani-HP-Pavilion-Sleekbook-15:@/tmp/.ICE-unix/1990,unix/rahmani-HP-Pavilion-Sleekbook-15:/tmp/.ICE-unix/1990'
+    'DEFAULTS_PATH' => '/usr/share/gconf/ubuntu.default.path'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'QT_IM_MODULE' => 'ibus'
+    'QT_QPA_PLATFORMTHEME' => 'appmenu-qt5'
+    'JOB' => 'dbus'
+    'PWD' => '/var/www/html/site_chercheur_licence-master/tests'
+    'XMODIFIERS' => '@im=ibus'
+    'GNOME_KEYRING_PID' => '1855'
+    'LANG' => 'fr_FR.UTF-8'
+    'GDM_LANG' => 'fr_FR'
+    'MANDATORY_PATH' => '/usr/share/gconf/ubuntu.mandatory.path'
+    'UBUNTU_MENUPROXY' => '1'
+    'IM_CONFIG_PHASE' => '1'
+    'COMPIZ_CONFIG_PROFILE' => 'ubuntu'
+    'GDMSESSION' => 'ubuntu'
+    'SESSIONTYPE' => 'gnome-session'
+    'SHLVL' => '1'
+    'XDG_SEAT' => 'seat0'
+    'HOME' => '/home/rahmani'
+    'LANGUAGE' => 'fr_FR'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'LOGNAME' => 'rahmani'
+    'COMPIZ_BIN_PATH' => '/usr/bin/'
+    'QT4_IM_MODULE' => 'xim'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:abstract=/tmp/dbus-hU3WQxt1uM'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'INSTANCE' => ''
+    'TEXTDOMAIN' => 'im-config'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'DISPLAY' => ':0'
+    'XDG_CURRENT_DESKTOP' => 'Unity'
+    'GTK_IM_MODULE' => 'ibus'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'TEXTDOMAINDIR' => '/usr/share/locale/'
+    'COLORTERM' => 'gnome-terminal'
+    'XAUTHORITY' => '/home/rahmani/.Xauthority'
+    'OLDPWD' => '/var/www/html/site_chercheur_licence-master'
+    '_' => '/usr/bin/php'
+    'PHP_SELF' => 'codecept.phar'
+    'SCRIPT_NAME' => '/index-test.php'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index-test.php'
+    'PATH_TRANSLATED' => 'codecept.phar'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1417006676.334
+    'REQUEST_TIME' => 1417006676
+    'argv' => [
+        0 => 'codecept.phar'
+        1 => 'run'
+        2 => 'unit'
+        3 => 'models/PublicationTest.php'
+    ]
+    'argc' => 4
+    'SERVER_NAME' => 'localhost'
+]
+2014-11-26 13:09:24 [127.0.0.1][100][-][error][yii\web\HttpException:404] exception 'yii\web\NotFoundHttpException' with message 'The requested page does not exist.' in /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php:182
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php(46): app\controllers\PublicationController->uploadBibtex(Object(yii\web\UploadedFile))
+#1 [internal function]: app\controllers\PublicationController->actionIndex()
+#2 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#5 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('publication/ind...', Array)
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2014-11-26 13:09:24 [127.0.0.1][100][-][info][application] $_GET = [
+    'r' => 'publication/index'
+]
+
+$_POST = [
+    '_csrf' => 'cFNwVERqUWM/GipsEQQLURUkFCYTWx8BSQceYHYuOgQeH0QCFSg1KA=='
+    'Bibtex' => [
+        'Bibtex' => ''
+    ]
+]
+
+$_FILES = [
+    'Bibtex' => [
+        'name' => [
+            'Bibtex' => 'Nouveau document.bib'
+        ]
+        'type' => [
+            'Bibtex' => 'text/x-bibtex'
+        ]
+        'tmp_name' => [
+            'Bibtex' => '/tmp/phpdNvJlo'
+        ]
+        'error' => [
+            'Bibtex' => 0
+        ]
+        'size' => [
+            'Bibtex' => 1235
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kc51nhninnhmn9cmv7s3c0ttb1'
+    '_csrf' => '727aca1c34acd94860164ab31ed54ff4fa47b1a2e54abb917a8e8afa991f238fs:32:\"OIZ8UnZ2ewdrW1Nb9Tn42DkgnL4VQBdK\";'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1691'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarypElYkjor0aBJW4B3'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=kc51nhninnhmn9cmv7s3c0ttb1; _csrf=727aca1c34acd94860164ab31ed54ff4fa47b1a2e54abb917a8e8afa991f238fs%3A32%3A%22OIZ8UnZ2ewdrW1Nb9Tn42DkgnL4VQBdK%22%3B; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '37738'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=publication/index'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417007364.91
+    'REQUEST_TIME' => 1417007364
+]
+2014-11-26 13:12:06 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'app\controllers\ExceptionClass' not found' in /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php:182
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2014-11-26 13:12:06 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'publication/index'
+]
+
+$_POST = [
+    '_csrf' => 'cEotcENEbTI/A3dIFio3ABU9SQIUdSNQSR5DRHEABlUeBhkmEgYJeQ=='
+    'Bibtex' => [
+        'Bibtex' => ''
+    ]
+]
+
+$_FILES = [
+    'Bibtex' => [
+        'name' => [
+            'Bibtex' => 'Nouveau document.bib'
+        ]
+        'type' => [
+            'Bibtex' => 'text/x-bibtex'
+        ]
+        'tmp_name' => [
+            'Bibtex' => '/tmp/php8ypiLD'
+        ]
+        'error' => [
+            'Bibtex' => 0
+        ]
+        'size' => [
+            'Bibtex' => 1235
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kc51nhninnhmn9cmv7s3c0ttb1'
+    '_csrf' => '727aca1c34acd94860164ab31ed54ff4fa47b1a2e54abb917a8e8afa991f238fs:32:\"OIZ8UnZ2ewdrW1Nb9Tn42DkgnL4VQBdK\";'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1691'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryWsJfc0jwyvJs53ju'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=kc51nhninnhmn9cmv7s3c0ttb1; _csrf=727aca1c34acd94860164ab31ed54ff4fa47b1a2e54abb917a8e8afa991f238fs%3A32%3A%22OIZ8UnZ2ewdrW1Nb9Tn42DkgnL4VQBdK%22%3B; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '37785'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=publication/index'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417007526.156
+    'REQUEST_TIME' => 1417007526
+]
+2014-11-26 13:13:15 [127.0.0.1][100][-][error][yii\web\HttpException:400] exception 'yii\web\HttpException' with message 'Wrong method' in /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php:182
+Stack trace:
+#0 /var/www/html/site_chercheur_licence-master/controllers/PublicationController.php(46): app\controllers\PublicationController->uploadBibtex(Object(yii\web\UploadedFile))
+#1 [internal function]: app\controllers\PublicationController->actionIndex()
+#2 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#5 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('publication/ind...', Array)
+#6 /var/www/html/site_chercheur_licence-master/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/site_chercheur_licence-master/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2014-11-26 13:13:15 [127.0.0.1][100][-][info][application] $_GET = [
+    'r' => 'publication/index'
+]
+
+$_POST = [
+    '_csrf' => 'd0RJWk1mczc4DRNiGAgpBRIzLSgaVz1VThAnbn8iGFAZCH0MHCQXfA=='
+    'Bibtex' => [
+        'Bibtex' => ''
+    ]
+]
+
+$_FILES = [
+    'Bibtex' => [
+        'name' => [
+            'Bibtex' => 'Nouveau document.bib'
+        ]
+        'type' => [
+            'Bibtex' => 'text/x-bibtex'
+        ]
+        'tmp_name' => [
+            'Bibtex' => '/tmp/phpT6mTPs'
+        ]
+        'error' => [
+            'Bibtex' => 0
+        ]
+        'size' => [
+            'Bibtex' => 1235
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'kc51nhninnhmn9cmv7s3c0ttb1'
+    '_csrf' => '727aca1c34acd94860164ab31ed54ff4fa47b1a2e54abb917a8e8afa991f238fs:32:\"OIZ8UnZ2ewdrW1Nb9Tn42DkgnL4VQBdK\";'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1691'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryw8SHUvOXy5TY9vIv'
+    'HTTP_REFERER' => 'http://localhost/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=kc51nhninnhmn9cmv7s3c0ttb1; _csrf=727aca1c34acd94860164ab31ed54ff4fa47b1a2e54abb917a8e8afa991f238fs%3A32%3A%22OIZ8UnZ2ewdrW1Nb9Tn42DkgnL4VQBdK%22%3B; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/site_chercheur_licence-master/web/index.php'
+    'REMOTE_PORT' => '37807'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=publication/index'
+    'REQUEST_URI' => '/site_chercheur_licence-master/web/index.php?r=publication/index'
+    'SCRIPT_NAME' => '/site_chercheur_licence-master/web/index.php'
+    'PHP_SELF' => '/site_chercheur_licence-master/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417007595.373
+    'REQUEST_TIME' => 1417007595
+]

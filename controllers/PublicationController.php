@@ -40,12 +40,11 @@ class PublicationController extends Controller
 		
 			if (Yii::$app->request->isPost) {
 				$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
-				if(isset($model->Bibtex))
+				if(isset($model->Bibtex) && $model->Bibtex->extension == 'bib')
 				{
 					$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
-				}
-				
-				PublicationController::uploadBibtex($model->Bibtex);
+					PublicationController::uploadBibtex($model->Bibtex);
+				}				
 			}		
 			return $this->render('index', [
 			'searchModel' => $searchModel,
@@ -155,10 +154,9 @@ class PublicationController extends Controller
     
     
     public function uploadBibtex($fichier)
-    {
-        
+    {    
             // On récupère les données
-            $uploadfile = 'uploads/bibtex/'.$fichier;
+            $uploadfile = 'uploads/bibtex/sdsd/'.$fichier;
             // On déplace le fichier dans le dossier d'upload
             if (file_exists($uploadfile))
             {
@@ -176,14 +174,12 @@ class PublicationController extends Controller
                     // On créé un objet Publication à partir des données bibtex
                    
                     $model = $this->mappingBibtex($datas);
-                    $model->save();
-                    
-                }     
-                
+                    $model->save();                   
+                }                   
             }
             else
             {
-               // throw new Exception(Kohana::lang('exception.0007'), 0007);
+               throw new \yii\web\HttpException(400, 'Wrong method', 405);
             }
     }
 	
