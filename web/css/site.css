@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+	
 }
 
 #selecBib {
@@ -20,9 +21,9 @@ border: 1px solid #b1cbe4;
 background-image: url(images/text-border-right.png);
 background-position: right;
 background-repeat: repeat-y;
-border-radius: 0px 0px 20px 20px;
+border-radius: 20px 20px 20px 20px;
 }
-
+ 
 .text-content {
 position: relative;
 width: auto;
@@ -49,7 +50,7 @@ table
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
-    background-image: url(images/bg_page.png);
+   background-image: url(images/fond.jpg);
     background-repeat: repeat-x;
 }
 
@@ -141,11 +142,11 @@ a.desc:after {
   background-image: url('images/menu_bg.png');
   border-color: #080808;
   color:white;
-  border-radius:0px 0px 20px 20px;
+  border-radius:10px 20px 10px 20px;
   margin-left:auto;
   margin-right:auto;
   width:80%;
-  
+
 }
 .container
 {
@@ -167,8 +168,8 @@ text-align:center;
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus,
 .navbar-inverse .navbar-nav > li > a:active {
-  color: blue;
-  background-color: white;
+  color: white;
+  background-color: #4063D6;
   border-radius:10px;
 }
 

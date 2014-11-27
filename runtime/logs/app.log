@@ -28707,3 +28707,1862 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1417008840.142
     'REQUEST_TIME' => 1417008840
 ]
+2014-11-26 15:41:51 [::1][100][buorh0s4pljql9k9rnna900mm0][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: logo' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:82
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#5 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2014-11-26 15:41:51 [::1][100][buorh0s4pljql9k9rnna900mm0][info][application] $_GET = [
+    'r' => 'site/logo'
+]
+
+$_COOKIE = [
+    '_csrf' => 'd226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s:32:\"JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0\";'
+    'PHPSESSID' => 'buorh0s4pljql9k9rnna900mm0'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=d226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s%3A32%3A%22JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0%22%3B; PHPSESSID=buorh0s4pljql9k9rnna900mm0; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '53046'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/logo'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/logo'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417012911.325
+    'REQUEST_TIME' => 1417012911
+]
+2014-11-26 15:44:58 [::1][100][buorh0s4pljql9k9rnna900mm0][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '<'' in C:\wamp\www\site-enseignant-chercheur\views\site\change_logo.php:5
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#2 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(100): yii\base\Controller->render()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogo()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#9 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2014-11-26 15:44:57 [::1][100][buorh0s4pljql9k9rnna900mm0][info][application] $_GET = [
+    'r' => 'site/logo'
+]
+
+$_COOKIE = [
+    '_csrf' => 'd226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s:32:\"JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0\";'
+    'PHPSESSID' => 'buorh0s4pljql9k9rnna900mm0'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=d226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s%3A32%3A%22JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0%22%3B; PHPSESSID=buorh0s4pljql9k9rnna900mm0; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '53155'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/logo'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/logo'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417013097.831
+    'REQUEST_TIME' => 1417013097
+]
+2014-11-26 15:44:59 [::1][100][buorh0s4pljql9k9rnna900mm0][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '<'' in C:\wamp\www\site-enseignant-chercheur\views\site\change_logo.php:5
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#2 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(100): yii\base\Controller->render()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogo()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#9 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2014-11-26 15:44:59 [::1][100][buorh0s4pljql9k9rnna900mm0][info][application] $_GET = [
+    'r' => 'site/logo'
+]
+
+$_COOKIE = [
+    '_csrf' => 'd226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s:32:\"JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0\";'
+    'PHPSESSID' => 'buorh0s4pljql9k9rnna900mm0'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=d226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s%3A32%3A%22JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0%22%3B; PHPSESSID=buorh0s4pljql9k9rnna900mm0; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '53157'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/logo'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/logo'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417013099.09
+    'REQUEST_TIME' => 1417013099
+]
+2014-11-26 15:48:44 [::1][100][-][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Unable to verify your data submission.' in C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Controller.php:110
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('logo', Array)
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('site/logo', Array)
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#5 {main}
+2014-11-26 15:48:44 [::1][100][-][info][application] $_GET = [
+    'r' => 'site/logo'
+]
+
+$_FILES = [
+    'logo' => [
+        'name' => 'logo.png'
+        'type' => 'image/png'
+        'tmp_name' => 'C:\\wamp\\tmp\\php580A.tmp'
+        'error' => 0
+        'size' => 63227
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => 'd226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s:32:\"JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0\";'
+    'PHPSESSID' => 'buorh0s4pljql9k9rnna900mm0'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '63408'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryyBEGDLz1yxlF2rRb'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/logo'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=d226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s%3A32%3A%22JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0%22%3B; PHPSESSID=buorh0s4pljql9k9rnna900mm0; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '53303'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/logo'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/logo'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417013323.962
+    'REQUEST_TIME' => 1417013323
+]
+2014-11-26 15:56:23 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected ')'' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:85
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(563): ::spl_autoload_call()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(563): ::class_exists()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(521): yii\base\Module->createControllerByID()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(449): yii\base\Module->createController()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#6 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2014-11-26 15:56:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/logo'
+]
+
+$_COOKIE = [
+    '_csrf' => 'd226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s:32:\"JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0\";'
+    'PHPSESSID' => 'buorh0s4pljql9k9rnna900mm0'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=d226f83bae76a3c2420354d126c8c15c4e81456d5b334dd6c061cb8b5620eb11s%3A32%3A%22JUck9YCzLa0Y1x73Eb2yR7tIRZUOPnj0%22%3B; PHPSESSID=buorh0s4pljql9k9rnna900mm0; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '53433'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/logo'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/logo'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417013783.562
+    'REQUEST_TIME' => 1417013783
+]
+2014-11-27 10:14:07 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../../../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:16
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 10:14:07 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s:32:\"c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ\";'
+    'PHPSESSID' => 'kn0u5sg0a76ppffsb7qsl3s0p6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s%3A32%3A%22c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ%22%3B; PHPSESSID=kn0u5sg0a76ppffsb7qsl3s0p6'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56214'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417079647.066
+    'REQUEST_TIME' => 1417079647
+]
+2014-11-27 10:14:19 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:16
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 10:14:19 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s:32:\"c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ\";'
+    'PHPSESSID' => 'kn0u5sg0a76ppffsb7qsl3s0p6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s%3A32%3A%22c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ%22%3B; PHPSESSID=kn0u5sg0a76ppffsb7qsl3s0p6'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56224'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417079658.968
+    'REQUEST_TIME' => 1417079658
+]
+2014-11-27 10:14:58 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../../rest/web): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:16
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 10:14:58 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s:32:\"c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ\";'
+    'PHPSESSID' => 'kn0u5sg0a76ppffsb7qsl3s0p6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s%3A32%3A%22c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ%22%3B; PHPSESSID=kn0u5sg0a76ppffsb7qsl3s0p6'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56230'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417079698.502
+    'REQUEST_TIME' => 1417079698
+]
+2014-11-27 10:15:20 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../../rest/web/index.php): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:16
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 10:15:20 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s:32:\"c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ\";'
+    'PHPSESSID' => 'kn0u5sg0a76ppffsb7qsl3s0p6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s%3A32%3A%22c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ%22%3B; PHPSESSID=kn0u5sg0a76ppffsb7qsl3s0p6'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56236'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417079720.428
+    'REQUEST_TIME' => 1417079720
+]
+2014-11-27 10:16:16 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:16
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 10:16:16 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s:32:\"c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ\";'
+    'PHPSESSID' => 'kn0u5sg0a76ppffsb7qsl3s0p6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=6385b0d74057aaf9b2ba75c11a9194997767fd652b632abd4e6b073e03368539s%3A32%3A%22c1QNnRJicnbp9z9uqTts7yZqoqTo9KjJ%22%3B; PHPSESSID=kn0u5sg0a76ppffsb7qsl3s0p6'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56253'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417079776.475
+    'REQUEST_TIME' => 1417079776
+]
+2014-11-27 11:07:46 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:43
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 11:07:45 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'emfs5gs1i6qaat5c5gkqsm0os0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__returnUrl' => '/site-enseignant-chercheur/web/index.php?r=site/logout'
+    '_sf2_attributes' => [
+        '_security_admin' => 'C:74:\"Symfony\\Component\\Security\\Core\\Authentication\\Token\\UsernamePasswordToken\":701:{a:3:{i:0;N;i:1;s:5:\"admin\";i:2;s:660:\"a:4:{i:0;O:41:\"Symfony\\Component\\Security\\Core\\User\\User\":7:{s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0username\";s:5:\"admin\";s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0password\";s:88:\"nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==\";s:50:\"\0Symfony\\Component\\Security\\Core\\User\\User\0enabled\";b:1;s:60:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonExpired\";b:1;s:64:\"\0Symfony\\Component\\Security\\Core\\User\\User\0credentialsNonExpired\";b:1;s:59:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonLocked\";b:1;s:48:\"\0Symfony\\Component\\Security\\Core\\User\\User\0roles\";a:0:{}}i:1;b:0;i:2;a:0:{}i:3;a:0:{}}\";}}'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417082783
+        'c' => 1417082767
+        'l' => '0'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=emfs5gs1i6qaat5c5gkqsm0os0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56656'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417082865.973
+    'REQUEST_TIME' => 1417082865
+]
+2014-11-27 11:11:54 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:43
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 11:11:54 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'emfs5gs1i6qaat5c5gkqsm0os0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__returnUrl' => '/site-enseignant-chercheur/web/index.php?r=site/logout'
+    '_sf2_attributes' => [
+        '_security_admin' => 'C:74:\"Symfony\\Component\\Security\\Core\\Authentication\\Token\\UsernamePasswordToken\":701:{a:3:{i:0;N;i:1;s:5:\"admin\";i:2;s:660:\"a:4:{i:0;O:41:\"Symfony\\Component\\Security\\Core\\User\\User\":7:{s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0username\";s:5:\"admin\";s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0password\";s:88:\"nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==\";s:50:\"\0Symfony\\Component\\Security\\Core\\User\\User\0enabled\";b:1;s:60:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonExpired\";b:1;s:64:\"\0Symfony\\Component\\Security\\Core\\User\\User\0credentialsNonExpired\";b:1;s:59:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonLocked\";b:1;s:48:\"\0Symfony\\Component\\Security\\Core\\User\\User\0roles\";a:0:{}}i:1;b:0;i:2;a:0:{}i:3;a:0:{}}\";}}'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417082783
+        'c' => 1417082767
+        'l' => '0'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=emfs5gs1i6qaat5c5gkqsm0os0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56699'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417083114.187
+    'REQUEST_TIME' => 1417083114
+]
+2014-11-27 11:11:55 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:43
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 11:11:55 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'emfs5gs1i6qaat5c5gkqsm0os0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__returnUrl' => '/site-enseignant-chercheur/web/index.php?r=site/logout'
+    '_sf2_attributes' => [
+        '_security_admin' => 'C:74:\"Symfony\\Component\\Security\\Core\\Authentication\\Token\\UsernamePasswordToken\":701:{a:3:{i:0;N;i:1;s:5:\"admin\";i:2;s:660:\"a:4:{i:0;O:41:\"Symfony\\Component\\Security\\Core\\User\\User\":7:{s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0username\";s:5:\"admin\";s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0password\";s:88:\"nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==\";s:50:\"\0Symfony\\Component\\Security\\Core\\User\\User\0enabled\";b:1;s:60:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonExpired\";b:1;s:64:\"\0Symfony\\Component\\Security\\Core\\User\\User\0credentialsNonExpired\";b:1;s:59:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonLocked\";b:1;s:48:\"\0Symfony\\Component\\Security\\Core\\User\\User\0roles\";a:0:{}}i:1;b:0;i:2;a:0:{}i:3;a:0:{}}\";}}'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417082783
+        'c' => 1417082767
+        'l' => '0'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=emfs5gs1i6qaat5c5gkqsm0os0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56701'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417083115.416
+    'REQUEST_TIME' => 1417083115
+]
+2014-11-27 11:12:45 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:43
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 11:12:45 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'emfs5gs1i6qaat5c5gkqsm0os0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__returnUrl' => '/site-enseignant-chercheur/web/index.php?r=site/logout'
+    '_sf2_attributes' => [
+        '_security_admin' => 'C:74:\"Symfony\\Component\\Security\\Core\\Authentication\\Token\\UsernamePasswordToken\":701:{a:3:{i:0;N;i:1;s:5:\"admin\";i:2;s:660:\"a:4:{i:0;O:41:\"Symfony\\Component\\Security\\Core\\User\\User\":7:{s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0username\";s:5:\"admin\";s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0password\";s:88:\"nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==\";s:50:\"\0Symfony\\Component\\Security\\Core\\User\\User\0enabled\";b:1;s:60:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonExpired\";b:1;s:64:\"\0Symfony\\Component\\Security\\Core\\User\\User\0credentialsNonExpired\";b:1;s:59:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonLocked\";b:1;s:48:\"\0Symfony\\Component\\Security\\Core\\User\\User\0roles\";a:0:{}}i:1;b:0;i:2;a:0:{}i:3;a:0:{}}\";}}'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417082783
+        'c' => 1417082767
+        'l' => '0'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=emfs5gs1i6qaat5c5gkqsm0os0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56705'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417083165.514
+    'REQUEST_TIME' => 1417083165
+]
+2014-11-27 11:14:46 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:43
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 11:14:45 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'emfs5gs1i6qaat5c5gkqsm0os0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__returnUrl' => '/site-enseignant-chercheur/web/index.php?r=site/logout'
+    '_sf2_attributes' => [
+        '_security_admin' => 'C:74:\"Symfony\\Component\\Security\\Core\\Authentication\\Token\\UsernamePasswordToken\":701:{a:3:{i:0;N;i:1;s:5:\"admin\";i:2;s:660:\"a:4:{i:0;O:41:\"Symfony\\Component\\Security\\Core\\User\\User\":7:{s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0username\";s:5:\"admin\";s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0password\";s:88:\"nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==\";s:50:\"\0Symfony\\Component\\Security\\Core\\User\\User\0enabled\";b:1;s:60:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonExpired\";b:1;s:64:\"\0Symfony\\Component\\Security\\Core\\User\\User\0credentialsNonExpired\";b:1;s:59:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonLocked\";b:1;s:48:\"\0Symfony\\Component\\Security\\Core\\User\\User\0roles\";a:0:{}}i:1;b:0;i:2;a:0:{}i:3;a:0:{}}\";}}'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417082783
+        'c' => 1417082767
+        'l' => '0'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=emfs5gs1i6qaat5c5gkqsm0os0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56724'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417083285.703
+    'REQUEST_TIME' => 1417083285
+]
+2014-11-27 11:15:24 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'include(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:43
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#3 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#10 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#11 {main}
+2014-11-27 11:15:24 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'emfs5gs1i6qaat5c5gkqsm0os0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__returnUrl' => '/site-enseignant-chercheur/web/index.php?r=site/logout'
+    '_sf2_attributes' => [
+        '_security_admin' => 'C:74:\"Symfony\\Component\\Security\\Core\\Authentication\\Token\\UsernamePasswordToken\":701:{a:3:{i:0;N;i:1;s:5:\"admin\";i:2;s:660:\"a:4:{i:0;O:41:\"Symfony\\Component\\Security\\Core\\User\\User\":7:{s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0username\";s:5:\"admin\";s:51:\"\0Symfony\\Component\\Security\\Core\\User\\User\0password\";s:88:\"nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==\";s:50:\"\0Symfony\\Component\\Security\\Core\\User\\User\0enabled\";b:1;s:60:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonExpired\";b:1;s:64:\"\0Symfony\\Component\\Security\\Core\\User\\User\0credentialsNonExpired\";b:1;s:59:\"\0Symfony\\Component\\Security\\Core\\User\\User\0accountNonLocked\";b:1;s:48:\"\0Symfony\\Component\\Security\\Core\\User\\User\0roles\";a:0:{}}i:1;b:0;i:2;a:0:{}i:3;a:0:{}}\";}}'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417082783
+        'c' => 1417082767
+        'l' => '0'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=emfs5gs1i6qaat5c5gkqsm0os0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56727'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417083324.123
+    'REQUEST_TIME' => 1417083324
+]
+2014-11-27 12:06:29 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'file_get_contents(../rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:44
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(325): ::unknown()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#4 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#10 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#11 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#12 {main}
+2014-11-27 12:06:29 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'lm554vmvo9bkrijf8a8965efp5'
+]
+
+$_SESSION = [
+    '_sf2_attributes' => [
+        '_security.admin.target_path' => 'http://localhost/site-enseignant-chercheur/rest/web/admin'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417084663
+        'c' => 1417084658
+        'l' => '0'
+    ]
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=publication'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=lm554vmvo9bkrijf8a8965efp5'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56905'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417086389.394
+    'REQUEST_TIME' => 1417086389
+]
+2014-11-27 12:09:51 [::1][][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'file_get_contents(/rest/web/admin): failed to open stream: No such file or directory' in C:\wamp\www\site-enseignant-chercheur\views\site\login.php:44
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(325): ::unknown()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render()
+#4 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(74): yii\base\Controller->render()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): app\controllers\SiteController->actionLogin()
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#8 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#9 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#10 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#11 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#12 {main}
+2014-11-27 12:09:50 [::1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s:32:\"jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6\";'
+    'PHPSESSID' => 'lm554vmvo9bkrijf8a8965efp5'
+]
+
+$_SESSION = [
+    '_sf2_attributes' => [
+        '_security.admin.target_path' => 'http://localhost/site-enseignant-chercheur/rest/web/admin'
+    ]
+    '_sf2_flashes' => []
+    '_sf2_meta' => [
+        'u' => 1417084663
+        'c' => 1417084658
+        'l' => '0'
+    ]
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=publication'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=327d77bab299c9e8a5f0f2e7bf202dd82d0659e4e97443c246498b40fac040d8s%3A32%3A%22jhb6ybBjUUq2OLpgmAe4GtgKSGVqgCj6%22%3B; PHPSESSID=lm554vmvo9bkrijf8a8965efp5'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '56913'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417086590.932
+    'REQUEST_TIME' => 1417086590
+]
+2014-11-27 14:33:34 [::1][100][vobmhpp6e9p122r3niopiopfd6][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined function app\controllers\ar_dump()' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:80
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#5 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2014-11-27 14:33:33 [::1][100][vobmhpp6e9p122r3niopiopfd6][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'U0dvVy4wYkNncABuQFgvcGQ.OD1jXDMSKjQ7P21VNyYWdh87fmlRKQ=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => 'jk2v4gt5ltltnp4l31da2ko2b5'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=jk2v4gt5ltltnp4l31da2ko2b5'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58064'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417095213.888
+    'REQUEST_TIME' => 1417095213
+]
+2014-11-27 14:43:36 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'echo' (T_ECHO)' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:80
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(563): ::spl_autoload_call()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(563): ::class_exists()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(521): yii\base\Module->createControllerByID()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(449): yii\base\Module->createController()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#6 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2014-11-27 14:43:36 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'OFlXaXo4dVEMbjhQFFA4Yg8gAAM3VCQAQSoDATldIDR9aCcFKmFGOw=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => '8erop5itltktri39g5gmsvccf7'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=8erop5itltktri39g5gmsvccf7'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58118'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417095816.791
+    'REQUEST_TIME' => 1417095816
+]
+2014-11-27 14:43:50 [::1][100][3dvkgo6oj7vjmcotbr74i54q40][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'linslin\yii2\curl\Curl' not found' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:77
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#5 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2014-11-27 14:43:50 [::1][100][3dvkgo6oj7vjmcotbr74i54q40][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'OFlXaXo4dVEMbjhQFFA4Yg8gAAM3VCQAQSoDATldIDR9aCcFKmFGOw=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => '8erop5itltktri39g5gmsvccf7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=8erop5itltktri39g5gmsvccf7'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58119'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417095830.396
+    'REQUEST_TIME' => 1417095830
+]
+2014-11-27 14:44:45 [::1][100][6t1omd977gkp0iumptp7mh6i25][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'linslin\yii2\curl' not found' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:77
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#5 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2014-11-27 14:44:44 [::1][100][6t1omd977gkp0iumptp7mh6i25][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'eFZkcnJfVzRMYQtLHDcaB08vMxg/MwZlASUwGjE6AlE9ZxQeIgZkXg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => 'appt7l00j9uu8gv3dgeqjos4l1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=appt7l00j9uu8gv3dgeqjos4l1'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58125'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417095884.853
+    'REQUEST_TIME' => 1417095884
+]
+2014-11-27 14:45:22 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '-', expecting ',' or ';'' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:11
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(563): ::spl_autoload_call()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(563): ::class_exists()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(521): yii\base\Module->createControllerByID()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(449): yii\base\Module->createController()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#6 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2014-11-27 14:45:22 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'eFZkcnJfVzRMYQtLHDcaB08vMxg/MwZlASUwGjE6AlE9ZxQeIgZkXg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => '6t1omd977gkp0iumptp7mh6i25'
+    '_identity' => 'bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es:28:\"[\"100\",\"test100key\",2592000]\";'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=6t1omd977gkp0iumptp7mh6i25; _identity=bfb9ad5b018f9fb6e5093af17b9905aa4ab4679a067a44cc1ca8a0843723c94es%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58130'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417095922.576
+    'REQUEST_TIME' => 1417095922
+]
+2014-11-27 14:46:03 [::1][100][5nhke0j3di74f9036021gsmqs4][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'linslin\yii2\Curl' not found' in C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php:77
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): ::call_user_func_array:{C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php:55}()
+#1 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams()
+#2 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction()
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest()
+#5 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2014-11-27 14:46:03 [::1][100][5nhke0j3di74f9036021gsmqs4][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'ZTcyRVBUS2ZRAF18PjwGVVJOZS8dOBo3HERmLRMxHgMgBkIpAA14DA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => '9kgq5ctvo51cggti0mq0r6edi2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=9kgq5ctvo51cggti0mq0r6edi2'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58134'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417095963.75
+    'REQUEST_TIME' => 1417095963
+]
+2014-11-27 14:51:32 [::1][100][-][error][yii\web\HttpException:400] exception 'yii\web\HttpException' with message 'false' in C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Curl.php:245
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Curl.php(128): yii\web\Curl->httpRequest('POST', 'http://localhos...', '{"username":"ad...', true)
+#1 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(81): yii\web\Curl->post('http://localhos...', '{"username":"ad...')
+#2 [internal function]: app\controllers\SiteController->actionLogin()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login', Array)
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('site/login', Array)
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#9 {main}
+2014-11-27 14:51:31 [::1][100][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'bXVVTE9Da0pZQjp1ISsmeVoMAiYCLzobFAYBJAwmPi8oRCUgHxpYIA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => 'c2i6tjme936q3s31l7iks7vil5'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=c2i6tjme936q3s31l7iks7vil5'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58161'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417096291.733
+    'REQUEST_TIME' => 1417096291
+]
+2014-11-27 14:53:36 [::1][100][-][error][yii\web\HttpException:400] exception 'yii\web\HttpException' with message 'false' in C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Curl.php:245
+Stack trace:
+#0 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Curl.php(128): yii\web\Curl->httpRequest('POST', 'http://localhos...', '{"username":"ad...', true)
+#1 C:\wamp\www\site-enseignant-chercheur\controllers\SiteController.php(81): yii\web\Curl->post('http://localhos...', '{"username":"ad...')
+#2 [internal function]: app\controllers\SiteController->actionLogin()
+#3 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login', Array)
+#6 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('site/login', Array)
+#7 C:\wamp\www\site-enseignant-chercheur\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\wamp\www\site-enseignant-chercheur\web\index.php(12): yii\base\Application->run()
+#9 {main}
+2014-11-27 14:53:35 [::1][100][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'SFZBRk52elp8YS5/IB43aX8vFiwDGisLMSUVLg0TLz8NZzEqHi9JMA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s:32:\"47o9nhM37yWjMlQQysThCeUeE1plPY3j\";'
+    'PHPSESSID' => 'hobs119hsr87i7q8i44hu5urk7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'language' => 'fr'
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://localhost/site-enseignant-chercheur/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=cf5d5c7268fbe1b2a350c7eee081e6dca0a8f2dd97dd039c0935446f5a72b377s%3A32%3A%2247o9nhM37yWjMlQQysThCeUeE1plPY3j%22%3B; PHPSESSID=hobs119hsr87i7q8i44hu5urk7'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\TXE Components\\TCS\\;C:\\Program Files\\Intel\\TXE Components\\TCS\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Acer\\Remote Files\\;C:\\casperjs\\batchbin;C:\\phantomjs;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/'
+    'SERVER_ADMIN' => 'admin@example.com'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/site-enseignant-chercheur/web/index.php'
+    'REMOTE_PORT' => '58176'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/site-enseignant-chercheur/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/site-enseignant-chercheur/web/index.php'
+    'PHP_SELF' => '/site-enseignant-chercheur/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1417096415.974
+    'REQUEST_TIME' => 1417096415
+]

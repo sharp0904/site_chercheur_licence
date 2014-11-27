@@ -8,7 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-
+use yii\web\Curl;
 
 class SiteController extends Controller
 {
@@ -67,7 +67,23 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+
+
+
+            $login = "'username':".$model->username;
+            $pass = "'password':".$model->password;
+            $test = array('username' => $model->username, 'password' => $model->password);
+            $tabJson = json_encode($test);
+            $curl = new Curl();
+ $response = $curl->post(
+            'http://localhost/site-enseignant-chercheur/rest/web/login', $tabJson
+        );
+        if($response=='ok')
+        {
+
+            return $this->goHome();
+        }
+
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -75,6 +91,34 @@ class SiteController extends Controller
         }
     }
 	
+
+    public function actionLogo()
+    {
+
+
+        if (Yii::$app->request->isPost) {
+            $uploaddir = 'uploads/';
+            $uploadfile = $uploaddir . basename($_FILES['logo']['name']);
+
+            
+            if (move_uploaded_file($_FILES['logo']['tmp_name'], $uploadfile)) {
+               
+                 return $this->render('index');
+
+            } else {
+                echo "Fichier n'a pas été téléchargé, peut être un mauvais format ?";
+            }
+
+
+            
+            }
+            else
+            {
+                 return $this->render('change_logo');
+            }
+
+       
+    }
 	
 	
 

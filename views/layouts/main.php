@@ -98,10 +98,14 @@ $rs = getMenus($language);
 <body>
 
 <?php $this->beginBody() ?>
+
     <div class="wrap">
+	<img src="uploads/logo.png" alt="logo" style="width:15%; margin-left:-60%;padding-bottom:30px;margin-top:20px;">
+
         <?php
             NavBar::begin([
                 //'brandLabel' => 'Site enseignant chercheur',
+				
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse',

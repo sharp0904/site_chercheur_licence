@@ -404,11 +404,12 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-dialog .ui-dialog-titlebar {
 	padding: .4em 1em;
-	position: relative;
+	position: relative;background-color:#A2D6DE;
 }
 .ui-dialog .ui-dialog-title {
 	float: left;
 	margin: .1em 0;
+	
 	white-space: nowrap;
 	width: 90%;
 	overflow: hidden;
@@ -418,9 +419,11 @@ button.ui-button::-moz-focus-inner {
 	position: absolute;
 	right: .3em;
 	top: 50%;
+	background-image:url('images/close.png');
+	background-size:cover;
 	width: 20px;
 	margin: -10px 0 0 0;
-	padding: 1px;
+	
 	height: 20px;
 }
 .ui-dialog .ui-dialog-content {
