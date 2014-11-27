@@ -13,46 +13,51 @@ use app\models\Menu;
 
 AppAsset::register($this);
 
+$session = Yii::$app->session;
 
+$session->open();
+$language = $session->get('language');
+
+if(!isset($language))
+{
+$language='fr';
+}
 
 function getMenus($locale = 'fr')
 {
-$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_DESC])->all();
+
+$list = Menu::find()->where(['actif' => '1'])->orderBy(['position' => SORT_ASC])->all();
 		
 		$rs=array();
 		if($locale == 'fr')
 		{
-		foreach($list as $item){
-		//process each item here
-		$rs[]=$item['titre_fr'];
-
-		}
+			foreach($list as $item){
+				$rs[]=$item['titre_fr'];
+			}
 		}
 		elseif($locale == 'en')
 		{
-		foreach($list as $item){
-		//process each item here
-		$rs[]=$item['titre_en'];
-
-		}
+			foreach($list as $item){
+				$rs[]=$item['titre_en'];
+			}
 		}
 		
 		return $rs;
 }
 
 
-function listerRubriques($rs,$id,$locale='fr')
+function listerRubriques($rs,$titre,$locale='fr')
 {
 $res;
 if($locale == 'fr')
 {
-$url = '/site/index&page='.getIdParTitreFR($rs[$id-1]);
-		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+	$url = '/site/index&page='.getIdParTitreFR($titre);
+	$res = ['label' => $titre, 'url' => [$url]];
 }
 elseif($locale == 'en')
 {
-$url = '/site/index&page='.getIdParTitreEN($rs[$id-1]);
-		$res = ['label' => $rs[$id-1], 'url' => [$url]];
+	$url = '/site/index&page='.getIdParTitreEN($titre);
+	$res = ['label' => $titre, 'url' => [$url]];
 }
 
 	return $res;
@@ -60,32 +65,15 @@ $url = '/site/index&page='.getIdParTitreEN($rs[$id-1]);
 	
 function getIdParTitreFR($titreFR)
 {
-$rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
-return $rubrique->id;
+	$rubrique = Menu::find()->where(['titre_fr' => $titreFR])->one();
+	return $rubrique->id;
 }
 
 function getIdParTitreEN($titreEN)
 {
-$rubrique = Menu::find()->where(['titre_en' => $titreEN])->one();
-return $rubrique->id;
+	$rubrique = Menu::find()->where(['titre_en' => $titreEN])->one();
+	return $rubrique->id;
 }
-
-$session = Yii::$app->session;
-if ($session->isActive)
-{
-$session->open();
-$language = $session->get('language');
-}
-else
-{
-$session->open();
-$session->set('language', 'fr');
-$language = $session->get('language');
-}
-
-
-
-
 
 
 
@@ -103,6 +91,9 @@ $rs = getMenus($language);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+	<link rel="stylesheet" href="../web/css/pop-up.css">
+
 </head>
 <body>
 
@@ -113,22 +104,57 @@ $rs = getMenus($language);
                 'brandLabel' => 'Site enseignant chercheur',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-inverse',
                 ],
             ]);
 			if(Yii::$app->user->isGuest)
 			{
-			echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-					['label' => 'Publications', 'url' => ['/site/publications']],
+				if($language == 'fr')
+				{
+					foreach($rs as $titre)
+					{
+					echo Nav::widget([
+						'options' => ['class' => 'navbar-nav navbar-left'],
+						'items' => [
+						
+						listerRubriques($rs, $titre, $language)
 
-                    ['label' => 'Login', 'url' => ['/site/login']],
-					
+						],
+					]);
+						
+					}
+				}
+				elseif($language =='en')
+				{
+					foreach($rs as $titre)
+					{
+					echo Nav::widget([
+						'options' => ['class' => 'navbar-nav navbar-left'],
+						'items' => [					
+						
+						listerRubriques($rs, $titre, $language)
+						
+						],
+					]);
+						
+					}
+				}
 
-                ],
-            ]);
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [
+						['label' => 'Publications', 'url' => ['/site/publications']],
+
+						['label' => 'Login', 'url' => ['/site/login']],
+						
+
+					],
+				]);
+				NavBar::end();
+			}
+			else
+			{
+			
 			if($language == 'fr')
 			{
 				foreach($rs as $titre)
@@ -137,7 +163,7 @@ $rs = getMenus($language);
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [
 					
-					listerRubriques($rs, getIdParTitreFR($titre), $language)
+					listerRubriques($rs, $titre, $language)
 
 					],
 				]);
@@ -152,60 +178,26 @@ $rs = getMenus($language);
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [					
 					
-					listerRubriques($rs, getIdParTitreEN($titre), $language)
+					listerRubriques($rs, $titre, $language)
 					
 					],
 				]);
 					
 				}
 			}
-            NavBar::end();
-			}
-			else
-			{
+
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-				    ['label' => 'Contact', 'url' => ['/site/contact']],
 					['label' => 'Publications', 'url' => ['/site/publications']],
-					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
-					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
+					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']],
+					['label' => 'Gestion Publications', 'url' => ['/publication/index']], 
 						
 						['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
-			if($language == 'fr')
-			{
-				foreach($rs as $titre)
-				{
-				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-left'],
-					'items' => [
-					
-					listerRubriques($rs, getIdParTitreFR($titre), $language)
-
-					],
-				]);
-					
-				}
-			}
-			elseif($language =='en')
-			{
-				foreach($rs as $titre)
-				{
-				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-left'],
-					'items' => [					
-					
-					listerRubriques($rs, getIdParTitreEN($titre), $language)
-					
-					],
-				]);
-					
-				}
-			}
             NavBar::end();
 			}
 			

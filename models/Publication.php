@@ -45,9 +45,11 @@ class Publication extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['reference', 'auteurs', 'titre', 'date'], 'required'],
+            [['reference', 'auteurs', 'titre', 'date', 'categorie_id'], 'required'],
             [['reference', 'auteurs', 'titre', 'journal', 'volume', 'number', 'pages', 'note', 'abstract', 'keywords', 'series', 'localite', 'publisher', 'editor', 'pdf', 'date_display'], 'string'],
+            [['pdf'],'file','extensions'=>'pdf'],
             [['date'], 'safe'],
+			[['date'], 'date', 'format'=>'yyyy-M-d'],
             [['categorie_id'], 'integer']
         ];
     }
@@ -80,11 +82,5 @@ class Publication extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCategorie()
-    {
-        return $this->hasOne(Categorie::className(), ['ID' => 'categorie_id']);
-    }
+   
 }
