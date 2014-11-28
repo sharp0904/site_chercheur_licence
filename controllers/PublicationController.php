@@ -256,13 +256,13 @@ class PublicationController extends Controller
 		}
 		
         // On defini la categorie
-		if( in_array($entryType, array('article')))
+		if( in_array($entryType, array('article','book','booklet','inbook','incollection')))
             $categ_id = "1";
-        else if( in_array($entryType, array('inproceedings')))
+        else if( in_array($entryType, array('conference','inproceedings','proceedings')))
             $categ_id = "2";
-        else if( in_array($entryType, array('techreport')))
+        else if( in_array($entryType, array('manual','techreport')))
             $categ_id = "3";
-        else if( in_array($entryType, array('phdthesis')))
+        else if( in_array($entryType, array('phdthesis','mastersthesis')))
             $categ_id = "4";
         else
             $categ_id = "5";

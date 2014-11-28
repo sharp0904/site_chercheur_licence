@@ -1,6 +1,9 @@
 <?php
 
 namespace app\models;
+use Yii;
+
+
 
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
@@ -11,13 +14,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public $accessToken;
 
     private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
+        
         '101' => [
             'id' => '101',
             'username' => 'demo',
@@ -39,7 +36,22 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public static function findIdentity($id)
     {
+
+        $session = Yii::$app->getSession();
+        if ($session->isActive)
+        {
+
+            $user = $session->get('user');
+            User::ajoutUser($user);
+        }
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+
+    }
+    public static function ajoutUser($user)
+    {
+        $tabUser = array('id'=>$user->id,'username'=>$user->username,'password'=>$user->password,'authKey'=>$user->authKey, 'accessToken'=>$user->accessToken);
+        
+        self::$users[$user->id]=$tabUser;        
     }
 
     /**

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\User;
 use yii\web\Curl;
 
 class SiteController extends Controller
@@ -66,24 +67,30 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post())) {
 
 
 
-            $login = "'username':".$model->username;
-            $pass = "'password':".$model->password;
             $test = array('username' => $model->username, 'password' => $model->password);
             $tabJson = json_encode($test);
             $curl = new Curl();
  $response = $curl->post(
             'http://localhost/site-enseignant-chercheur/rest/web/login', $tabJson
         );
-        if($response=='ok')
-        {
+       
 
-            return $this->goHome();
-        }
 
+
+ $user = new User(['id' => '108', 'username' => $model->username, 'password'=> $model->password, 'authKey'=>'test108key','accessToken'=>'108-token']);
+           
+
+$session = Yii::$app->session;
+$session->open();
+$session->set('user', $user);
+
+        
+        $model->login2($user);
+return $this->goHome();
         } else {
             return $this->render('login', [
                 'model' => $model,
