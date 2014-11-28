@@ -7,12 +7,36 @@ body {
 }
 
 #validerUpBib {
-	visibility:hidden;
+	display: none;
 }
 
 .fileInput {
-	visibility : hidden;
 	display: inline-block;
+	padding : 20px;
+}
+
+#deleteMulti {
+	margin: 25px;
+	float: right;
+}
+
+#error{
+	color: red;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-left: 10%;
+}
+
+.btn-delete:hover, .btn-delete:focus, .btn-delete:active, .btn-delete.active, .open > .dropdown-toggle.btn-delete {
+color: #fff;
+background-color: #E22B00;
+border-color: #EA2400;
+}
+
+.btn-delete {
+color: #fff;
+background-color: #F20000;
+border-color: #D50505;
 }
 
 .text-contener {

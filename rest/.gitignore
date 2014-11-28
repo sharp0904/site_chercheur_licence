@@ -1,0 +1,6 @@
+/composer.phar
+/php-cs-fixer.phar
+/phpunit.phar
+/vendor/
+/.idea/
+/composer.lock

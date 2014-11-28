@@ -10,6 +10,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\helpers\Json;
+
+
 
 /**
  * PublicationController implements the CRUD actions for Publication model.
@@ -135,6 +138,20 @@ class PublicationController extends Controller
 
         return $this->redirect(['index']);
     }
+    
+    public function actionDeletemulti()
+    {
+		
+        if (isset($_POST['keylist'])) {
+			$champSelec = $_POST['keylist'];
+			foreach($champSelec as $key => $value)
+			{
+				$this->findModel($value)->delete();	
+			}	
+			return true;
+		}
+		return $this->redirect(['index']);
+    }
 
     /**
      * Finds the Publication model based on its primary key value.
@@ -143,7 +160,7 @@ class PublicationController extends Controller
      * @return Publication the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    public function findModel($id)
     {
         if (($model = Publication::findOne($id)) !== null) {
             return $model;
@@ -156,7 +173,7 @@ class PublicationController extends Controller
     public function uploadBibtex($fichier)
     {    
             // On récupère les données
-            $uploadfile = 'uploads/bibtex/sdsd/'.$fichier;
+            $uploadfile = 'uploads/bibtex/'.$fichier;
             // On déplace le fichier dans le dossier d'upload
             if (file_exists($uploadfile))
             {
@@ -168,7 +185,7 @@ class PublicationController extends Controller
                 // On parse le fichier bibtex afin de remplir la structure.
                 $bibtex->parse();
                 
-                $model ;
+                $model;
                 foreach ($bibtex->data as $datas)
                 {
                     // On créé un objet Publication à partir des données bibtex
@@ -179,7 +196,7 @@ class PublicationController extends Controller
             }
             else
             {
-               throw new \yii\web\HttpException(400, 'Wrong method', 405);
+               throw new NotFoundHttpException('Fichier Introuvable: '.$fichier);
             }
     }
 	
@@ -187,7 +204,7 @@ class PublicationController extends Controller
 	public static function mappingBibtex($tableau)
     {
         // On initialise les variables 
-        $date = "";
+        $date = date('Y')."-01-01";
         $date_display = "";
         $journal = "";
         $volume = "";
@@ -202,85 +219,97 @@ class PublicationController extends Controller
         $editor = "";
         $categorie = "";
         $date_display = "";
-        // Champs obligatoire
-        $reference = $tableau["cite"];
-        $auteurs = substr($tableau["author"], 1 ,-1);
-        $titre = substr($tableau["title"], 1 ,-1);
+        $entryType = "";
         
-        // On formate la date
-        if( array_key_exists('year', $tableau) )
+        if (!empty($tableau) && isset($tableau["cite"]) && isset($tableau["author"]) && isset($tableau["title"]))
         {
-            $date = substr($tableau["year"],1 ,-1);
-            $date_display = substr($tableau["year"], 1, -1);                
-            if(array_key_exists('month', $tableau) && $tableau["month"] != "")
-            {
-                $date .= '-'.substr($tableau["month"], 1, -1).'-01';
-                $date_display .= substr($tableau["month"], 1, -1).' '.$date_display;
-            }
-            else
-            {
-                $date .= "-01-01";
-            }
-        }
-        
-        // On récupère les autres données et on supprimme les { } des données
-        foreach ($tableau as $key => $value)
-        {
-            if(!in_array($key, array('cite','author','title','year','month')))
-            {
-				if($key != 'entryType')
+			// Champs obligatoire
+			$reference = $tableau["cite"];
+			$auteurs = substr($tableau["author"], 1 ,-1);
+			$titre = substr($tableau["title"], 1 ,-1);
+			
+			// On formate la date
+			if( array_key_exists('year', $tableau))
+			{
+				if(is_numeric(substr($tableau["year"], 1 ,-1)))
 				{
-					$$key = substr($value, 1, -1);
+					$date = substr($tableau["year"],1 ,-1);
+					$date_display = substr($tableau["year"], 1, -1);                
+					if(array_key_exists('month', $tableau) && is_numeric(substr($tableau["month"], 1 ,-1)))
+					{
+						$date .= '-'.substr($tableau["month"], 1, -1).'-01';
+						$date_display .= substr($tableau["month"], 1, -1).' '.$date_display;
+					}
+					else
+					{
+						$date .= "-01-01";
+					}
 				}
-				else{
-					$$key = $value;
+			}
+			
+			// On récupère les autres données et on supprimme les { } des données
+			foreach ($tableau as $key => $value)
+			{
+				if(!in_array($key, array('cite','author','title','year','month')))
+				{
+					if($key != 'entryType')
+					{
+						$$key = substr($value, 1, -1);
+					}
+					else{
+						$$key = $value;
+					}
 				}
-            }
-        }
-        // On fait correspondre les variables du fichier bibtex et les attributs
-        // de la publication
-        if(isset($booktitle))
-        {
-            $journal = $booktitle;
+			}
+			// On fait correspondre les variables du fichier bibtex et les attributs
+			// de la publication
+			if(isset($booktitle))
+			{
+				$journal = $booktitle;
+			}
+			if(isset($address))
+			{
+				$localite = $address;
+			}
+			
+			// On defini la categorie
+			if( in_array($entryType, array('article')))
+				$categ_id = "1";
+			else if( in_array($entryType, array('inproceedings')))
+				$categ_id = "2";
+			else if( in_array($entryType, array('techreport')))
+				$categ_id = "3";
+			else if( in_array($entryType, array('phdthesis')))
+				$categ_id = "4";
+			else
+				$categ_id = "5";
+		   
+			
+			// On créer la publication et on attribut les values
+			$publication = new Publication();
+			$publication->reference=$reference;
+			$publication->auteurs=$auteurs;
+			$publication->titre=$titre;
+			$publication->date=$date;
+			$publication->journal=$journal;
+			$publication->volume=$volume;
+			$publication->number=$number;
+			$publication->pages=$pages;
+			$publication->note=$note;
+			$publication->abstract=$abstract;
+			$publication->keywords=$keywords;
+			$publication->series=$series;
+			$publication->localite=$localite;
+			$publication->publisher=$publisher;
+			$publication->editor=$editor;
+			$publication->pdf=null;
+			$publication->date_display=date('Y-m-d');
+			$publication->categorie_id = $categ_id;
+			return $publication;
 		}
-        if(isset($address))
-        {
-            $localite = $address;
+		else
+		{
+			throw new NotFoundHttpException('Le tableau est vide ou ses champs obligatoires le sont.');
 		}
-		
-        // On defini la categorie
-		if( in_array($entryType, array('article')))
-            $categ_id = "1";
-        else if( in_array($entryType, array('inproceedings')))
-            $categ_id = "2";
-        else if( in_array($entryType, array('techreport')))
-            $categ_id = "3";
-        else if( in_array($entryType, array('phdthesis')))
-            $categ_id = "4";
-        else
-            $categ_id = "5";
-       
-        
-        // On créer la publication et on attribut les values
-        $publication = new Publication();
-		$publication->reference=$reference;
-		$publication->auteurs=$auteurs;
-		$publication->titre=$titre;
-		$publication->date=$date;
-		$publication->journal=$journal;
-		$publication->volume=$volume;
-		$publication->number=$number;
-		$publication->pages=$pages;
-		$publication->note=$note;
-		$publication->abstract=$abstract;
-		$publication->keywords=$keywords;
-		$publication->series=$series;
-		$publication->localite=$localite;
-		$publication->publisher=$publisher;
-		$publication->editor=$editor;
-		$publication->pdf=null;
-		$publication->date_display=date('Y-m-d');
-		$publication->categorie_id = $categ_id;
-        return $publication;
     }
 }

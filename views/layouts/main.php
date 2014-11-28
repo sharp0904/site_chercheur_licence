@@ -145,10 +145,7 @@ $rs = getMenus($language);
 					'items' => [
 						['label' => 'Publications', 'url' => ['/site/publications']],
 
-						['label' => 'Login', 'url' => ['/site/login']],
-						
-						['label' => 'Try', 'url' => ['/site/index&page=105']],
-						
+						['label' => 'Login', 'url' => ['/site/login']],						
 
 					],
 				]);

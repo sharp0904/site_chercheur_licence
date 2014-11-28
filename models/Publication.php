@@ -47,7 +47,7 @@ class Publication extends \yii\db\ActiveRecord
         return [
             [['reference', 'auteurs', 'titre', 'date', 'categorie_id'], 'required'],
             [['reference', 'auteurs', 'titre', 'journal', 'volume', 'number', 'pages', 'note', 'abstract', 'keywords', 'series', 'localite', 'publisher', 'editor',  'date_display'], 'string'],
-            [['pdf'], 'file', 'extensions'=>'pdf',/*'maxSize'=>2097152,*/ ],
+            [['pdf'], 'file', 'extensions'=>'pdf'],
             [['date'], 'safe'],
 			[['date'], 'date', 'format'=>'yyyy-M-d'],
             [['categorie_id'], 'integer']
