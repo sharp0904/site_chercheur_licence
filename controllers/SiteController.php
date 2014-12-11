@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\User;
+use yii\web\Curl;
 
 class SiteController extends Controller
 {
@@ -34,6 +36,8 @@ class SiteController extends Controller
         ];
     }
 
+	
+
     public function actions()
     {
         return [
@@ -51,6 +55,11 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+	
+	public function actionPublications()
+    {
+        return $this->render('publications');
+    }
 
     public function actionLogin()
     {
@@ -59,14 +68,62 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+
+
+
+            $form = array('username' => $model->username, 'password' => $model->password);
+            $tabJson = json_encode($form);
+            $curl = new Curl();
+			$r = $curl->post(
+				'http://localhost/site_chercheur_licence-master/rest/web/login', $tabJson
+        );
+ 
+       
+
+
+
+			$user = new User(['id' => '108', 'username' => $model->username, 'password'=> $model->password, 'authKey'=>'test108key','accessToken'=>'108-token']);
+					   
+
+			$session = Yii::$app->session;
+			$session->open();
+			$session->set('user', $user);
+			$session->set('token','WU8nb/rCD6JgtiyxTW3ZP+s4n9Vg9liUllh5bZLoLQhAMMoCaHE72nYLQSsw12uhkgWJLDmgMmZVD+aIk6BsZw==');
+					$model->login2($user);
+			return $this->goHome();
+		} else {
+			return $this->render('login', [
+				'model' => $model,
+			]);
+		}
+    }
+	
+
+    public function actionLogo()
+    {
+
+
+        if (Yii::$app->request->isPost) {
+            $uploaddir = 'uploads/';
+            $uploadfile = $uploaddir . basename($_FILES['logo']['name']);
+
+            
+            if (move_uploaded_file($_FILES['logo']['tmp_name'], $uploadfile)) {
+               
+                 return $this->render('index');
+
+            } 
+            else {
+                echo "Fichier n'a pas été téléchargé, peut être un mauvais format ?";
+            }
+        }
+        else
+        {
+            return $this->render('change_logo');
         }
     }
+
 
     public function actionLogout()
     {

@@ -1,0 +1,41 @@
+@inproceedings { S12f,
+   AUTHOR = {S. SALVA and A. Rollet},
+   TITLE = {A pragmatic approach for testing stateless and stateful Web Service Robustness},
+   BOOKTITLE = {Studia Informatica Universalis},
+   YEAR = {2012},
+   volume = {10},
+   number = {2},
+   pages = {139-179},
+   month = {10},
+   note = {The interest in testing methodologies dedicated to Web Services is soaring as much as the massive use of these components. Since Web Services are heterogeneous in nature and take part in complex Business processes, robustness testing which is the topic of this paper, is an important step to build them with confidence. Firstly, we focus on the SOAP environment which is used to call Web Service operations in an XML format. We show that SOAP must be taken into account in testing methods because it substantially modifies the Web Service observable behaviour and blocks many classical hazards used for testing. Then, we propose two approaches: the first one aims to test stateless Web Services, represented by relational models. The second approach is dedicated to stateful ones modelled with Symbolic Transition Systems. For both methods, the SOAP environment is taken into account by filtering the messages or by completing the specification. These methods have been experimented with an academic tool on many Web Services deployed on the Internet. This experimentation shows that several ones have robustness issues and that our methods are able to detect them.},
+   keywords = {Robustness testing; stateless, stateful Web Services; testing framework},
+   publisher = {Hermann},}
+
+@inproceedings { DS14b,
+   AUTHOR = {William Durand and Sébastien Salva},
+   TITLE = {Inferring models with rule-based expert systems },
+   BOOKTITLE = {5th symposium on Information and Communication Technology (SoICT 2014)},
+   YEAR = {2014},
+   month = {12},
+   abstract = {Many works related to software engineering rely upon for- mal models, e.g., to perform model-checking or automatic test case generation. Nonetheless, producing such mod- els is usually tedious and error-prone. Model inference is a research field helping in producing models by generating partial models from documentation or execution traces (ob- served action sequences). This paper presents a new model generation method combining model inference and expert systems. It appears that an engineer is able to recognise the functional behaviours of an application from its traces by applying deduction rules. We propose a framework, applied to Web applications, simulating this reasoning mechanism, with inference rules organised into layers. Each yields par- tial IOSTSs (Input Output Symbolic Transition Systems), which become more and more abstract and understandable.},
+   keywords = {Model inference, automatic testing, IOSTS, expert system},
+   address = {Hanoi, Vietnam},
+   publisher = {ACM},}
+
+@techreport { RR-13-04,
+   AUTHOR = {Sébastien Salva},
+   TITLE = {A Model-based testing approach combining passive testing and runtime verification. Application to Web service composition testing in Clouds, Reseach report RR13-04},
+   YEAR = {2013},
+   month = {04},}
+
+@phdthesis { RR-13-04,
+   AUTHOR = {Sébastien Salva},
+   TITLE = {A Model-based testing approach combining passive testing and runtime verification. Application to Web service composition testing in Clouds, Reseach report RR13-04},
+   YEAR = {2013},
+   month = {04},}
+
+@misc { SALV07b,
+   AUTHOR = {S. Salva},
+   TITLE = {Séminaire Llaic clermont ferrand: Etude du test de conformité de systèmes},
+   YEAR = {2007},
+   month = {01},}

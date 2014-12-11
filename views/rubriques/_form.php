@@ -9,33 +9,42 @@ use yii\helpers\ArrayHelper;
 /* @var $model app\models\Rubrique */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<script src="<?php echo '/site_chercheur_licence/ckeditor/ckeditor.js'; ?>"></script>
-
+<script src="<?php echo '/site_chercheur_licence-master/ckeditor/ckeditor.js'; ?>"></script>
 
 <div class="rubrique-form">
+		
 
     <?php $form = ActiveForm::begin(); ?>
+    
+    <?= $form->field($modelM, 'titre_fr')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'date_creation')->hiddenInput(array('value'=>date('Y-m-d'))) ?>
+    <?= $form->field($modelM, 'titre_en')->textInput(['maxlength' => 20]) ?>
+    
+     <?= $form->field($modelR, 'content_fr')->textarea(['rows' => 6]) ?>
 	
-	<?php  echo(date('Y-m-d')); echo"</br></br></br>";?>
+    <?= $form->field($modelR, 'content_en')->textarea(['rows' => 6]) ?>
+
+    <?= $form->field($modelM, 'actif')->textInput() ?>
+
+    <?= $form->field($modelM, 'position')->textInput() ?>
+
+    <?= $form->field($modelR, 'date_creation')->hiddenInput(array('value'=>date('Y-m-d'))) ?>
 	
-    <?= Html::activeHiddenInput($model,'date_modification',$option = ['value' => date('Y-m-d')]) ?>
+	<?php  echo(date('Y-m-d')); echo"</br></br>";?>
 	
-    <?= $form->field($model, 'content_fr')->textarea(['rows' => 6]) ?>
-	
-    <?= $form->field($model, 'content_en')->textarea(['rows' => 6]) ?>
+    <?= Html::activeHiddenInput($modelR,'date_modification',$option = ['value' => date('Y-m-d')]) ?>
+    
+    <?= Html::activeHiddenInput($modelR,'menu_id',$option = ['value' => '']); ?>
 
 
-	<?php 
-// listName est le nom de la balise, 1 est le option selected et array on aura une focntion qui récupèrera la liste des clefs 
+<!--// listName est le nom de la balise, 1 est le option selected et array on aura une focntion qui récupèrera la liste des clefs 
 // etrangères et on les ajoutera a un tableau qu'on passera en paramètre
-	echo Html::activeDropDownList($model, 'menu_id', ArrayHelper::map(Menu::find()->all(), 'id','titre_fr')); 
-	?>
+	//echo Html::activeDropDownList($model, 'menu_id', ArrayHelper::map(Menu::find()->all(), 'id','titre_fr')); -->
+
 	</br></br>
 	
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($modelR->isNewRecord ? 'Create' : 'Update', ['class' => $modelR->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

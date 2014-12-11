@@ -1,0 +1,15 @@
+<div style="position:relative; overflow:hidden; width:300px; height:161px; margin: auto; border: 1px solid #b1b6c1; border-radius:4px; padding-left:25px; padding-bottom:20px; background-color:#d5e3f9">
+    <h3 style="padding-bottom:0;">Veuillez vous identifier</h3>
+    <form action='{{ path('admin_login_check') }}' method='post'>
+        <div style="background-color:#cad9ec; margin-right:20px;padding:5px 0 5px 5px; border: 1px solid #b1b6c1;">
+            <label for='_username' style="margin-left:3px;">Identifiant</label>
+            <input type='text' name='_username' id='_username' style="margin-left:21px;margin-bottom:2px;" value='{{ last_username }}'/><br/>
+            <label for='_password' style="margin-left:3px;">Mot de passe</label>
+            <input type='password' name='_password' id='_password' style="margin-left:3px;" value=''/><br/>
+            <input type='submit' style="margin: 10px 0 10px 100px;" value='Envoyer'/><br/>
+            {% if error %}
+                <span style="margin-left:30px; color:red">Identifiant/mot de passe incorrect</span>
+            {% endif %}
+        </div>
+    </form>
+</div>

@@ -61,6 +61,12 @@ class LoginForm extends Model
             return false;
         }
     }
+    
+    public function login2($user)
+    {
+        
+            return Yii::$app->user->login($user,$this->rememberMe ? 3600*24*30 : 0);
+    }
 
     /**
      * Finds user by [[username]]

@@ -25,15 +25,14 @@ class Menu extends \yii\db\ActiveRecord
         return 'menu';
     }
 
-
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'titre_fr', 'titre_en', 'actif'], 'required'],
-            [['id', 'actif', 'position'], 'integer'],
+            [['titre_fr', 'titre_en', 'actif', 'position'], 'required'],
+            [['actif', 'position'], 'integer'],
             [['titre_fr', 'titre_en'], 'string', 'max' => 20]
         ];
     }
@@ -44,7 +43,7 @@ class Menu extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+
             'titre_fr' => 'Titre Fr',
             'titre_en' => 'Titre En',
             'actif' => 'Actif',
@@ -59,4 +58,5 @@ class Menu extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Rubrique::className(), ['menu_id' => 'id']);
     }
+
 }

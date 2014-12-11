@@ -1,17 +1,61 @@
+<!DOCTYPE html>
+
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\Menu;
+use app\librairies\FonctionsCurl;
+use app\librairies\FonctionsMenus;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
+
+$session = Yii::$app->session;
+
+$session->open();
+$language = $session->get('language');
+
+if(!isset($language))
+{
+$language='fr';
+}
+
+
+
+$rs = array();
+
+try{
+$rs = FonctionsMenus::getMenusActifs($language);
+}
+catch(Exception $e)
+{
+	echo"no menus";
+}
+
+if($language=='fr')
+{
+	$connexion = 'Connexion';
+	$deconnexion = 'Déconnexion';
+	$GRubriques = 'Gestion Rubriques';
+	$GPublications = 'Gestion Publications';
+}
+else
+{
+	$connexion = 'Login';
+	$deconnexion = 'Logout';
+	$GRubriques = 'Section management';
+	$GPublications = 'Publications management';
+}
+
+
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
+
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
@@ -19,45 +63,122 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+	  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	  <script>var jQuery = $.noConflict(true);</script>
+	  <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="js/jquery.tablesorter.pager.js"></script>
+
+  
+	<link rel="stylesheet" href="css/pop-up.css">
+
 </head>
 <body>
 
 <?php $this->beginBody() ?>
+
     <div class="wrap">
+	<img src="uploads/logo.png" alt="logo" style="width:20%; margin-left:-60%;padding-bottom:30px;margin-top:20px;">
+	<div id="language">
+	<a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
+	<a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a>
+	</div>
         <?php
             NavBar::begin([
-                'brandLabel' => 'Site enseignant chercheur',
+                //'brandLabel' => 'Site enseignant chercheur',
+				
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-inverse',
                 ],
             ]);
 			if(Yii::$app->user->isGuest)
 			{
-			echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    ['label' => 'Login', 'url' => ['/site/login']],
-                ],
-            ]);
-            NavBar::end();
+				if($language == 'fr')
+				{
+					foreach($rs as $titre)
+					{
+					echo Nav::widget([
+						'options' => ['class' => 'navbar-nav navbar-left'],
+						'items' => [
+						
+						FonctionsMenus::listerRubriques($rs, $titre, $language)
+
+						],
+					]);
+						
+					}
+				}
+				elseif($language =='en')
+				{
+					foreach($rs as $titre)
+					{
+					echo Nav::widget([
+						'options' => ['class' => 'navbar-nav navbar-left'],
+						'items' => [					
+						
+						FonctionsMenus::listerRubriques($rs, $titre, $language)
+						
+						],
+					]);
+						
+					}
+				}
+
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [
+						['label' => 'Publications', 'url' => ['/site/publications']],
+
+						['label' => $connexion, 'url' => ['/site/login']],						
+
+					],
+				]);
+				NavBar::end();
 			}
 			else
 			{
+			
+			if($language == 'fr')
+			{
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [
+					
+					FonctionsMenus::listerRubriques($rs, $titre, $language)
+
+					],
+				]);
+					
+				}
+			}
+			elseif($language =='en')
+			{
+				foreach($rs as $titre)
+				{
+				echo Nav::widget([
+					'options' => ['class' => 'navbar-nav navbar-left'],
+					'items' => [					
+					
+					FonctionsMenus::listerRubriques($rs, $titre, $language)
+					
+					],
+				]);
+					
+				}
+			}
+
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-        
-					['label' => 'Gestion Menu', 'url' => ['/menu/index']],
-					['label' => 'Gestion Rubriques', 'url' => ['/rubriques/index']], 
+					['label' => 'Publications', 'url' => ['/site/publications']],
+					['label' => 'Changer logo', 'url' => ['/site/logo']],
+					['label' => $GRubriques, 'url' => ['/rubriques/index']],
+					['label' => $GPublications, 'url' => ['/publication/index']], 
 						
-						['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+						['label' => $deconnexion.' (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],
@@ -65,24 +186,6 @@ AppAsset::register($this);
             NavBar::end();
 			}
 			
-			//code d'origine 
-			
-            /*echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-						['label' => 'Gestion Menu', 'url' => ['/menu']],
-						['label' => 'Gestion Rubriques', 'url' => ['/rubriques']],
-                ],
-            ]);
-            NavBar::end();*/
         ?>
 
         <div class="container">

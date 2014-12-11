@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Rubriques', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+if(!Yii::$app->user->isGuest):
 ?>
 <div class="rubrique-view">
 
@@ -24,17 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'date_creation',
-            'date_modification',
-            'content_fr:ntext',
-            'content_en:ntext',
-            'menu_id',
-        ],
-    ]) ?>
-
+		<?php echo($model->content_fr); ?>
 </div>
+<?php endif; ?>
