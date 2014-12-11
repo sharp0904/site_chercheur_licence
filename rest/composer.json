@@ -1,15 +1,26 @@
 {
-    "name": "",
-    "description": "",
-    "license": "",
-    "keywords": [],
-    "authors": [],
+    "name": "webServicesTeacherSearcherWebsite",
+    "description": "Web Services for TeacherSearcher website",
+    "keywords": [
+        "web services",
+        "Silex"
+    ],
+    "authors": [
+        {
+            "name": "Nicolas Bascon",
+            "email": "nico.bascon@live.fr",
+            "role": "Developer"
+        },
+        {
+            "name": "Yannis Richard",
+            "email": "yannisrichard63@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "silex/silex": "~1.2",
         "doctrine/dbal": "~2.2",
-        "symfony/security": "~2.3",
-        "twig/twig": ">=1.8,<2.0-dev",
-        "symfony/twig-bridge": "~2.3"
+        "symfony/security": "~2.3"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*",

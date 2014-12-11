@@ -1,7 +1,9 @@
 <?php
+
 namespace Appli\Tests\Functional;
 
 use Silex\WebTestCase;
+use Appli\PasswordEncoder;
 
 class AuthenticationTest extends WebTestCase
 {
@@ -9,103 +11,85 @@ class AuthenticationTest extends WebTestCase
     {
         $app = require __DIR__ . '/../../../../app/app.php';
         $app['debug'] = true;
-        $app['session.test'] = true;
 
         return $app;
     }
 
-    public function testInitialPage()
+    /**
+     * Test page login sans contenu.
+     */
+    public function testLoginPageWithoutContent()
     {
         $client = $this->createClient();
-        $client->request('GET', '/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $client->request('POST', '/login');
+
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals('No content', $client->getResponse()->getContent());
     }
 
-    public function testLoginErrorLanguage()
+    /**
+     * Test page login sans l'attribut username.
+     */
+    public function testLoginPageWithoutUsernameAttribute()
     {
         $client = $this->createClient();
-        $client->request('GET', '/login', array(), array(), array(
-            'CONTENT_TYPE'  => 'it',
+        $client->request('POST', '/login', array(), array(), array(),
+            '{"password":"admin"}');
 
-        ),   null);
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Attributes username or password not here', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test page login sans l'attribut password.
+     */
+    public function testLoginPageWithoutPasswordAttribute()
+    {
+        $client = $this->createClient();
+        $client->request('POST', '/login', array(), array(), array(),
+            '{"username":"admin"}');
+
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Attributes username or password not here', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test page login avec un username inexistant.
+     */
+    public function testLoginPageWithNonExistingUser()
+    {
+        $client = $this->createClient();
+        $client->request('POST', '/login', array(), array(), array(),
+            '{"username":"toto","password":"admin"}');
+
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
+        $this->assertEquals('User don\'t exist', $client->getResponse()->getContent());
     }
 
-    public function testLoginCorrectLanguage()
+    /**
+     * Test page login avec un password faux par rapport a l'username.
+     */
+    public function testLoginPageWithFalsePassword()
     {
         $client = $this->createClient();
-        $client->request('GET', '/login', array(), array(), array(
-                'CONTENT_TYPE'  => 'fr',
-            ), null);
-        $this->assertNotEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertNotEquals('Language needed: French or English', $client->getResponse()->getContent());
-    }
+        $client->request('POST', '/login', array(), array(), array(),
+            '{"username":"admin","password":"toto"}');
 
-    public function testDisplayLoginFormFR()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'fr',
-        ), null);
-        $this->assertContains('Veuillez vous identifier', $client->getResponse()->getContent());
-        $this->assertContains('Identifiant', $client->getResponse()->getContent());
-        $this->assertContains('Mot de passe', $client->getResponse()->getContent());
-        $this->assertContains('Envoyer', $client->getResponse()->getContent());
-    }
-
-    public function testDisplayLoginFormEN()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en',
-        ), null);
-        $this->assertContains('Please identify', $client->getResponse()->getContent());
-        $this->assertContains('Login', $client->getResponse()->getContent());
-        $this->assertContains('Password', $client->getResponse()->getContent());
-        $this->assertContains('Submit', $client->getResponse()->getContent());
-    }
-
-    public function testAdminPageWithoutConnection()
-    {
-        $client = $this->createClient();
-        $client->request('GET', '/admin');
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
     }
 
-    public function testAdminPageFR()
+    /**
+     * Test page login avec username et password valide.
+     */
+    public function testLoginPageWithCorrectPassword()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'fr'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Envoyer');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('POST', '/login', array(), array(), array(),
+            '{"username":"admin","password":"admin"}');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
-    }
-
-    public function testAdminPageEN()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $encoder = new PasswordEncoder();
+        $this->assertEquals($encoder->encodePassword('Admin connected'), $client->getResponse()->getContent());
     }
 }

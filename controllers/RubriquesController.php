@@ -126,6 +126,20 @@ class RubriquesController extends Controller
 
         return $this->redirect(['index']);
     }
+    
+    public function actionDeletemulti()
+    {
+		
+        if (isset($_POST['keylist'])) {
+			$champSelec = $_POST['keylist'];
+			foreach($champSelec as $key => $value)
+			{
+				$this->findModel($value)->delete();	
+			}	
+			return true;
+		}
+		return $this->redirect(['index']);
+    }
 
     /**
      * Finds the Rubrique model based on its primary key value.

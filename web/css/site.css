@@ -3,42 +3,51 @@ body {
     height: 100%;
 }
 
-#selecBib {
-}
-
-#validerUpBib {
-	display: none;
-}
-
 .fileInput {
 	display: inline-block;
 	padding : 20px;
-}
-
-#deleteMulti {
-	margin: 25px;
-	float: right;
 }
 
 #error{
 	color: red;
 	font-weight: bold;
 	margin-top: 25px;
-	margin-left: 10%;
 }
 
-.btn-delete:hover, .btn-delete:focus, .btn-delete:active, .btn-delete.active, .open > .dropdown-toggle.btn-delete {
-color: #fff;
-background-color: #E22B00;
-border-color: #EA2400;
+#formu {
+border-right: 1px solid gray;
+box-shadow: 3px 3px 23px gray;
+border-radius: 10px;
+margin: 35px;
 }
 
-.btn-delete {
-color: #fff;
-background-color: #F20000;
-border-color: #D50505;
+.publication-update, .publication-create{
+height: 500px;
+overflow: scroll;
+background: gainsboro;
 }
 
+.volume, .number, .pages, .note, .abstract, .keywords, .series, .localite, .publisher, .editor, .date_display, .categorie_id, .titreen, .contenten, .dateCreation, .dateModification {
+	display:none;
+}
+
+#check {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#check tbody{
+	text-align: left;
+}
+
+#check td{
+	padding-right: 70px;
+	padding-bottom: 10px;
+}
+
+#language{
+margin-left:50%;
+}
 .text-contener {
 border: 1px solid #b1cbe4;
 background-image: url(images/text-border-right.png);
@@ -58,14 +67,6 @@ padding-left: 25px;
 background-color: #FFF;
 background-image: url(images/text-border-left.png);
 background-repeat: repeat-y;
-}
-
-table
-{
-	width: 90%;
-	background-color: white;
-	margin-left:auto;
-	margin-right:auto;
 }
 
 .wrap {
@@ -274,10 +275,25 @@ a:hover
     color: #b40000;
     font-size: 12px;
 }
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: blue;
+}
 
 .logo
 {
-    width: 348px;
+    width: 20%;
     height: 100px;
 
 
@@ -352,7 +368,9 @@ a:hover
 
 .site-index 
 {
-    
+	padding:20px;
+    box-shadow: 6px 6px 6px #4552D9 inset;
+	border-radius:30px;
     width: 100%;
 }
 
@@ -641,12 +659,21 @@ a:hover
     color: #333333;
 }
 
+.publications-items
+{
+    width: 100%;
+    
+    margin-top: 3px;
+}
+
 .publications-item
 {
+    width: 100%;
+
     margin-top: 3px;
     margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 6px;
+    margin-right: 6px;
     font-size: 12px;
 }
 
@@ -683,11 +710,6 @@ a:hover
 .publi-journal
 {
     font-weight: bold;
-}
-
-.publi-cat
-{
-	display:none;
 }
 
 .publi-editor
@@ -732,8 +754,7 @@ a:hover
 
 .publi-note
 {
-max-height: 50px;
-overflow: hidden;
+    
 }
 
 .publi-abstract

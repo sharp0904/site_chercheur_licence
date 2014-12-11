@@ -37,23 +37,26 @@ class PublicationController extends Controller
      */
     public function actionIndex()
     {
-		$searchModel = new PublicationSearch();
-		$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 		$model = new Bibtex();
 		
-			if (Yii::$app->request->isPost) {
-				$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
-				if(isset($model->Bibtex) && $model->Bibtex->extension == 'bib')
-				{
-					$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
-					PublicationController::uploadBibtex($model->Bibtex);
-				}				
-			}		
-			return $this->render('index', [
-			'searchModel' => $searchModel,
-			'dataProvider' => $dataProvider,
-			'model' => $model,
-			]);	
+		if (Yii::$app->request->isPost) {
+			$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
+			if(isset($model->Bibtex) && $model->Bibtex->extension == 'bib')
+			{
+				$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
+				PublicationController::uploadBibtex($model->Bibtex);
+			}				
+		}		
+		return $this->render('index', [
+		'model' => $model,
+		]);	
+    }
+    
+    
+    public function actionTab()
+    {
+		$tab = array('reference' => '5', 'authors' => 'Poupoupidou', 'titre' => 'ppp', 'date' => '2014-05-08', 'journal' => 'mmmmm');
+		echo json_encode($tab);
     }
 
     /**

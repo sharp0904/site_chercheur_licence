@@ -1,373 +1,372 @@
 <?php
+
 namespace Appli\Tests\Functional;
 
 use Silex\WebTestCase;
+use Appli\PasswordEncoder;
 
-class CategorieTest extends WebTestCase
+class CategoriesTest extends WebTestCase
 {
     public function createApplication()
     {
         $app = require __DIR__ . '/../../../../app/app.php';
         $app['debug'] = true;
-        $app['session.test'] = true;
 
         return $app;
     }
 
+    /**
+     * Test GET /categories sans categories.
+     */
     public function testGetAllCategoriesWithoutCategories()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin/categories', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('GET', '/categories');
 
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('No categories', $client->getResponse()->getContent());
     }
 
-    public function testPostCategorieWithoutConnection()
-    {
-        $client = $this->createClient();
-        $client->request('POST', '/admin/categorie');
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
-    }
-
+    /**
+     * Test POST /categorie sans contenu.
+     */
     public function testPostCategorieWithoutContent()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $client->request('POST', '/admin/categorie', array(), array(), array(), null);
+        $client->request('POST', '/admin/categorie');
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('No content', $client->getResponse()->getContent());
     }
 
-    public function testPostCategorieWithoutNameFR()
+    /**
+     * Test POST /categorie sans l'attribut a (pour la connexion).
+     */
+    public function testPostCategorieWithoutAAttribute()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('POST', '/admin/categorie', array(), array(), array(),
+            '{"name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}');
 
-        $client->request('POST', '/admin/categorie', array(), array(), array(), '{"name_en":"International and national conferences"}');
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test POST /categorie avec l'attribut a faux.
+     */
+    public function testPostCategorieWithAAttributeFalse()
+    {
+        $client = $this->createClient();
+        $client->request('POST', '/admin/categorie', array(), array(), array(),
+            '{"a":"toto","name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}');
+
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test POST /categorie sans l'attribut name_fr.
+     */
+    public function testPostCategorieWithoutNameFrAttribute()
+    {
+        $client = $this->createClient();
+        $encoder = new PasswordEncoder();
+        $client->request('POST', '/admin/categorie', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","name_en":"International and national conferences"}');
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Attributes name_fr or name_en not here', $client->getResponse()->getContent());
     }
 
-    public function testPostCategorieWithoutNameEN()
+    /**
+     * Test POST /categorie sans l'attribut name_en.
+     */
+    public function testPostCategorieWithoutNameEnAttribute()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $client->request('POST', '/admin/categorie', array(), array(), array(), '{"name_fr":"Conferences nationales et internationales"}');
+        $encoder = new PasswordEncoder();
+        $client->request('POST', '/admin/categorie', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","name_fr":"Conferences nationales et internationales"}');
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Attributes name_fr or name_en not here', $client->getResponse()->getContent());
     }
 
-    public function testPostCategorieWithoutID()
+    /**
+     * Test POST /categorie sans l'attribut ID.
+     */
+    public function testPostCategorieWithoutId()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $client->request('POST', '/admin/categorie', array(), array(), array(), '{"name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}');
+        $encoder = new PasswordEncoder();
+        $client->request('POST', '/admin/categorie', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Categorie created', $client->getResponse()->getContent());
     }
 
-     public function testPostCategorieWithID()
-     {
-         $client = $this->createClient();
-         $crawler = $client->request('GET', '/admin', array(), array(), array(
-             'CONTENT_TYPE'  => 'en'
-         ), null);
-         $buttonCrawlerNode = $crawler->selectButton('Submit');
-         $form = $buttonCrawlerNode->form(array(
-             '_username' => 'admin',
-             '_password' => 'admin',
-         ));
-         $client->submit($form);
-
-         $client->request('POST', '/admin/categorie', array(), array(), array(), '{"ID":2,"name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}');
-
-         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-         $this->assertEquals(null, $client->getResponse()->getContent());
-    }
-
-    public function testGetAllCategoriesWithoutConnection()
+    /**
+     * Test POST /categorie avec l'attribut ID.
+     */
+    public function testPostCategorieWithId()
     {
         $client = $this->createClient();
-        $client->request('GET', '/admin/categories');
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
+        $encoder = new PasswordEncoder();
+        $client->request('POST', '/admin/categorie', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","ID":"1","name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Categorie created', $client->getResponse()->getContent());
     }
 
+    /**
+     * Test GET /categories ok.
+     */
     public function testGetAllCategories()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin/categories', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('GET', '/categories');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertContains('[{', $client->getResponse()->getContent());
         $this->assertContains('International and national conferences', $client->getResponse()->getContent());
     }
 
-    public function testGetCategorieByIdWithoutConnection()
+    /**
+     * Test GET /categories/id avec un ID inexistant.
+     */
+    public function testGetCategorieByIDWithoutExistingId()
     {
         $client = $this->createClient();
-        $client->request('GET', '/admin/categories/1');
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
-    }
-
-    public function testGetCategorieByNonExistingId()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin/categories/1000', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('GET', '/categories/1000');
 
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Categorie doesn\'t exist', $client->getResponse()->getContent());
     }
 
-    public function testGetCategorieByExistingId()
+    /**
+     * Test GET /categories/id avec un ID existant.
+     */
+    public function testGetCategorieByIdWithExistingId()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin/categories/2', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('GET', '/categories/1');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals('{"ID":"2","name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}',
-                    $client->getResponse()->getContent());
+        $this->assertEquals('{"ID":"1","name_fr":"Conferences nationales et internationales","name_en":"International and national conferences"}', $client->getResponse()->getContent());
     }
 
-    public function testUpdateCategorieWithoutConnection()
+    /**
+     * Test PUT /categories/id sans contenu.
+     */
+    public function testPutCategorieByIdWithoutContent()
     {
         $client = $this->createClient();
-        $client->request('PUT', '/admin/categories/2');
+        $client->request('PUT', '/admin/categories/1');
+
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals('No content', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test PUT /categories/id sans l'attribut a (pour la connexion).
+     */
+    public function testPutCategorieByIdWithoutAAttribute()
+    {
+        $client = $this->createClient();
+        $client->request('PUT', '/admin/categories/1', array(), array(), array(),
+            '{}');
+
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test PUT /categories/id avec l'attribut a faux.
+     */
+    public function testPutCategorieByIdWithAAttributeFalse()
+    {
+        $client = $this->createClient();
+        $client->request('PUT', '/admin/categories/1', array(), array(), array(),
+            '{"a":"toto"}');
+
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test PUT /categories/id avec un ID inexistant.
+     */
+    public function testPutCategorieByIdWithoutExistingId()
+    {
+        $client = $this->createClient();
+        $encoder = new PasswordEncoder();
+        $client->request('PUT', '/admin/categories/1000', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'"}');
+
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
+        $this->assertEquals('Categorie doesn\'t exist', $client->getResponse()->getContent());
     }
 
-    public function testUpdateCategorieWithoutContent()
+    /**
+     * Test PUT /categories/id sans l'attribut name_fr.
+     */
+    public function testPutCategorieByIdWithoutNameFr()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $encoder = new PasswordEncoder();
+        $client->request('PUT', '/admin/categories/1', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","name_en":"International conferences"}');
 
-        $client->request('PUT', '/admin/categories/2', array(), array(), array(), null);
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Attributes name_fr or name_en not here', $client->getResponse()->getContent());
     }
 
-    public function testUpdateCategorieByNonExistingId()
+    /**
+     * Test PUT /categories/id sans l'attribut name_en.
+     */
+    public function testPutCategorieByIdWithoutNameEn()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $encoder = new PasswordEncoder();
+        $client->request('PUT', '/admin/categories/1', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","name_fr":"Conferences internationales"}');
 
-        $client->request('PUT', '/admin/categories/1000', array(), array(), array(), '{"name_fr":"Conferences nationales","name_en":"National conferences"}');
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
-    }
-
-    public function testUpdateCategorieWithoutNameFR()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $client->request('PUT', '/admin/categories/2', array(), array(), array(), '{"name_en":"National conferences"}');
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Attributes name_fr or name_en not here', $client->getResponse()->getContent());
     }
 
-    public function testUpdateCategorieWithoutNameEN()
+    /**
+     * Test PUT /categories/id ok.
+     */
+    public function testPutCategorieById()
     {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+       $client = $this->createClient();
+        $encoder = new PasswordEncoder();
+        $client->request('PUT', '/admin/categories/1', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'","name_fr":"Conferences internationales","name_en":"International conferences"}');
 
-        $client->request('PUT', '/admin/categories/2', array(), array(), array(), '{"name_fr":"Conferences nationales"}');
-        $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
-    }
-
-    public function testUpdateCategorie()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $client->request('PUT', '/admin/categories/2', array(), array(), array(), '{"name_fr":"Conferences nationales","name_en":"National conferences"}');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Categorie updated', $client->getResponse()->getContent());
     }
 
-    public function testDeleteCategorieWithoutConnection()
+    /**
+     * Test DELETE /categories/id sans contenu.
+     */
+    public function testDeleteCategorieByIdWithoutContent()
     {
         $client = $this->createClient();
-        $client->request('DELETE', '/admin/categories/2');
+        $client->request('DELETE', '/admin/categories/1');
+
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals('No content', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test DELETE /categories/id sans l'attribut a (pour la connexion).
+     */
+    public function testDeleteCategorieByIdWithoutAAttribute()
+    {
+        $client = $this->createClient();
+        $client->request('DELETE', '/admin/categories/1', array(), array(), array(),
+            '{}');
+
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test DELETE /categories/id avec l'attribut a faux.
+     */
+    public function testDeleteCategorieByIdWithAAttributeFalse()
+    {
+        $client = $this->createClient();
+        $client->request('DELETE', '/admin/categories/1', array(), array(), array(),
+            '{"a":"toto"}');
+
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test DELETE /categories/id avec un ID inexistant.
+     */
+    public function testDeleteCategorieByIdWithoutExistingId()
+    {
+        $client = $this->createClient();
+        $encoder = new PasswordEncoder();
+        $client->request('DELETE', '/admin/categories/1000', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'"}');
+
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
+        $this->assertEquals('Categorie doesn\'t exist', $client->getResponse()->getContent());
     }
 
-    public function testDeleteCategorieByNonExistingId()
+    /**
+     * Test DELETE /categories/id avec un ID existant.
+     */
+    public function testDeleteCategorieByIdWithExistingId()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $encoder = new PasswordEncoder();
+        $client->request('DELETE', '/admin/categories/1', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'"}');
 
-        $client->request('DELETE', '/admin/categories/1000', array(), array(), array(), null);
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
-    }
-
-    public function testDeleteCategorieByExistingId()
-    {
-        $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
-
-        $client->request('DELETE', '/admin/categories/2', array(), array(), array(), null);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Categorie deleted', $client->getResponse()->getContent());
     }
 
-    public function testDeleteAllCategorieWithoutConnection()
+    /**
+     * Test DELETE /categories sans contenu.
+     */
+    public function testDeleteCategoriesWithoutContent()
     {
         $client = $this->createClient();
         $client->request('DELETE', '/admin/categories');
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-        $this->assertEquals('Language needed: French or English', $client->getResponse()->getContent());
+
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals('No content', $client->getResponse()->getContent());
     }
 
-    public function testDeleteAllCategorie()
+    /**
+     * Test DELETE /categories sans l'attribut a (pour la connexion).
+     */
+    public function testDeleteCategoriesWithoutAAttribute()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/admin', array(), array(), array(
-            'CONTENT_TYPE'  => 'en'
-        ), null);
-        $buttonCrawlerNode = $crawler->selectButton('Submit');
-        $form = $buttonCrawlerNode->form(array(
-            '_username' => 'admin',
-            '_password' => 'admin',
-        ));
-        $client->submit($form);
+        $client->request('DELETE', '/admin/categories', array(), array(), array(),
+            '{}');
 
-        $client->request('DELETE', '/admin/categories', array(), array(), array(), null);
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test DELETE /categories avec l'attribut a faux.
+     */
+    public function testDeleteCategoriesWithAAttributeFalse()
+    {
+        $client = $this->createClient();
+        $client->request('DELETE', '/admin/categories', array(), array(), array(),
+            '{"a":"toto"}');
+
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());
+        $this->assertEquals('Admin not connected', $client->getResponse()->getContent());
+    }
+
+    /**
+     * Test DELETE /categories ok.
+     */
+    public function testDeleteCategories()
+    {
+        $client = $this->createClient();
+        $encoder = new PasswordEncoder();
+        $client->request('DELETE', '/admin/categories', array(), array(), array(),
+            '{"a":"' . $encoder->encodePassword('Admin connected') .'"}');
+
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals(null, $client->getResponse()->getContent());
+        $this->assertEquals('Categories deleted', $client->getResponse()->getContent());
     }
 }

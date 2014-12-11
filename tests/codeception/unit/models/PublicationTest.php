@@ -298,5 +298,10 @@ class PublicationTest extends TestCase
         $model->save();
 		$publiController = PublicationController::findModel($model->ID);
 	}
+	
+	public function testDeleteMulti()
+	{
+		PublicationController::actionDeletemulti();
+	}
 
 }
