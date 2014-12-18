@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use app\models\Publication;
 
 
 /* @var $this yii\web\View */
@@ -18,3 +19,8 @@ $this->title = 'Create Publication';
     ]) ?>
 
 </div>
+<script type="text/javascript">
+	// data correspond aux attributs de publications. Utiles dans web/js/publication-index.js
+	var data =<?php echo(json_encode(Publication::getLabels()));?>;
+</script>
+<script type="text/javascript" src="js/create-publi.js"></script>

@@ -1,0 +1,147 @@
+
+
+::selection { background: #5f74a0; color: #fff; }
+::-moz-selection { background: #5f74a0; color: #fff; }
+::-webkit-selection { background: #5f74a0; color: #fff; }
+
+br { display: block; line-height: 1.6em; } 
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+input, textarea { 
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none; 
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong, b { font-weight: bold; } 
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+h1 { 
+  font-family: 'Amarante', Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 3.6em;
+  line-height: 1.7em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+/** page structure **/
+#wrapper {
+  display: block;
+  width: 850px;
+  background: #fff;
+  margin: 0 auto;
+  padding: 10px 17px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+}
+
+#keywords {
+  margin: 0 auto;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  width: inherit;
+}
+
+
+#keywords thead {
+  cursor: pointer;
+  background-image: url('images/menu_bg.png');
+  color:white;
+}
+#keywords thead tr th { 
+  font-weight: bold;
+  padding-right: 30px;
+  padding-left: 42px;
+}
+#keywords thead tr th span { 
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
+background-image: url('images/menu_bg.png');
+  color:white;}
+
+#keywords thead tr th.headerSortUp span {
+  background-image: url('up-arrow.png');
+}
+#keywords thead tr th.headerSortDown span {
+  background-image: url('down-arrow.png');
+}
+
+
+#keywords tbody tr { 
+  color: #555;
+}
+#keywords tbody tr td {
+  text-align: center;
+  border: 1px solid #ddd;
+    padding: 12px 30px;
+  padding-left: 42px;
+  font-size:0.9em;
+}
+#keywords tbody tr td.lalign {
+  text-align: left;
+}
+#keywords tfoot tr th { 
+  font-weight: bold;
+  padding-right: 30px;
+  padding-left: 42px;
+}
+
+#keywords tfoot {
+  background-image: url('images/menu_bg.png');
+  color:white;
+}
+
+
+
+.pager { 
+  padding: 5px; 
+} 
+/* pager wrapper, in thead/tfoot */ 
+td.pager { 
+  background-color: #e6eeee; 
+} 
+/* pager navigation arrows */ 
+.pager img { 
+  vertical-align: middle; 
+  margin-right: 2px; 
+} 
+/* pager output text */ 
+.pager .pagedisplay { 
+  font-size: 11px; 
+  padding: 0 5px 0 5px; 
+  width: 50px; 
+  text-align: center; 
+} 
+ 
+/*** loading ajax indeterminate progress indicator ***/ 
+#tablesorterPagerLoading { 
+  background: rgba(255,255,255,0.8) url(icons/loading.gif) center center no-repeat; 
+  position: absolute; 
+  z-index: 1000; 
+} 
+ 
+/*** css used when "updateArrows" option is true ***/ 
+/* the pager itself gets a disabled class when the number of rows is less than the size */ 
+.pager.disabled { 
+  display: none; 
+} 
+/* hide or fade out pager arrows when the first or last row is visible */ 
+.pager img.disabled { 
+  /* visibility: hidden */ 
+  opacity: 0.5; 
+  filter: alpha(opacity=50); 
+}

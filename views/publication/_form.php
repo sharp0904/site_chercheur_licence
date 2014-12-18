@@ -38,7 +38,7 @@ use yii\jui\DatePicker;
 
     <label class="control-label"><?= 'Année: ' ?></label>
     <select name="year" id="year">
-		<?php for($cpt=date('Y')-20; $cpt<=date('Y'); $cpt++)
+		<?php for($cpt=date('Y')-10; $cpt<=date('Y'); $cpt++)
 		{
 			echo('<option value="'.$cpt.'">'.$cpt.'</option>');
 		}
