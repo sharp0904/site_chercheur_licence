@@ -6,9 +6,10 @@ use yii\helpers\Url;
 use app\models\Publication;
 use app\models\Categorie;
 use yii\jui\Dialog;
-
+use app\librairies\FonctionsPublications;
 
 include('fonctions_tri_publi.php');
+
 
 $session = Yii::$app->session;
 if (isset($_GET["locale"])) {
@@ -18,14 +19,9 @@ if (isset($_GET["locale"])) {
 $language = $session->get('language');
 
 
-function getPublications()
-{
-	$list = Publication::find()->orderBy(['date' => SORT_DESC])->all();
-	return $list;
-}
 
 
-$rs = getPublications();
+
 $tex = "";
 
 if (isset($_GET["tri"])) {
@@ -55,29 +51,41 @@ $this->title = 'Site enseignant chercheur';
 ?>
 
 <div class="site-index">
-<a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
-<a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a> 
-</br>
-<a href="?r=site/publications&tri=cat"><img src="images/icon-sort.png" /></a> 
 <a href="?r=site/publications&tri=date"><img src="images/icon-sort-date.png" /></a> 
+<a href="?r=site/publications&tri=cat"><img src="images/icon-sort.png" /></a> 
 </br></br>
-<table cellspacing="0" cellpadding="0" style="width: 90%;background-color:white;">
-<tbody><tr>
+
 <?php
-if($tri == 'cat')
-{
-	triPubliParCategorie($rs);
-}
-elseif($tri== 'date')
-{
-	triPubliParDate($rs);
-}
-else
-{
-echo 'veuillez choisir une méthode de tri des publications';
-}
-?></tr>
-</tbody></table>
+
+	if($tri == 'cat')
+	{
+		try{
+		triPubliParCategorie($language);
+		}
+	catch(Exception $e)
+	{
+		echo("Aucune publication");
+	}
+	}
+	elseif($tri== 'date')
+	{
+
+		try{
+		triPubliParDate();
+		}
+	catch(Exception $e)
+	{
+		echo("Aucune publication");
+	}
+
+	}
+	else
+	{
+	echo 'veuillez choisir une méthode de tri des publications';
+	}
+
+?>
+</div></div>
 <?php Dialog::begin([
 	'id' => 'dial-tex',
     'clientOptions' => [
@@ -107,7 +115,5 @@ Dialog::begin([
     ],
 ]);
 Dialog::end();   ?>
-</div>
-</div>
 
-</div>
+

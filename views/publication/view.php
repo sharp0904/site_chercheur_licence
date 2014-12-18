@@ -7,10 +7,9 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Publication */
 
 $this->title = $model->ID;
-$this->params['breadcrumbs'][] = ['label' => 'Publications', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
-<div class="publication-view">
+<div class="site-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

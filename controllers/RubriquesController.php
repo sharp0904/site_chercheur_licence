@@ -10,6 +10,9 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\librairies\FonctionsCurl;
+use app\librairies\FonctionsRubriques;
+use app\librairies\FonctionsMenus;
 
 /**
  * RubriquesController implements the CRUD actions for Rubrique model.
@@ -34,25 +37,23 @@ class RubriquesController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new RubriquesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		if(!Yii::$app->user->isGuest)
+		{
+			$searchModel = new RubriquesSearch();
+			$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+			return $this->render('index', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+			]);
+		}
+		else
+		{
+			return $this->redirect('index.php');
+		}
     }
 
-	/** Met à jour l'id_menu de Rubriques renvoi sur cette rubrique */
-    public function actionMaj($id, $menu_id)
-    {
-		$modelR = $this->findModel($id);
-		$modelR->attributes=array('menu_id'=>$menu_id);
-		$modelR->save();
-        return $this->redirect(['view',
-            'id' => $modelR->id,
-        ]);
-    }
+	
     
 	/**
      * Displays a single Rubrique model.
@@ -61,9 +62,18 @@ class RubriquesController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+		if(!Yii::$app->user->isGuest)
+		{
+			FonctionsRubriques::getRubriqueParidentifiant($id);
+			return $this->render('view', [
+				'model' => FonctionsRubriques::getRubriqueParidentifiant($id),
+
+			]);
+		}
+		else
+		{
+			return $this->redirect('index.php');
+		}
     }
 
 
@@ -74,18 +84,30 @@ class RubriquesController extends Controller
      */
     public function actionCreate()
     {
-        $modelR = new Rubrique();
-        $modelM = new Menu();
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
+			
+			$modelR = new Rubrique();
+			$modelM = new Menu();
+			if ($modelR->load(Yii::$app->request->post()) && $modelM->load(Yii::$app->request->post())) {
+			FonctionsCurl::CreateRubrique($token,$modelM->titre_fr,$modelM->titre_en,$modelM->actif,$modelM->position,$modelR->content_fr,$modelR->content_en);
+					return $this->redirect(['index']);
 
-        if ($modelR->load(Yii::$app->request->post()) && $modelR->save() && $modelM->load(Yii::$app->request->post()) && $modelM->save()) {
-            
-            $this->redirect(['maj', 'id' => $modelR->id, 'menu_id' => $modelM->id]);
-        } else {
-            return $this->render('create', [
-                'modelR' => $modelR,
-                'modelM' => $modelM,
-            ]);
-        }
+
+			} else {
+				return $this->render('create', [
+					'modelR' => $modelR,
+					'modelM' => $modelM,
+				]);
+			}
+		}
+		else
+		{
+			return $this->redirect('index.php');
+		}
     }
 
     /**
@@ -96,18 +118,30 @@ class RubriquesController extends Controller
      */
     public function actionUpdate($id)
     {
-        $modelR = $this->findModel($id);
-        $modelM = MenuController::findModel($modelR->menu_id);
-        
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
 
-        if ($modelR->load(Yii::$app->request->post()) && $modelR->save() && $modelM->load(Yii::$app->request->post()) && $modelM->save()) {
-            return $this->redirect(['maj', 'id' => $modelR->id, 'menu_id' => $modelM->id]);
-        } else {
-            return $this->render('update', [
-                'modelR' => $modelR,
-                'modelM' => $modelM,
-            ]);
-        }
+
+			$modelR = FonctionsRubriques::getRubriqueParidentifiant($id);
+			$modelM = FonctionsMenus::getMenuById($modelR->menu_id);
+			 
+			if ($modelR->load(Yii::$app->request->post()) && $modelM->load(Yii::$app->request->post())) {
+				FonctionsCurl::UpdateRubrique($token,$modelM->ID,$modelM->titre_fr,$modelM->titre_en,$modelM->actif,$modelM->position,$modelR->content_fr,$modelR->content_en);
+				return $this->redirect(['index']);
+			} else {
+				return $this->render('update', [
+					'modelR' => $modelR,
+					'modelM' => $modelM,
+				]);
+			}
+		}
+		else
+		{
+			return $thid->redirect('index.php');
+		}
     }
 
     /**
@@ -118,13 +152,51 @@ class RubriquesController extends Controller
      */
     public function actionDelete($id)
     {
-		$modelR = $this->findModel($id);
-		$modelM = MenuController::findModel($modelR->menu_id);
-        $idMenu = $modelM->id;
-        $this->findModel($id)->delete();
-        MenuController::findModel($idMenu)->delete();
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
 
-        return $this->redirect(['index']);
+
+			$modelR = FonctionsRubriques::getRubriqueParidentifiant($id);
+			$modelM = FonctionsMenus::getMenuById($modelR->menu_id);
+			$idMenu = $modelM->ID;
+
+
+			FonctionsCurl::DeleteRubrique($token,$idMenu);
+			return $this->redirect(['index']);
+		}
+		else
+		{
+			return $thid->redirect('index.php');
+		}
+    }
+
+
+    public function actionDeletemulti()
+    {
+        
+        if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
+
+			if (isset($_POST['keylist'])) {
+				$champSelec = $_POST['keylist'];
+				foreach($champSelec as $key => $value)
+				{
+					FonctionsCurl::DeleteRubrique($token,$value);
+				}   
+				return true;
+			}
+			return $this->redirect(['index']);
+        }
+        else
+		{
+			return $thid->redirect('index.php');
+		}
     }
 
     /**
@@ -134,7 +206,7 @@ class RubriquesController extends Controller
      * @return Rubrique the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected static function findModel($id)
+    public static function findModel($id)
     {
         if (($model = Rubrique::findOne($id)) !== null) {
             return $model;

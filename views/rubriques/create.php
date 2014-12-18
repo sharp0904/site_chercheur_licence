@@ -10,10 +10,9 @@ use yii\helpers\Html;
 
 
 $this->title = 'Create Rubrique';
-$this->params['breadcrumbs'][] = ['label' => 'Rubriques', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
-<div class="rubrique-create">
+<div class="site-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

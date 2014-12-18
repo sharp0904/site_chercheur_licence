@@ -50,6 +50,16 @@ class Menu extends \yii\db\ActiveRecord
             'position' => 'Position',
         ];
     }
+    public static function getLabels()
+    {
+        return [
+
+            'titre_fr' => 'Titre Fr',
+            'titre_en' => 'Titre En',
+            'actif' => 'Actif',
+            'position' => 'Position',
+        ];
+    }
 
     /**
      * @return \yii\db\ActiveQuery

@@ -45,9 +45,10 @@ class Publication extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['reference', 'auteurs', 'titre', 'date', 'categorie_id'], 'required'],
-            [['reference', 'auteurs', 'titre', 'journal', 'volume', 'number', 'pages', 'note', 'abstract', 'keywords', 'series', 'localite', 'publisher', 'editor', 'pdf', 'date_display'], 'string'],
-            [['pdf'],'file','extensions'=>'pdf'],
+            [['reference', 'auteurs', 'titre', 'categorie_id'], 'required'],
+
+            [['reference', 'auteurs', 'titre', 'journal', 'volume', 'number', 'pages', 'note', 'abstract', 'keywords', 'series', 'localite', 'publisher', 'editor',  'date_display'], 'string'],
+            [['pdf'], 'file', 'extensions'=>'pdf'],
             [['date'], 'safe'],
 			[['date'], 'date', 'format'=>'yyyy-M-d'],
             [['categorie_id'], 'integer']
@@ -82,5 +83,28 @@ class Publication extends \yii\db\ActiveRecord
         ];
     }
 
-   
+   public static function getLabels()
+    {
+        return [
+            'ID' => 'ID',
+            'reference' => 'Reference',
+            'auteurs' => 'Auteurs',
+            'titre' => 'Titre',
+            'date' => 'Date',
+            'journal' => 'Journal',
+            'volume' => 'Volume',
+            'number' => 'Number',
+            'pages' => 'Pages',
+            'note' => 'Note',
+            'abstract' => 'Abstract',
+            'keywords' => 'Keywords',
+            'series' => 'Series',
+            'localite' => 'Localite',
+            'publisher' => 'Publisher',
+            'editor' => 'Editor',
+            'pdf' => 'Pdf',
+            'date_display' => 'Date Display',
+            'categorie_id' => 'Categorie ID',
+        ];
+    }
 }

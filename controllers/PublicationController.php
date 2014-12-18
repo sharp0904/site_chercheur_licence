@@ -11,6 +11,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\helpers\Json;
+use app\librairies\FonctionsCurl;
+use app\librairies\FonctionsPublications;
 
 
 /**
@@ -36,23 +39,31 @@ class PublicationController extends Controller
      */
     public function actionIndex()
     {
-		$searchModel = new PublicationSearch();
-		$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		$model = new Bibtex();
 		
-			if (Yii::$app->request->isPost) {
-				$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
-				if(isset($model->Bibtex) && $model->Bibtex->extension == 'bib')
-				{
-					$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
-					PublicationController::uploadBibtex($model->Bibtex);
-				}				
-			}		
-			return $this->render('index', [
-			'searchModel' => $searchModel,
-			'dataProvider' => $dataProvider,
-			'model' => $model,
-			]);	
+		if(!Yii::$app->user->isGuest)
+		{
+			$searchModel = new PublicationSearch();
+			$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+			$model = new Bibtex();
+			
+				if (Yii::$app->request->isPost) {
+					$model->Bibtex = UploadedFile::getInstance($model, 'Bibtex');
+					if(isset($model->Bibtex) && $model->Bibtex->extension == 'bib')
+					{
+						$model->Bibtex->saveAs('uploads/bibtex/' . $model->Bibtex);
+						PublicationController::uploadBibtex($model->Bibtex);
+					}				
+				}		
+				return $this->render('index', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+				'model' => $model,
+				]);	
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -62,39 +73,75 @@ class PublicationController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
+	
+			return $this->render('view', [
+				'model' => FonctionsPublications::getPubliParId($token,$id),
+			]);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
      * Creates a new Publication model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * If creation is successful, the browser will be redirected to the 'index' page.
      * @return mixed
      */
      public function actionCreate()
     {
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
 
-        $model = new Publication(); 
-        if ($model->load(Yii::$app->request->post())) {		
-			if (Yii::$app->request->isPost) {
-				$model->pdf = UploadedFile::getInstance($model, 'pdf');
-				if(isset($model->pdf->baseName))
-				{
-					$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
-					$model->attributes=array('pdf'=>$model->pdf->baseName);
+				$model = new Publication(); 
+				if ($model->load(Yii::$app->request->post())) {		
+					if (Yii::$app->request->isPost) {
+						$model->pdf = UploadedFile::getInstance($model, 'pdf');
+						if(isset($model->pdf->baseName))
+						{
+							$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+							$model->attributes=array('pdf'=>$model->pdf->baseName);
+						}
+					}
+					if(isset($_POST['month']))
+					{
+						$month = $_POST['month'];
+					}
+					else
+					{
+						$month = '01';
+					}
+					if(isset($_POST['year']))
+					{
+						$year = $_POST['year'];
+					}
+					else
+					{
+						$year = date('Y');
+					}
+					$date = $year.'-'.$month.'-01';
+					$model->attributes=array('date'=>$date);
+					FonctionsCurl::CreatePublication($token,$model->reference,$model->auteurs,$model->titre,$model->date,$model->journal,$model->volume,$model->number,$model->pages,$model->note,$model->abstract,$model->keywords,$model->series,$model->localite,$model->publisher,$model->editor,$model->pdf,$model->date_display,$model->categorie_id);
+					return $this->redirect(['index']);
+				} else {
+					return $this->render('create', [
+						'model' => $model,
+					]);
 				}
 			}
-
-			$model->save();
-			return $this->redirect(['view', 'id' => $model->ID]);
-
-			
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+		else
+		{
+			return $this->goHome();
+		}
     }
 	
 
@@ -106,25 +153,55 @@ class PublicationController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
+		   
+			$model = FonctionsPublications::getPubliParId($token,$id);
 
-        if ($model->load(Yii::$app->request->post())) {
-			if (Yii::$app->request->isPost) {
-				$model->pdf = UploadedFile::getInstance($model, 'pdf');
-				if(isset($model->pdf->baseName))
-				{
-					$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
-					$model->attributes=array('pdf'=>$model->pdf->baseName);
+			if ($model->load(Yii::$app->request->post())) {
+				if (Yii::$app->request->isPost) {
+					$model->pdf = UploadedFile::getInstance($model, 'pdf');
+					if(isset($model->pdf->baseName))
+					{
+						$model->pdf->saveAs('uploads/' . $model->pdf->baseName . '.' . $model->pdf->extension);
+						$model->attributes=array('pdf'=>$model->pdf->baseName);
+					}
 				}
-			}
+				if(isset($_POST['month']))
+				{
+					$month = $_POST['month'];
+				}
+				else
+				{
+					$month = '01';
+				}
+				if(isset($_POST['year']))
+				{
+					$year = $_POST['year'];
+				}
+				else
+				{
+					$year = date('Y');
+				}
+				$date = $year.'-'.$month.'-01';
+				$model->attributes=array('date'=>$date);
 
-			$model->save();
-            return $this->redirect(['view', 'id' => $model->ID]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+				
+				FonctionsCurl::UpdatePublication($token,$model->ID,$model->reference,$model->auteurs,$model->titre,$model->date,$model->journal,$model->volume,$model->number,$model->pages,$model->note,$model->abstract,$model->keywords,$model->series,$model->localite,$model->publisher,$model->editor,$model->pdf,$model->date_display,$model->categorie_id);
+				return $this->redirect(['view', 'id' => $model->ID]);
+			} else {
+				return $this->render('update', [
+					'model' => $model,
+				]);
+			}
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -135,9 +212,44 @@ class PublicationController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
 
-        return $this->redirect(['index']);
+			FonctionsCurl::deletePublication($token,$id);
+
+			return $this->redirect(['index']);
+		}
+		else
+		{
+			return $this->goHome();
+		}
+    }
+    
+    public function actionDeletemulti()
+    {
+		if(!Yii::$app->user->isGuest)
+		{
+			$session = Yii::$app->session;
+			$session->open();
+			$token = $session->get('token');
+
+			if (isset($_POST['keylist'])) {
+				$champSelec = $_POST['keylist'];
+				foreach($champSelec as $key => $value)
+				{
+					FonctionsCurl::deletePublication($token,$value);
+				}	
+				return true;
+			}
+			return $this->redirect(['index']);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -147,7 +259,7 @@ class PublicationController extends Controller
      * @return Publication the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    public function findModel($id)
     {
         if (($model = Publication::findOne($id)) !== null) {
             return $model;
@@ -160,29 +272,52 @@ class PublicationController extends Controller
     
     public function uploadBibtex($fichier)
     {    
-            // On récupère les données
-            $uploadfile = 'uploads/bibtex/'.$fichier;
-            // On déplace le fichier dans le dossier d'upload
-            if (file_exists($uploadfile))
-            {
-                // On charge le fichier bibtex
-                $bibtex = new Structures_BibTex_Core();
-                $ret = $bibtex->loadFile($uploadfile);
-                
-                
-                // On parse le fichier bibtex afin de remplir la structure.
-                $bibtex->parse();
-                
-                $model = new Publication();
-                foreach ($bibtex->data as $datas)
-                {
-                    // On créé un objet Publication à partir des données bibtex
-                    $model = $this->mappingBibtex($datas);
-                    $model->save();
+		if($fichier != null)
+		{
+			if(!Yii::$app->user->isGuest)
+			{
+			
+				$session = Yii::$app->session;
+				$session->open();
+				$token = $session->get('token');
 
-                }     
+				// On récupère les données
+				$uploadfile = 'uploads/bibtex/'.$fichier;
+				// On déplace le fichier dans le dossier d'upload
+				if (file_exists($uploadfile))
+				{
+					// On charge le fichier bibtex
+					$bibtex = new Structures_BibTex_Core();
+					$ret = $bibtex->loadFile($uploadfile);
+					
+					
+					// On parse le fichier bibtex afin de remplir la structure.
+					$bibtex->parse();
+					
+					$model = new Publication();
 
-            }
+					foreach ($bibtex->data as $datas)
+					{
+						// On créé un objet Publication à partir des données bibtex
+						$model = $this->mappingBibtex($datas);
+						FonctionsCurl::CreatePublication($token,$model->reference,$model->auteurs,$model->titre,$model->date,$model->journal,$model->volume,$model->number,$model->pages,$model->note,$model->abstract,$model->keywords,$model->series,$model->localite,$model->publisher,$model->editor,$model->pdf,$model->date_display,$model->categorie_id);
+						//$model->save();                   
+					}                   
+				}
+				else
+				{
+				   throw new NotFoundHttpException('Fichier Introuvable: '.$fichier);
+				}
+			}
+			else
+			{
+				return $this->goHome();
+			}
+		}
+		else
+		{
+			return $this->goHome();
+		}
             
         }
 
@@ -192,7 +327,7 @@ class PublicationController extends Controller
 	public static function mappingBibtex($tableau)
     {
         // On initialise les variables 
-        $date = "";
+        $date = date('Y')."-01-01";
         $date_display = "";
         $journal = "";
         $volume = "";
@@ -208,91 +343,100 @@ class PublicationController extends Controller
         $categorie = "";
         $date_display = "";
 
-        // Champs obligatoire
-        $reference = $tableau["cite"];
-        $auteurs = substr($tableau["author"], 1 ,-1);
-        $titre = substr($tableau["title"], 1 ,-1);
-        
-        // On formate la date
-        if( array_key_exists('year', $tableau) )
+        $entryType = "";        
+        if (!empty($tableau) && isset($tableau["cite"]) && isset($tableau["author"]) && isset($tableau["title"]))
         {
-            $date = substr($tableau["year"],1 ,-1);
-            $date_display = substr($tableau["year"], 1, -1);                
-            if(array_key_exists('month', $tableau) && $tableau["month"] != "")
-            {
-                $date .= '-'.substr($tableau["month"], 1, -1).'-01';
-                $date_display .= substr($tableau["month"], 1, -1).' '.$date_display;
-            }
-            else
-            {
-                $date .= "-01-01";
-            }
-        }
-
-        
-        // On récupère les autres données et on supprimme les { } des données
-        foreach ($tableau as $key => $value)
-        {
-            if(!in_array($key, array('cite','author','title','year','month')))
-            {
-				if($key != 'entryType')
+			// Champs obligatoire
+			$reference = $tableau["cite"];
+			$auteurs = substr($tableau["author"], 1 ,-1);
+			$auteurs = str_replace('é', 'e', $auteurs);
+			$titre = substr($tableau["title"], 1 ,-1);
+			
+			// On formate la date
+			if( array_key_exists('year', $tableau))
+			{
+				if(is_numeric(substr($tableau["year"], 1 ,-1)))
 				{
-					$$key = substr($value, 1, -1);
+					$date = substr($tableau["year"],1 ,-1);
+					$date_display = substr($tableau["year"], 1, -1);                
+					if(array_key_exists('month', $tableau) && is_numeric(substr($tableau["month"], 1 ,-1)))
+					{
+						$date .= '-'.substr($tableau["month"], 1, -1).'-01';
+						$date_display .= substr($tableau["month"], 1, -1).' '.$date_display;
+					}
+					else
+					{
+						$date .= "-01-01";
+					}
 				}
-				else{
-					$$key = $value;
+			}
+			
+			// On récupère les autres données et on supprimme les { } des données
+			foreach ($tableau as $key => $value)
+			{
+				if(!in_array($key, array('cite','author','title','year','month')))
+				{
+					if($key != 'entryType')
+					{
+						$$key = substr($value, 1, -1);
+					}
+					else{
+						
+						$$key = $value;
+					}
 				}
-            }
-        }
-        // On fait correspondre les variables du fichier bibtex et les attributs
-        // de la publication
-        if(isset($booktitle))
-        {
-            $journal = $booktitle;
+			}
+			// On fait correspondre les variables du fichier bibtex et les attributs
+			// de la publication
+			if(isset($booktitle))
+			{
+				$journal = $booktitle;
+			}
+			if(isset($address))
+			{
+				$localite = $address;
+			}
+			
+			// On defini la categorie
+			if( in_array(strtolower($entryType), array('article')))
+				$categ_id = "1";
+			else if( in_array(strtolower($entryType), array('inproceedings')))
+				$categ_id = "2";
+			else if( in_array(strtolower($entryType), array('techreport')))
+				$categ_id = "3";
+			else if( in_array(strtolower($entryType), array('phdthesis')))
+				$categ_id = "4";
+			else
+				$categ_id = "5";
+		   
+			
+			// On créer la publication et on attribut les values
+			$publication = new Publication();
+			$publication->reference=$reference;
+			$publication->auteurs=$auteurs;
+			$publication->titre=$titre;
+			$publication->date=$date;
+			$publication->journal=$journal;
+			$publication->volume=$volume;
+			$publication->number=$number;
+			$publication->pages=$pages;
+			$publication->note=$note;
+			$publication->abstract=$abstract;
+			$publication->keywords=$keywords;
+			$publication->series=$series;
+			$publication->localite=$localite;
+			$publication->publisher=$publisher;
+			$publication->editor=$editor;
+			$publication->pdf=null;
+			$publication->date_display=date('Y-m-d');
+			$publication->categorie_id = $categ_id;
+			return $publication;
 		}
-        if(isset($address))
-        {
-            $localite = $address;
+		else
+		{
+			throw new NotFoundHttpException('Le tableau est vide ou ses champs obligatoires le sont.');
 		}
-		
-        // On defini la categorie
-		if( in_array($entryType, array('article','book','booklet','inbook','incollection')))
-            $categ_id = "1";
-        else if( in_array($entryType, array('conference','inproceedings','proceedings')))
-            $categ_id = "2";
-        else if( in_array($entryType, array('manual','techreport')))
-            $categ_id = "3";
-        else if( in_array($entryType, array('phdthesis','mastersthesis')))
-            $categ_id = "4";
-        else
-            $categ_id = "5";
-       
-        
-        // On créer la publication et on attribut les values
-        $publication = new Publication();
-		$publication->setAttribute('ID',null);
-		$publication->setAttribute('reference',$reference);
-		$publication->setAttribute('auteurs',$auteurs);
-		$publication->setAttribute('titre',$titre);
-		$publication->setAttribute('date',$date);
-		$publication->setAttribute('journal',$journal);
-		$publication->setAttribute('volume',$volume);
-		$publication->setAttribute('number',$number);
-		$publication->setAttribute('pages',$pages);
-		$publication->setAttribute('note',$note);
-		$publication->setAttribute('abstract',$abstract);
-		$publication->setAttribute('keywords',$keywords);
-		$publication->setAttribute('series',$series);
-		$publication->setAttribute('localite',$localite);
-		$publication->setAttribute('publisher',$publisher);
-		$publication->setAttribute('editor',$editor);
-		$publication->setAttribute('pdf',null);
-		$publication->setAttribute('date_display',date('Y-m-d'));
-		$publication->setAttribute('categorie_id',$categ_id);
-        return $publication;
     }
 
-	
-	
 	
 }

@@ -56,6 +56,19 @@ class Rubrique extends \yii\db\ActiveRecord
         ];
     }
 
+
+    public static function getLabels()
+    {
+        return [
+            'id' => 'ID',
+            'date_creation' => 'Date Creation',
+            'date_modification' => 'Date Modification',
+            'content_fr' => 'Content Fr',
+            'content_en' => 'Content En',
+            'menu_id' => 'Menu ID',
+        ];
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */

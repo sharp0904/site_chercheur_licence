@@ -34,13 +34,20 @@ class MenuController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new MenuSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		if(!Yii::$app->user->isGuest)
+		{
+			$searchModel = new MenuSearch();
+			$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+			return $this->render('index', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+			]);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -50,9 +57,16 @@ class MenuController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+		if(!Yii::$app->user->isGuest)
+		{
+			return $this->render('view', [
+				'model' => $this->findModel($id),
+			]);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -62,15 +76,22 @@ class MenuController extends Controller
      */
     public function actionCreate()
     {
+		if(!Yii::$app->user->isGuest)
+		{
         $modelM = new Menu();        
-        if ($modelM->load(Yii::$app->request->post()) && $modelM->save()) {
-			
-			return $this->redirect(['view', 'id' => $modelM->id]);
-        } else {
-            return $this->render('create', [
-                'modelM' => $modelM,
-            ]);
-        }
+			if ($modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+				
+				return $this->redirect(['view', 'id' => $modelM->id]);
+			} else {
+				return $this->render('create', [
+					'modelM' => $modelM,
+				]);
+			}
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -81,16 +102,23 @@ class MenuController extends Controller
      */
     public function actionUpdate($id)
     {
-        $modelM = $this->findModel($id);
+		if(!Yii::$app->user->isGuest)
+		{
+			$modelM = $this->findModel($id);
 
-        if ($modelM->load(Yii::$app->request->post()) && $modelM->save()) {
-            return $this->redirect(['view', 'id' => $modelM->id]);
-        } else {
-            return $this->render('update', [
-                'modelM' => $modelM,
+			if ($modelM->load(Yii::$app->request->post()) && $modelM->save()) {
+				return $this->redirect(['view', 'id' => $modelM->id]);
+			} else {
+				return $this->render('update', [
+					'modelM' => $modelM,
 
-            ]);
-        }
+				]);
+			}
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -101,9 +129,16 @@ class MenuController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+		if(!Yii::$app->user->isGuest)
+		{
+			$this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+			return $this->redirect(['index']);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**

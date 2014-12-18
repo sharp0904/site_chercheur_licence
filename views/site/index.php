@@ -2,8 +2,9 @@
 
 use yii\helpers\Html;
 use app\models\Rubrique;
+use app\models\Menu;
 use yii\helpers\Url;
-
+use app\librairies\FonctionsRubriques;
 
 $session = Yii::$app->session;
 
@@ -27,46 +28,28 @@ $this->title = 'Site enseignant chercheur';
 if (isset($_GET["page"])) {
     $idPage = $_GET["page"];
 }
-$rubrique = Rubrique::find(array('order'=>'menu_id ASC'))->one();
-
-
-	
-function getRubriqueParid($id, $locale = 'fr')
-{
-
-$rubrique = Rubrique::find()->where(['menu_id' => $id])->one();
-
-if($locale == 'en')
-{
-echo"<p>";
-
-	echo $rubrique->content_en;
-	echo"</p>";
-
+$menu = new Menu(['ID' => '108', 'titre_fr' => 'Aucune rubrique', 'titre_en'=> 'No section', 'actif'=>0]);
+$rubrique = new Rubrique(['ID'=>'108', 'content_fr'=>'Aucune rubrique', 'content_en'=>"No section"]);
+try{
+	$rubrique = FonctionsRubriques::getFirstRubrique();
 }
-elseif($locale == 'fr')
+catch(Exception $e)
 {
-echo"<p>";
-	echo $rubrique->content_fr;
-	echo"</p>";
-}
+	echo 'Aucune rubrique';
 }
 ?>
 <div class="site-index">
-<a href="?r=site/index&locale=fr"><img src="images/flag-fr.png" /></a> 
-<a href="?r=site/index&locale=en"><img src="images/flag-en.png" /></a> 
+ 
 </br></br></br>
 <?php
-
 
 if(isset($idPage))
 {
 	try{
 		
-		echo '<div class="text-contener" >';
-		echo '<div class="text-content" >';
-		getRubriqueParid($idPage, $language);
-		echo '</div></div>';
+		
+		echo(FonctionsRubriques::getContentRubriqueParid($idPage, $language));
+		
 	}
 	catch(Exception $e)
 	{
@@ -91,11 +74,11 @@ else
 {
 	if(isset($language))
 	{
-	getRubriqueParid($rubrique->menu_id,$language);
+	echo(FonctionsRubriques::getContentRubriqueParid($rubrique->menu_id,$language));
 	}
 	else
 	{
-	getRubriqueParid($rubrique->menu_id,'fr');
+	echo(FonctionsRubriques::getContentRubriqueParid($rubrique->menu_id,'fr'));
 	}
 
 }

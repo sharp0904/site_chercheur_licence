@@ -37,6 +37,7 @@ class SiteController extends Controller
     }
 
 	
+
     public function actions()
     {
         return [
@@ -71,31 +72,31 @@ class SiteController extends Controller
 
 
 
-            $test = array('username' => $model->username, 'password' => $model->password);
-            $tabJson = json_encode($test);
+            $form = array('username' => $model->username, 'password' => $model->password);
+            $tabJson = json_encode($form);
             $curl = new Curl();
- $response = $curl->post(
-            'http://localhost/site-enseignant-chercheur/rest/web/login', $tabJson
+			$r = $curl->post(
+				'http://localhost/site-enseignant-chercheur/rest/web/index.php/login', $tabJson
         );
+ 
        
 
 
 
- $user = new User(['id' => '108', 'username' => $model->username, 'password'=> $model->password, 'authKey'=>'test108key','accessToken'=>'108-token']);
-           
+			$user = new User(['id' => '108', 'username' => $model->username, 'password'=> $model->password, 'authKey'=>'test108key','accessToken'=>'108-token']);
+					   
 
-$session = Yii::$app->session;
-$session->open();
-$session->set('user', $user);
-
-        
-        $model->login2($user);
-return $this->goHome();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
+			$session = Yii::$app->session;
+			$session->open();
+			$session->set('user', $user);
+			$session->set('token','WU8nb/rCD6JgtiyxTW3ZP+s4n9Vg9liUllh5bZLoLQhAMMoCaHE72nYLQSsw12uhkgWJLDmgMmZVD+aIk6BsZw==');
+			$model->login2($user);
+			return $this->goHome();
+		} else {
+			return $this->render('login', [
+				'model' => $model,
+			]);
+		}
     }
 	
 
@@ -104,30 +105,30 @@ return $this->goHome();
 
 
         if (Yii::$app->request->isPost) {
-            $uploaddir = 'uploads/';
-            $uploadfile = $uploaddir . basename($_FILES['logo']['name']);
-
-            
-            if (move_uploaded_file($_FILES['logo']['tmp_name'], $uploadfile)) {
-               
-                 return $this->render('index');
-
-            } else {
-                echo "Fichier n'a pas été téléchargé, peut être un mauvais format ?";
-            }
-
-
-            
-            }
-            else
+            $filename = $_FILES['logo']['name'];
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            if($ext == 'png')
             {
-                 return $this->render('change_logo');
-            }
+                $uploaddir = 'uploads/';
+                $uploadfile = $uploaddir . "logo.png";
 
-       
+            
+                if (move_uploaded_file($_FILES['logo']['tmp_name'], $uploadfile)) {
+                   
+                     return $this->render('index');
+
+                } 
+            }
+            else {
+                return $this->render('erreurlogo');
+            }
+        }
+        else
+        {
+            return $this->render('change_logo');
+        }
     }
-	
-	
+
 
     public function actionLogout()
     {

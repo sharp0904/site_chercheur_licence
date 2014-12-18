@@ -32,13 +32,20 @@ class CategorieController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CategorieSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		if(!Yii::$app->user->isGuest)
+		{
+			$searchModel = new CategorieSearch();
+			$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+			return $this->render('index', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+			]);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -48,9 +55,16 @@ class CategorieController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+		if(!Yii::$app->user->isGuest)
+		{
+			return $this->render('view', [
+				'model' => $this->findModel($id),
+			]);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -60,15 +74,22 @@ class CategorieController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Categorie();
+		if(!Yii::$app->user->isGuest)
+		{
+			$model = new Categorie();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				return $this->redirect(['view', 'id' => $model->ID]);
+			} else {
+				return $this->render('create', [
+					'model' => $model,
+				]);
+			}
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -79,15 +100,22 @@ class CategorieController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+		if(!Yii::$app->user->isGuest)
+		{
+			$model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				return $this->redirect(['view', 'id' => $model->ID]);
+			} else {
+				return $this->render('update', [
+					'model' => $model,
+				]);
+			}
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**
@@ -98,9 +126,16 @@ class CategorieController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+		if(!Yii::$app->user->isGuest)
+		{
+			$this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+			return $this->redirect(['index']);
+		}
+		else
+		{
+			return $this->goHome();
+		}
     }
 
     /**

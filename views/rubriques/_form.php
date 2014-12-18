@@ -49,6 +49,7 @@ use yii\helpers\ArrayHelper;
 
     <?php ActiveForm::end(); ?>
 <script>     
+                CKEDITOR.env.isCompatible = true;
                 CKEDITOR.replace( 'rubrique-content_fr' );
                 CKEDITOR.replace( 'rubrique-content_en' );
 </script>

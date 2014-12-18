@@ -40,17 +40,21 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         $session = Yii::$app->getSession();
         if ($session->isActive)
         {
-
-            $user = $session->get('user');
-            User::ajoutUser($user);
+            if($session->get('user')!= null)
+            {
+                $user = $session->get('user');
+                User::ajoutUser($user);
+            }
         }
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
 
     }
     public static function ajoutUser($user)
     {
-        $tabUser = array('id'=>$user->id,'username'=>$user->username,'password'=>$user->password,'authKey'=>$user->authKey, 'accessToken'=>$user->accessToken);
-        
+        if(isset($user))
+        {
+            $tabUser = array('id'=>$user->id,'username'=>$user->username,'password'=>$user->password,'authKey'=>$user->authKey, 'accessToken'=>$user->accessToken);
+        }
         self::$users[$user->id]=$tabUser;        
     }
 
