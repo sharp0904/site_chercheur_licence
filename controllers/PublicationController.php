@@ -301,7 +301,8 @@ class PublicationController extends Controller
 						// On créé un objet Publication à partir des données bibtex
 						$model = $this->mappingBibtex($datas);
 						FonctionsCurl::CreatePublication($token,$model->reference,$model->auteurs,$model->titre,$model->date,$model->journal,$model->volume,$model->number,$model->pages,$model->note,$model->abstract,$model->keywords,$model->series,$model->localite,$model->publisher,$model->editor,$model->pdf,$model->date_display,$model->categorie_id);
-						//$model->save();                   
+						/*$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+						$this->redirect($actual_link);*/               
 					}                   
 				}
 				else

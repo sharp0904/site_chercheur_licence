@@ -1,0 +1,337 @@
+a:8:{s:6:"config";a:5:{s:10:"phpVersion";s:16:"5.5.9-1ubuntu4.5";s:10:"yiiVersion";s:5:"2.0.0";s:11:"application";a:4:{s:3:"yii";s:5:"2.0.0";s:4:"name";s:14:"My Application";s:3:"env";s:3:"dev";s:5:"debug";b:1;}s:3:"php";a:4:{s:7:"version";s:16:"5.5.9-1ubuntu4.5";s:6:"xdebug";b:0;s:3:"apc";b:0;s:8:"memcache";b:0;}s:10:"extensions";a:7:{s:24:"yiisoft/yii2-swiftmailer";a:3:{s:4:"name";s:24:"yiisoft/yii2-swiftmailer";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:16:"@yii/swiftmailer";s:78:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-swiftmailer";}}s:24:"yiisoft/yii2-codeception";a:3:{s:4:"name";s:24:"yiisoft/yii2-codeception";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:16:"@yii/codeception";s:78:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-codeception";}}s:16:"yiisoft/yii2-jui";a:3:{s:4:"name";s:16:"yiisoft/yii2-jui";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:8:"@yii/jui";s:70:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-jui";}}s:22:"yiisoft/yii2-bootstrap";a:3:{s:4:"name";s:22:"yiisoft/yii2-bootstrap";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:14:"@yii/bootstrap";s:76:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-bootstrap";}}s:18:"yiisoft/yii2-debug";a:3:{s:4:"name";s:18:"yiisoft/yii2-debug";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:10:"@yii/debug";s:72:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-debug";}}s:16:"yiisoft/yii2-gii";a:3:{s:4:"name";s:16:"yiisoft/yii2-gii";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:8:"@yii/gii";s:70:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-gii";}}s:18:"yiisoft/yii2-faker";a:3:{s:4:"name";s:18:"yiisoft/yii2-faker";s:7:"version";s:7:"2.0.0.0";s:5:"alias";a:1:{s:10:"@yii/faker";s:72:"/var/www/html/site-chercheur-enseignant-finale/vendor/yiisoft/yii2-faker";}}}}s:7:"request";a:14:{s:7:"flashes";a:0:{}s:10:"statusCode";i:302;s:14:"requestHeaders";a:12:{s:4:"host";s:9:"localhost";s:10:"connection";s:10:"keep-alive";s:14:"content-length";s:4:"9121";s:13:"cache-control";s:9:"max-age=0";s:6:"accept";s:74:"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";s:6:"origin";s:16:"http://localhost";s:10:"user-agent";s:104:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36";s:12:"content-type";s:33:"application/x-www-form-urlencoded";s:7:"referer";s:82:"http://localhost/site-chercheur-enseignant-finale/web/index.php?r=rubriques/create";s:15:"accept-encoding";s:13:"gzip, deflate";s:15:"accept-language";s:35:"fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4";s:6:"cookie";s:296:"_csrf=60336aeeb122b1860c1f018d11a816d1e1f69b51a88c92cf3ce5ebf6c25522b0s%3A32%3A%22PdypYEiKTnQ98t_LRL8rzYje7jswgdyn%22%3B; PHPSESSID=l102be9ii2b698qdava0f92974; _identity=e770dc6e133fcfdac42cec7dd728fcbc2be70a8adf63ee41fe4ebe08eb25a241s%3A28%3A%22%5B%22108%22%2C%22test108key%22%2C2592000%5D%22%3B";}s:15:"responseHeaders";a:6:{s:12:"X-Powered-By";s:20:"PHP/5.5.9-1ubuntu4.5";s:7:"Expires";s:29:"Thu, 19 Nov 1981 08:52:00 GMT";s:13:"Cache-Control";s:62:"no-store, no-cache, must-revalidate, post-check=0, pre-check=0";s:6:"Pragma";s:8:"no-cache";s:8:"Location";s:81:"http://localhost/site-chercheur-enseignant-finale/web/index.php?r=rubriques/index";s:10:"Set-Cookie";s:210:"_identity=e770dc6e133fcfdac42cec7dd728fcbc2be70a8adf63ee41fe4ebe08eb25a241s%3A28%3A%22%5B%22108%22%2C%22test108key%22%2C2592000%5D%22%3B; expires=Sun, 18-Jan-2015 13:39:43 GMT; Max-Age=2592000; path=/; httponly";}s:5:"route";s:16:"rubriques/create";s:6:"action";s:51:"app\controllers\RubriquesController::actionCreate()";s:12:"actionParams";a:0:{}s:11:"requestBody";a:3:{s:12:"Content Type";s:33:"application/x-www-form-urlencoded";s:3:"Raw";s:9121:"_csrf=a1hxSnZ6VVc7PAg6Lz88HD82IHNODgobORRJOAwjPzJcMgI9ER4sOQ%3D%3D&Menu%5Btitre_fr%5D=Recherche&Menu%5Btitre_en%5D=Research&Rubrique%5Bcontent_fr%5D=%3Ch2%3EDomaine+de+recherche%3C%2Fh2%3E%0D%0A%0D%0A%3Cp%3E%3Cimg+alt%3D%22%22+src%3D%22http%3A%2F%2Fsebastien.salva.free.fr%2Fuseruploads%2Fimages%2Ftest.jpg%22+style%3D%22height%3A395px%3B+margin%3A0px%3B+padding%3A0px%3B+vertical-align%3Abaseline%3B+width%3A591px%22+title%3D%22testing%22+%2F%3E%3C%2Fp%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Ch3%3ETest+bas%26eacute%3B+mod%26egrave%3Ble+de+syst%26egrave%3Bmes+%28syst%26egrave%3Bmes+temporis%26eacute%3Bs%2C+services+web%2C+clients+riches%2C+app.+Mobiles%29%2C+testabilit%26eacute%3B%3C%2Fh3%3E%0D%0A%0D%0A%3Cp%3EValidation+%28test+bas%26eacute%3B+mod%26egrave%3Ble%2C+test+du+fonctionnement+de+l%26%2339%3Bimplantation+par+rapport+%26agrave%3B+sa+sp%26eacute%3Bcification+%28tests+de+conformit%26eacute%3B%2C+de+robustesse%2C+de+s%26eacute%3Bcurit%26eacute%3B%29.%3C%2Fp%3E%0D%0A%0D%0A%3Cp%3ECette+phase+est+utilis%26eacute%3Be+sur+les+syst%26egrave%3Bmes+critiques+depuis+plus+de+30+ans+mais+se+retrouve+de+plus+en+plus+aujourd%26%2339%3Bhui+dans+des+mod%26egrave%3Bles+de+qualit%26eacute%3B+logicielle+comme+le+CMMI.%3C%2Fp%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3ETest+bas%26eacute%3B+mod%26egrave%3Ble%2C+testabilit%26eacute%3B%26nbsp%3B%3A+test+de+conformit%26eacute%3B+et+de+robustesse+de+syst%26egrave%3Bmes+temporis%26eacute%3Bs%2C+r%26eacute%3Bactifs%2C+de+compositions+de+Services%2C%3C%2Fli%3E%0D%0A%09%3Cli%3ETest+de+s%26eacute%3Bcurit%26eacute%3B+d%3Fapplications+Mobiles%2C+de+compositions+de+services%2C%3C%2Fli%3E%0D%0A%09%3Cli%3ETest+automatique%3A+test+de+composition+de+services+Web%2C+de+clients+riches+%28conformit%26eacute%3B%2C+robustesse%2C+s%26eacute%3Bcurit%26eacute%3B%29+dans+des+environnements+%26agrave%3B+acc%26egrave%3Bs+restreints+%28Clouds%2C+etc.%29.+Conception+d%3Foutils.%3C%2Fli%3E%0D%0A%09%3Cli%3EInf%26eacute%3Brence+de+mod%26egrave%3Bles%2C+pour+syst%26egrave%3Bmes+industriels%2C+pour+applications+Mobiles.+Utilisation+de+syst%26egrave%3Bmes+experts.%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Cp%3EQuelques+Probl%26eacute%3Bmatiques+%3A%3C%2Fp%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3EG%26eacute%3Bn%26eacute%3Brer+des+cas+de+test+pertinents+%26agrave%3B+partir+de+la+sp%26eacute%3Bcification%3C%2Fli%3E%0D%0A%09%3Cli%3EV%26eacute%3Brifier+la+validit%26eacute%3B+de+contraintes+temporelles+sur+l%26%2339%3Bimplantation%3C%2Fli%3E%0D%0A%09%3Cli%3ER%26eacute%3Bduire+les+co%26ucirc%3Bts+du+test%3C%2Fli%3E%0D%0A%09%3Cli%3EProposer+des+%26eacute%3Bquivalences+sp%26eacute%3Bcification%2Fimplantation+qui+prennent+en+compte+le+temps%3C%2Fli%3E%0D%0A%09%3Cli%3Etests+de+syst%26egrave%3Bmes+sp%26eacute%3Bcifiques+comme+les+services+web%2C+les+clients+riches+%28Ajax%2Csilverlight%29%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Ch3%3EEncradement+de+th%26egrave%3Bse%3C%2Fh3%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3Eseptembre+2008%2C+Sujet%3A+Testabilit%26eacute%3B+des+services+web%2C+doctorant%3A+Issam+Rabhi%2C+soutenue+en+janvier+2012%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3Ejanvier+2009%2C+Sujet+%3A+%26Eacute%3Btude+de+la+validation+de+chor%26eacute%3Bgraphies+de+services+web%2C+doctorant%3A+Najib+Mekouar%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3ENovembre+2011%2C+Sujet%3A+S%26eacute%3Bcurit%26eacute%3B+des+transactions+et+applications+sur+t%26eacute%3Bl%26eacute%3Bphones+mobiles%2C+doctorant%26nbsp%3B%3A+Stassia+Resondry+Za+Miharisoa%2C+Bourse+Innovation+R%26eacute%3Bgion%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3EJanvier+2013%2C+Sujet%3A%26nbsp%3B%3Cspan+style%3D%22font-size%3Asmall%22%3E%3Cspan+style%3D%22font-family%3Atimes+new+roman%22%3EOptimisation+et+reutilisation+des+tests+pour+la+validation+oriente%3Fe+mode%3Fle%26nbsp%3B%3C%2Fspan%3E%3Cspan+style%3D%22font-family%3Atimes+new+roman%22%3Ed%3Fapplications+et+de+machines+de+production%2C+Bourse+CIFRE+Michelin%3C%2Fspan%3E%3C%2Fspan%3E%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Ch3%3E%3Cstrong%3EEncadrement+de+stages+de+Master+Recherche%3A%3C%2Fstrong%3E%3C%2Fh3%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2014+Analyse+et+d%26eacute%3Bfinition+de+la+corr%26eacute%3Blation+entre+les+vuln%26eacute%3Brabilit%26eacute%3Bs+de+s%26eacute%3Bcurit%26eacute%3B+et+les+patrons+de+s%26eacute%3Bcurit%26eacute%3B%2C+%26eacute%3Btudiant%3A+A.+Ahamada%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2008+%26Eacute%3Btude+de+la+conformit%26eacute%3B+des+services+web%2C+%26eacute%3Btudiant%3A+S.+Rihawi%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2007+Validation+d%26%2339%3Bapplications+Internet+bas%26eacute%3Bes+sur+Ajax%2C+%26eacute%3Btudiant%3A+B.+Boussad%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2004+Localisation+d%26%2339%3Berreurs+dans+le+test+de+syst%26egrave%3Bmes+temporis%26eacute%3Bs%2C+%26eacute%3Btudiant%3A%26nbsp%3BY.+Haydersah%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A&Rubrique%5Bcontent_en%5D=%3Ch2%3EResearch+Activity%3C%2Fh2%3E%0D%0A%0D%0A%3Cp%3E%3Cimg+alt%3D%22%22+src%3D%22http%3A%2F%2Fsebastien.salva.free.fr%2Fuseruploads%2Fimages%2Ftest.jpg%22+style%3D%22height%3A395px%3B+margin%3A0px%3B+padding%3A0px%3B+vertical-align%3Abaseline%3B+width%3A591px%22+title%3D%22testing%22+%2F%3E%3C%2Fp%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Ch3%3EModel-based+Testing+%28timed+systems%2C+web+services%2C+rich+client+applications%29%2C+testability%3C%2Fh3%3E%0D%0A%0D%0A%3Cp%3Evalidation+%28model-based+testing%29%2C+test+of+implementation+in+comparison+with+its+specification.+This+step+is+well+known+and+used+with+critical+systems+for+30+years+and+is+more+and+taken+into+account+in+software+development+companies+with+the+need+of+software+quality+and+the+introduction+of+models+like+CMMI.%3C%2Fp%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3EConformance+and+robustness+testind+of+timed+systems%2C+tools+for+test+case+generation%2C+test+architecture+for+WAP-based+devices%2C%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3EWeb+service+and+service+compostion+testing+%28conformance%2C+robustness%2C+security%29%2C+in+classical+environments+or+partially+open+ones+e.g.%2C+Clouds%2C%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3ESecurity+testing+Of+Mobile+applications%2C%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3ETestability%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Cp%3ESome+Problematics+%3A%3C%2Fp%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3EGenerate+the+relevant+test+cases+from+the+specification%3C%2Fli%3E%0D%0A%09%3Cli%3ECheck+the+satisfaction+of+timed+constraints%3C%2Fli%3E%0D%0A%09%3Cli%3ETest+costs+reducing%3C%2Fli%3E%0D%0A%09%3Cli%3ESpecific+systems+test+like+web+services%2C+rich+client+applications+%28Ajax%2Csilverlight%29%3C%2Fli%3E%0D%0A%09%3Cli%3Etesting+without+specification+%3F%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Ch3%3EThesis+and+master+%28university%29+supervisory%3C%2Fh3%3E%0D%0A%0D%0A%3Cp%3ECurrently+supervisor+of+2+Thesis%3C%2Fp%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2008+september%2C+title%3A+web+service+testability%2C+student%3A+Issam+Rabhi%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2009+january%2C+title+%3A+study+of+the+web+service+choregraphy+validation%2C+student%3A+Najib+Mekouar%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E2011+november%2C+title%3A+application+and+transaction+security+on+mobile+phones%2C+student+%3A+Stassia+Resondry+Za+Miharisoa%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E2013+january%2C+title%3A+Reusing+and+optimising+tests+for+testing+production+machines%26nbsp%3B%3Cspan+style%3D%22font-size%3Asmall%22%3E%3Cspan+style%3D%22font-family%3Atimes+new+roman%22%3E%2C%26nbsp%3B+grant+CIFRE+Michelin%3C%2Fspan%3E%3C%2Fspan%3E%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Cp%3E%26nbsp%3B%3C%2Fp%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%3C%2Ful%3E%0D%0A%0D%0A%3Ch3%3ESupervisor+of+Master+%28university%29training%3A%3C%2Fh3%3E%0D%0A%0D%0A%3Cul%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2008+Web+service+conformance+study%2C+student%3A+S.+Rihawi%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2007+Ajax+validation%2C+student%3A+B.+Boussad%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%09%3Cli%3E%0D%0A%09%3Cp%3E2004+Timed+systems+fault+localisation%2C+student%3A%26nbsp%3BY.+Haydersah%3C%2Fp%3E%0D%0A%09%3C%2Fli%3E%0D%0A%3C%2Ful%3E%0D%0A&Menu%5Bactif%5D=1&Menu%5Bposition%5D=2&Rubrique%5Bdate_creation%5D=2014-12-19&Rubrique%5Bdate_modification%5D=2014-12-19&Rubrique%5Bmenu_id%5D=";s:17:"Decoded to Params";a:3:{s:5:"_csrf";s:56:"a1hxSnZ6VVc7PAg6Lz88HD82IHNODgobORRJOAwjPzJcMgI9ER4sOQ==";s:4:"Menu";a:4:{s:8:"titre_fr";s:9:"Recherche";s:8:"titre_en";s:8:"Research";s:5:"actif";s:1:"1";s:8:"position";s:1:"2";}s:8:"Rubrique";a:5:{s:10:"content_fr";s:3773:"<h2>Domaine de recherche</h2>
+
+<p><img alt="" src="http://sebastien.salva.free.fr/useruploads/images/test.jpg" style="height:395px; margin:0px; padding:0px; vertical-align:baseline; width:591px" title="testing" /></p>
+
+<p>&nbsp;</p>
+
+<h3>Test bas&eacute; mod&egrave;le de syst&egrave;mes (syst&egrave;mes temporis&eacute;s, services web, clients riches, app. Mobiles), testabilit&eacute;</h3>
+
+<p>Validation (test bas&eacute; mod&egrave;le, test du fonctionnement de l&#39;implantation par rapport &agrave; sa sp&eacute;cification (tests de conformit&eacute;, de robustesse, de s&eacute;curit&eacute;).</p>
+
+<p>Cette phase est utilis&eacute;e sur les syst&egrave;mes critiques depuis plus de 30 ans mais se retrouve de plus en plus aujourd&#39;hui dans des mod&egrave;les de qualit&eacute; logicielle comme le CMMI.</p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li>Test bas&eacute; mod&egrave;le, testabilit&eacute;&nbsp;: test de conformit&eacute; et de robustesse de syst&egrave;mes temporis&eacute;s, r&eacute;actifs, de compositions de Services,</li>
+	<li>Test de s&eacute;curit&eacute; d?applications Mobiles, de compositions de services,</li>
+	<li>Test automatique: test de composition de services Web, de clients riches (conformit&eacute;, robustesse, s&eacute;curit&eacute;) dans des environnements &agrave; acc&egrave;s restreints (Clouds, etc.). Conception d?outils.</li>
+	<li>Inf&eacute;rence de mod&egrave;les, pour syst&egrave;mes industriels, pour applications Mobiles. Utilisation de syst&egrave;mes experts.</li>
+</ul>
+
+<ul>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Quelques Probl&eacute;matiques :</p>
+
+<ul>
+	<li>G&eacute;n&eacute;rer des cas de test pertinents &agrave; partir de la sp&eacute;cification</li>
+	<li>V&eacute;rifier la validit&eacute; de contraintes temporelles sur l&#39;implantation</li>
+	<li>R&eacute;duire les co&ucirc;ts du test</li>
+	<li>Proposer des &eacute;quivalences sp&eacute;cification/implantation qui prennent en compte le temps</li>
+	<li>tests de syst&egrave;mes sp&eacute;cifiques comme les services web, les clients riches (Ajax,silverlight)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>Encradement de th&egrave;se</h3>
+
+<ul>
+	<li>
+	<p>septembre 2008, Sujet: Testabilit&eacute; des services web, doctorant: Issam Rabhi, soutenue en janvier 2012</p>
+	</li>
+	<li>
+	<p>janvier 2009, Sujet : &Eacute;tude de la validation de chor&eacute;graphies de services web, doctorant: Najib Mekouar</p>
+	</li>
+</ul>
+
+<ul>
+	<li>
+	<p>Novembre 2011, Sujet: S&eacute;curit&eacute; des transactions et applications sur t&eacute;l&eacute;phones mobiles, doctorant&nbsp;: Stassia Resondry Za Miharisoa, Bourse Innovation R&eacute;gion</p>
+	</li>
+</ul>
+
+<ul>
+	<li>
+	<p>Janvier 2013, Sujet:&nbsp;<span style="font-size:small"><span style="font-family:times new roman">Optimisation et reutilisation des tests pour la validation oriente?e mode?le&nbsp;</span><span style="font-family:times new roman">d?applications et de machines de production, Bourse CIFRE Michelin</span></span></p>
+	</li>
+</ul>
+
+<ul>
+</ul>
+
+<ul>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><strong>Encadrement de stages de Master Recherche:</strong></h3>
+
+<ul>
+</ul>
+
+<ul>
+	<li>
+	<p>2014 Analyse et d&eacute;finition de la corr&eacute;lation entre les vuln&eacute;rabilit&eacute;s de s&eacute;curit&eacute; et les patrons de s&eacute;curit&eacute;, &eacute;tudiant: A. Ahamada</p>
+	</li>
+	<li>
+	<p>2008 &Eacute;tude de la conformit&eacute; des services web, &eacute;tudiant: S. Rihawi</p>
+	</li>
+	<li>
+	<p>2007 Validation d&#39;applications Internet bas&eacute;es sur Ajax, &eacute;tudiant: B. Boussad</p>
+	</li>
+	<li>
+	<p>2004 Localisation d&#39;erreurs dans le test de syst&egrave;mes temporis&eacute;s, &eacute;tudiant:&nbsp;Y. Haydersah</p>
+	</li>
+</ul>
+";s:10:"content_en";s:2483:"<h2>Research Activity</h2>
+
+<p><img alt="" src="http://sebastien.salva.free.fr/useruploads/images/test.jpg" style="height:395px; margin:0px; padding:0px; vertical-align:baseline; width:591px" title="testing" /></p>
+
+<p>&nbsp;</p>
+
+<h3>Model-based Testing (timed systems, web services, rich client applications), testability</h3>
+
+<p>validation (model-based testing), test of implementation in comparison with its specification. This step is well known and used with critical systems for 30 years and is more and taken into account in software development companies with the need of software quality and the introduction of models like CMMI.</p>
+
+<ul>
+	<li>Conformance and robustness testind of timed systems, tools for test case generation, test architecture for WAP-based devices,</li>
+</ul>
+
+<ul>
+	<li>Web service and service compostion testing (conformance, robustness, security), in classical environments or partially open ones e.g., Clouds,</li>
+</ul>
+
+<ul>
+	<li>Security testing Of Mobile applications,</li>
+</ul>
+
+<ul>
+	<li>Testability</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Some Problematics :</p>
+
+<ul>
+	<li>Generate the relevant test cases from the specification</li>
+	<li>Check the satisfaction of timed constraints</li>
+	<li>Test costs reducing</li>
+	<li>Specific systems test like web services, rich client applications (Ajax,silverlight)</li>
+	<li>testing without specification ?</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>Thesis and master (university) supervisory</h3>
+
+<p>Currently supervisor of 2 Thesis</p>
+
+<ul>
+	<li>
+	<p>2008 september, title: web service testability, student: Issam Rabhi</p>
+	</li>
+	<li>
+	<p>2009 january, title : study of the web service choregraphy validation, student: Najib Mekouar</p>
+	</li>
+	<li>2011 november, title: application and transaction security on mobile phones, student : Stassia Resondry Za Miharisoa</li>
+</ul>
+
+<ul>
+	<li>2013 january, title: Reusing and optimising tests for testing production machines&nbsp;<span style="font-size:small"><span style="font-family:times new roman">,&nbsp; grant CIFRE Michelin</span></span></li>
+</ul>
+
+<ul>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+</ul>
+
+<h3>Supervisor of Master (university)training:</h3>
+
+<ul>
+	<li>
+	<p>2008 Web service conformance study, student: S. Rihawi</p>
+	</li>
+	<li>
+	<p>2007 Ajax validation, student: B. Boussad</p>
+	</li>
+	<li>
+	<p>2004 Timed systems fault localisation, student:&nbsp;Y. Haydersah</p>
+	</li>
+</ul>
+";s:13:"date_creation";s:10:"2014-12-19";s:17:"date_modification";s:10:"2014-12-19";s:7:"menu_id";s:0:"";}}}s:6:"SERVER";a:35:{s:9:"HTTP_HOST";s:9:"localhost";s:15:"HTTP_CONNECTION";s:10:"keep-alive";s:14:"CONTENT_LENGTH";s:4:"9121";s:18:"HTTP_CACHE_CONTROL";s:9:"max-age=0";s:11:"HTTP_ACCEPT";s:74:"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";s:11:"HTTP_ORIGIN";s:16:"http://localhost";s:15:"HTTP_USER_AGENT";s:104:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36";s:12:"CONTENT_TYPE";s:33:"application/x-www-form-urlencoded";s:12:"HTTP_REFERER";s:82:"http://localhost/site-chercheur-enseignant-finale/web/index.php?r=rubriques/create";s:20:"HTTP_ACCEPT_ENCODING";s:13:"gzip, deflate";s:20:"HTTP_ACCEPT_LANGUAGE";s:35:"fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4";s:11:"HTTP_COOKIE";s:296:"_csrf=60336aeeb122b1860c1f018d11a816d1e1f69b51a88c92cf3ce5ebf6c25522b0s%3A32%3A%22PdypYEiKTnQ98t_LRL8rzYje7jswgdyn%22%3B; PHPSESSID=l102be9ii2b698qdava0f92974; _identity=e770dc6e133fcfdac42cec7dd728fcbc2be70a8adf63ee41fe4ebe08eb25a241s%3A28%3A%22%5B%22108%22%2C%22test108key%22%2C2592000%5D%22%3B";s:4:"PATH";s:60:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin";s:16:"SERVER_SIGNATURE";s:69:"<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+";s:15:"SERVER_SOFTWARE";s:21:"Apache/2.4.7 (Ubuntu)";s:11:"SERVER_NAME";s:9:"localhost";s:11:"SERVER_ADDR";s:9:"127.0.0.1";s:11:"SERVER_PORT";s:2:"80";s:11:"REMOTE_ADDR";s:9:"127.0.0.1";s:13:"DOCUMENT_ROOT";s:13:"/var/www/html";s:14:"REQUEST_SCHEME";s:4:"http";s:14:"CONTEXT_PREFIX";s:0:"";s:21:"CONTEXT_DOCUMENT_ROOT";s:13:"/var/www/html";s:12:"SERVER_ADMIN";s:19:"webmaster@localhost";s:15:"SCRIPT_FILENAME";s:60:"/var/www/html/site-chercheur-enseignant-finale/web/index.php";s:11:"REMOTE_PORT";s:5:"47060";s:17:"GATEWAY_INTERFACE";s:7:"CGI/1.1";s:15:"SERVER_PROTOCOL";s:8:"HTTP/1.1";s:14:"REQUEST_METHOD";s:4:"POST";s:12:"QUERY_STRING";s:18:"r=rubriques/create";s:11:"REQUEST_URI";s:66:"/site-chercheur-enseignant-finale/web/index.php?r=rubriques/create";s:11:"SCRIPT_NAME";s:47:"/site-chercheur-enseignant-finale/web/index.php";s:8:"PHP_SELF";s:47:"/site-chercheur-enseignant-finale/web/index.php";s:18:"REQUEST_TIME_FLOAT";d:1418996383.4920001;s:12:"REQUEST_TIME";i:1418996383;}s:3:"GET";a:1:{s:1:"r";s:16:"rubriques/create";}s:4:"POST";a:3:{s:5:"_csrf";s:56:"a1hxSnZ6VVc7PAg6Lz88HD82IHNODgobORRJOAwjPzJcMgI9ER4sOQ==";s:4:"Menu";a:4:{s:8:"titre_fr";s:9:"Recherche";s:8:"titre_en";s:8:"Research";s:5:"actif";s:1:"1";s:8:"position";s:1:"2";}s:8:"Rubrique";a:5:{s:10:"content_fr";s:3773:"<h2>Domaine de recherche</h2>
+
+<p><img alt="" src="http://sebastien.salva.free.fr/useruploads/images/test.jpg" style="height:395px; margin:0px; padding:0px; vertical-align:baseline; width:591px" title="testing" /></p>
+
+<p>&nbsp;</p>
+
+<h3>Test bas&eacute; mod&egrave;le de syst&egrave;mes (syst&egrave;mes temporis&eacute;s, services web, clients riches, app. Mobiles), testabilit&eacute;</h3>
+
+<p>Validation (test bas&eacute; mod&egrave;le, test du fonctionnement de l&#39;implantation par rapport &agrave; sa sp&eacute;cification (tests de conformit&eacute;, de robustesse, de s&eacute;curit&eacute;).</p>
+
+<p>Cette phase est utilis&eacute;e sur les syst&egrave;mes critiques depuis plus de 30 ans mais se retrouve de plus en plus aujourd&#39;hui dans des mod&egrave;les de qualit&eacute; logicielle comme le CMMI.</p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li>Test bas&eacute; mod&egrave;le, testabilit&eacute;&nbsp;: test de conformit&eacute; et de robustesse de syst&egrave;mes temporis&eacute;s, r&eacute;actifs, de compositions de Services,</li>
+	<li>Test de s&eacute;curit&eacute; d?applications Mobiles, de compositions de services,</li>
+	<li>Test automatique: test de composition de services Web, de clients riches (conformit&eacute;, robustesse, s&eacute;curit&eacute;) dans des environnements &agrave; acc&egrave;s restreints (Clouds, etc.). Conception d?outils.</li>
+	<li>Inf&eacute;rence de mod&egrave;les, pour syst&egrave;mes industriels, pour applications Mobiles. Utilisation de syst&egrave;mes experts.</li>
+</ul>
+
+<ul>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Quelques Probl&eacute;matiques :</p>
+
+<ul>
+	<li>G&eacute;n&eacute;rer des cas de test pertinents &agrave; partir de la sp&eacute;cification</li>
+	<li>V&eacute;rifier la validit&eacute; de contraintes temporelles sur l&#39;implantation</li>
+	<li>R&eacute;duire les co&ucirc;ts du test</li>
+	<li>Proposer des &eacute;quivalences sp&eacute;cification/implantation qui prennent en compte le temps</li>
+	<li>tests de syst&egrave;mes sp&eacute;cifiques comme les services web, les clients riches (Ajax,silverlight)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>Encradement de th&egrave;se</h3>
+
+<ul>
+	<li>
+	<p>septembre 2008, Sujet: Testabilit&eacute; des services web, doctorant: Issam Rabhi, soutenue en janvier 2012</p>
+	</li>
+	<li>
+	<p>janvier 2009, Sujet : &Eacute;tude de la validation de chor&eacute;graphies de services web, doctorant: Najib Mekouar</p>
+	</li>
+</ul>
+
+<ul>
+	<li>
+	<p>Novembre 2011, Sujet: S&eacute;curit&eacute; des transactions et applications sur t&eacute;l&eacute;phones mobiles, doctorant&nbsp;: Stassia Resondry Za Miharisoa, Bourse Innovation R&eacute;gion</p>
+	</li>
+</ul>
+
+<ul>
+	<li>
+	<p>Janvier 2013, Sujet:&nbsp;<span style="font-size:small"><span style="font-family:times new roman">Optimisation et reutilisation des tests pour la validation oriente?e mode?le&nbsp;</span><span style="font-family:times new roman">d?applications et de machines de production, Bourse CIFRE Michelin</span></span></p>
+	</li>
+</ul>
+
+<ul>
+</ul>
+
+<ul>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><strong>Encadrement de stages de Master Recherche:</strong></h3>
+
+<ul>
+</ul>
+
+<ul>
+	<li>
+	<p>2014 Analyse et d&eacute;finition de la corr&eacute;lation entre les vuln&eacute;rabilit&eacute;s de s&eacute;curit&eacute; et les patrons de s&eacute;curit&eacute;, &eacute;tudiant: A. Ahamada</p>
+	</li>
+	<li>
+	<p>2008 &Eacute;tude de la conformit&eacute; des services web, &eacute;tudiant: S. Rihawi</p>
+	</li>
+	<li>
+	<p>2007 Validation d&#39;applications Internet bas&eacute;es sur Ajax, &eacute;tudiant: B. Boussad</p>
+	</li>
+	<li>
+	<p>2004 Localisation d&#39;erreurs dans le test de syst&egrave;mes temporis&eacute;s, &eacute;tudiant:&nbsp;Y. Haydersah</p>
+	</li>
+</ul>
+";s:10:"content_en";s:2483:"<h2>Research Activity</h2>
+
+<p><img alt="" src="http://sebastien.salva.free.fr/useruploads/images/test.jpg" style="height:395px; margin:0px; padding:0px; vertical-align:baseline; width:591px" title="testing" /></p>
+
+<p>&nbsp;</p>
+
+<h3>Model-based Testing (timed systems, web services, rich client applications), testability</h3>
+
+<p>validation (model-based testing), test of implementation in comparison with its specification. This step is well known and used with critical systems for 30 years and is more and taken into account in software development companies with the need of software quality and the introduction of models like CMMI.</p>
+
+<ul>
+	<li>Conformance and robustness testind of timed systems, tools for test case generation, test architecture for WAP-based devices,</li>
+</ul>
+
+<ul>
+	<li>Web service and service compostion testing (conformance, robustness, security), in classical environments or partially open ones e.g., Clouds,</li>
+</ul>
+
+<ul>
+	<li>Security testing Of Mobile applications,</li>
+</ul>
+
+<ul>
+	<li>Testability</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Some Problematics :</p>
+
+<ul>
+	<li>Generate the relevant test cases from the specification</li>
+	<li>Check the satisfaction of timed constraints</li>
+	<li>Test costs reducing</li>
+	<li>Specific systems test like web services, rich client applications (Ajax,silverlight)</li>
+	<li>testing without specification ?</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>Thesis and master (university) supervisory</h3>
+
+<p>Currently supervisor of 2 Thesis</p>
+
+<ul>
+	<li>
+	<p>2008 september, title: web service testability, student: Issam Rabhi</p>
+	</li>
+	<li>
+	<p>2009 january, title : study of the web service choregraphy validation, student: Najib Mekouar</p>
+	</li>
+	<li>2011 november, title: application and transaction security on mobile phones, student : Stassia Resondry Za Miharisoa</li>
+</ul>
+
+<ul>
+	<li>2013 january, title: Reusing and optimising tests for testing production machines&nbsp;<span style="font-size:small"><span style="font-family:times new roman">,&nbsp; grant CIFRE Michelin</span></span></li>
+</ul>
+
+<ul>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+</ul>
+
+<h3>Supervisor of Master (university)training:</h3>
+
+<ul>
+	<li>
+	<p>2008 Web service conformance study, student: S. Rihawi</p>
+	</li>
+	<li>
+	<p>2007 Ajax validation, student: B. Boussad</p>
+	</li>
+	<li>
+	<p>2004 Timed systems fault localisation, student:&nbsp;Y. Haydersah</p>
+	</li>
+</ul>
+";s:13:"date_creation";s:10:"2014-12-19";s:17:"date_modification";s:10:"2014-12-19";s:7:"menu_id";s:0:"";}}s:6:"COOKIE";a:3:{s:5:"_csrf";s:104:"60336aeeb122b1860c1f018d11a816d1e1f69b51a88c92cf3ce5ebf6c25522b0s:32:"PdypYEiKTnQ98t_LRL8rzYje7jswgdyn";";s:9:"PHPSESSID";s:26:"l102be9ii2b698qdava0f92974";s:9:"_identity";s:100:"e770dc6e133fcfdac42cec7dd728fcbc2be70a8adf63ee41fe4ebe08eb25a241s:28:"["108","test108key",2592000]";";}s:5:"FILES";a:0:{}s:7:"SESSION";a:5:{s:7:"__flash";a:0:{}s:8:"language";s:2:"fr";s:4:"user";O:15:"app\models\User":5:{s:2:"id";s:3:"108";s:8:"username";s:5:"admin";s:8:"password";s:5:"admin";s:7:"authKey";s:10:"test108key";s:11:"accessToken";s:9:"108-token";}s:5:"token";s:88:"WU8nb/rCD6JgtiyxTW3ZP+s4n9Vg9liUllh5bZLoLQhAMMoCaHE72nYLQSsw12uhkgWJLDmgMmZVD+aIk6BsZw==";s:4:"__id";s:3:"108";}}s:3:"log";a:1:{s:8:"messages";a:16:{i:0;a:5:{i:0;s:33:"Bootstrap with yii\log\Dispatcher";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1418996383.495961;i:4;a:0:{}}i:1;a:5:{i:0;s:21:"Loading module: debug";i:1;i:8;i:2;s:26:"yii\base\Module::getModule";i:3;d:1418996383.4960539;i:4;a:0:{}}i:2;a:5:{i:0;s:44:"Bootstrap with yii\debug\Module::bootstrap()";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1418996383.497849;i:4;a:0:{}}i:3;a:5:{i:0;s:19:"Loading module: gii";i:1;i:8;i:2;s:26:"yii\base\Module::getModule";i:3;d:1418996383.498337;i:4;a:0:{}}i:4;a:5:{i:0;s:42:"Bootstrap with yii\gii\Module::bootstrap()";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1418996383.4986119;i:4;a:0:{}}i:5;a:5:{i:0;s:56:"Pretty URL not enabled. Using default URL parsing logic.";i:1;i:8;i:2;s:32:"yii\web\UrlManager::parseRequest";i:3;d:1418996383.498992;i:4;a:0:{}}i:6;a:5:{i:0;s:35:"Route requested: 'rubriques/create'";i:1;i:8;i:2;s:34:"yii\web\Application::handleRequest";i:3;d:1418996383.499346;i:4;a:0:{}}i:7;a:5:{i:0;s:30:"Route to run: rubriques/create";i:1;i:8;i:2;s:30:"yii\base\Controller::runAction";i:3;d:1418996383.500114;i:4;a:0:{}}i:8;a:5:{i:0;s:67:"Running action: app\controllers\RubriquesController::actionCreate()";i:1;i:8;i:2;s:36:"yii\base\InlineAction::runWithParams";i:3;d:1418996383.501857;i:4;a:0:{}}i:9;a:5:{i:0;s:15:"Session started";i:1;i:4;i:2;s:21:"yii\web\Session::open";i:3;d:1418996383.5026009;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:87;s:8:"function";s:5:"__get";s:5:"class";s:18:"yii\base\Component";s:4:"type";s:2:"->";}}}i:10;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `rubrique`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5067091;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:11;a:5:{i:0;s:63:"Opening DB connection: mysql:host=localhost;dbname=webchercheur";i:1;i:4;i:2;s:23:"yii\db\Connection::open";i:3;d:1418996383.5068369;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:16;a:5:{i:0;s:28:"SHOW CREATE TABLE `rubrique`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.510112;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:19;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `menu`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.512279;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:22;a:5:{i:0;s:24:"SHOW CREATE TABLE `menu`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5143549;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:25;a:5:{i:0;s:7788:"Start sending cURL-Request: http://localhost/site-enseignant-chercheur/rest/web/index.php/admin/rubrique
+"{\"a\":\"WU8nb\\\/rCD6JgtiyxTW3ZP+s4n9Vg9liUllh5bZLoLQhAMMoCaHE72nYLQSsw12uhkgWJLDmgMmZVD+aIk6BsZw==\",\"titre_fr\":\"Recherche\",\"titre_en\":\"Research\",\"actif\":\"1\",\"position\":\"2\",\"content_fr\":\"<h2>Domaine de recherche<\\\/h2>\\r\\n\\r\\n<p><img alt=\\\"\\\" src=\\\"http:\\\/\\\/sebastien.salva.free.fr\\\/useruploads\\\/images\\\/test.jpg\\\" style=\\\"height:395px; margin:0px; padding:0px; vertical-align:baseline; width:591px\\\" title=\\\"testing\\\" \\\/><\\\/p>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<h3>Test bas&eacute; mod&egrave;le de syst&egrave;mes (syst&egrave;mes temporis&eacute;s, services web, clients riches, app. Mobiles), testabilit&eacute;<\\\/h3>\\r\\n\\r\\n<p>Validation (test bas&eacute; mod&egrave;le, test du fonctionnement de l&#39;implantation par rapport &agrave; sa sp&eacute;cification (tests de conformit&eacute;, de robustesse, de s&eacute;curit&eacute;).<\\\/p>\\r\\n\\r\\n<p>Cette phase est utilis&eacute;e sur les syst&egrave;mes critiques depuis plus de 30 ans mais se retrouve de plus en plus aujourd&#39;hui dans des mod&egrave;les de qualit&eacute; logicielle comme le CMMI.<\\\/p>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Test bas&eacute; mod&egrave;le, testabilit&eacute;&nbsp;: test de conformit&eacute; et de robustesse de syst&egrave;mes temporis&eacute;s, r&eacute;actifs, de compositions de Services,<\\\/li>\\r\\n\\t<li>Test de s&eacute;curit&eacute; d?applications Mobiles, de compositions de services,<\\\/li>\\r\\n\\t<li>Test automatique: test de composition de services Web, de clients riches (conformit&eacute;, robustesse, s&eacute;curit&eacute;) dans des environnements &agrave; acc&egrave;s restreints (Clouds, etc.). Conception d?outils.<\\\/li>\\r\\n\\t<li>Inf&eacute;rence de mod&egrave;les, pour syst&egrave;mes industriels, pour applications Mobiles. Utilisation de syst&egrave;mes experts.<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n<\\\/ul>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<p>Quelques Probl&eacute;matiques :<\\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>G&eacute;n&eacute;rer des cas de test pertinents &agrave; partir de la sp&eacute;cification<\\\/li>\\r\\n\\t<li>V&eacute;rifier la validit&eacute; de contraintes temporelles sur l&#39;implantation<\\\/li>\\r\\n\\t<li>R&eacute;duire les co&ucirc;ts du test<\\\/li>\\r\\n\\t<li>Proposer des &eacute;quivalences sp&eacute;cification\\\/implantation qui prennent en compte le temps<\\\/li>\\r\\n\\t<li>tests de syst&egrave;mes sp&eacute;cifiques comme les services web, les clients riches (Ajax,silverlight)<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<h3>Encradement de th&egrave;se<\\\/h3>\\r\\n\\r\\n<ul>\\r\\n\\t<li>\\r\\n\\t<p>septembre 2008, Sujet: Testabilit&eacute; des services web, doctorant: Issam Rabhi, soutenue en janvier 2012<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>janvier 2009, Sujet : &Eacute;tude de la validation de chor&eacute;graphies de services web, doctorant: Najib Mekouar<\\\/p>\\r\\n\\t<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>\\r\\n\\t<p>Novembre 2011, Sujet: S&eacute;curit&eacute; des transactions et applications sur t&eacute;l&eacute;phones mobiles, doctorant&nbsp;: Stassia Resondry Za Miharisoa, Bourse Innovation R&eacute;gion<\\\/p>\\r\\n\\t<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>\\r\\n\\t<p>Janvier 2013, Sujet:&nbsp;<span style=\\\"font-size:small\\\"><span style=\\\"font-family:times new roman\\\">Optimisation et reutilisation des tests pour la validation oriente?e mode?le&nbsp;<\\\/span><span style=\\\"font-family:times new roman\\\">d?applications et de machines de production, Bourse CIFRE Michelin<\\\/span><\\\/span><\\\/p>\\r\\n\\t<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n<\\\/ul>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<h3><strong>Encadrement de stages de Master Recherche:<\\\/strong><\\\/h3>\\r\\n\\r\\n<ul>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>\\r\\n\\t<p>2014 Analyse et d&eacute;finition de la corr&eacute;lation entre les vuln&eacute;rabilit&eacute;s de s&eacute;curit&eacute; et les patrons de s&eacute;curit&eacute;, &eacute;tudiant: A. Ahamada<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>2008 &Eacute;tude de la conformit&eacute; des services web, &eacute;tudiant: S. Rihawi<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>2007 Validation d&#39;applications Internet bas&eacute;es sur Ajax, &eacute;tudiant: B. Boussad<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>2004 Localisation d&#39;erreurs dans le test de syst&egrave;mes temporis&eacute;s, &eacute;tudiant:&nbsp;Y. Haydersah<\\\/p>\\r\\n\\t<\\\/li>\\r\\n<\\\/ul>\\r\\n\",\"content_en\":\"<h2>Research Activity<\\\/h2>\\r\\n\\r\\n<p><img alt=\\\"\\\" src=\\\"http:\\\/\\\/sebastien.salva.free.fr\\\/useruploads\\\/images\\\/test.jpg\\\" style=\\\"height:395px; margin:0px; padding:0px; vertical-align:baseline; width:591px\\\" title=\\\"testing\\\" \\\/><\\\/p>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<h3>Model-based Testing (timed systems, web services, rich client applications), testability<\\\/h3>\\r\\n\\r\\n<p>validation (model-based testing), test of implementation in comparison with its specification. This step is well known and used with critical systems for 30 years and is more and taken into account in software development companies with the need of software quality and the introduction of models like CMMI.<\\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Conformance and robustness testind of timed systems, tools for test case generation, test architecture for WAP-based devices,<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Web service and service compostion testing (conformance, robustness, security), in classical environments or partially open ones e.g., Clouds,<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Security testing Of Mobile applications,<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Testability<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<p>Some Problematics :<\\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Generate the relevant test cases from the specification<\\\/li>\\r\\n\\t<li>Check the satisfaction of timed constraints<\\\/li>\\r\\n\\t<li>Test costs reducing<\\\/li>\\r\\n\\t<li>Specific systems test like web services, rich client applications (Ajax,silverlight)<\\\/li>\\r\\n\\t<li>testing without specification ?<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<h3>Thesis and master (university) supervisory<\\\/h3>\\r\\n\\r\\n<p>Currently supervisor of 2 Thesis<\\\/p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>\\r\\n\\t<p>2008 september, title: web service testability, student: Issam Rabhi<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>2009 january, title : study of the web service choregraphy validation, student: Najib Mekouar<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>2011 november, title: application and transaction security on mobile phones, student : Stassia Resondry Za Miharisoa<\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n\\t<li>2013 january, title: Reusing and optimising tests for testing production machines&nbsp;<span style=\\\"font-size:small\\\"><span style=\\\"font-family:times new roman\\\">,&nbsp; grant CIFRE Michelin<\\\/span><\\\/span><\\\/li>\\r\\n<\\\/ul>\\r\\n\\r\\n<ul>\\r\\n<\\\/ul>\\r\\n\\r\\n<p>&nbsp;<\\\/p>\\r\\n\\r\\n<ul>\\r\\n<\\\/ul>\\r\\n\\r\\n<h3>Supervisor of Master (university)training:<\\\/h3>\\r\\n\\r\\n<ul>\\r\\n\\t<li>\\r\\n\\t<p>2008 Web service conformance study, student: S. Rihawi<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>2007 Ajax validation, student: B. Boussad<\\\/p>\\r\\n\\t<\\\/li>\\r\\n\\t<li>\\r\\n\\t<p>2004 Timed systems fault localisation, student:&nbsp;Y. Haydersah<\\\/p>\\r\\n\\t<\\\/li>\\r\\n<\\\/ul>\\r\\n\"}"";i:1;i:8;i:2;s:25:"yii\web\Curl::httpRequest";i:3;d:1418996383.517544;i:4;a:2:{i:0;a:5:{s:4:"file";s:75:"/var/www/html/site-chercheur-enseignant-finale/librairies/FonctionsCurl.php";s:4:"line";i:49;s:8:"function";s:4:"post";s:5:"class";s:12:"yii\web\Curl";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:96;s:8:"function";s:14:"CreateRubrique";s:5:"class";s:28:"app\librairies\FonctionsCurl";s:4:"type";s:2:"::";}}}}}s:9:"profiling";a:3:{s:6:"memory";i:2564832;s:4:"time";d:0.18123292922973633;s:8:"messages";a:12:{i:12;a:5:{i:0;s:63:"Opening DB connection: mysql:host=localhost;dbname=webchercheur";i:1;i:80;i:2;s:23:"yii\db\Connection::open";i:3;d:1418996383.506917;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:13;a:5:{i:0;s:63:"Opening DB connection: mysql:host=localhost;dbname=webchercheur";i:1;i:96;i:2;s:23:"yii\db\Connection::open";i:3;d:1418996383.5075691;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:14;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `rubrique`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5077291;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:15;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `rubrique`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5089459;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:17;a:5:{i:0;s:28:"SHOW CREATE TABLE `rubrique`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5103531;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:18;a:5:{i:0;s:28:"SHOW CREATE TABLE `rubrique`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.511086;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:20;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `menu`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5124459;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:21;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `menu`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5135851;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:23;a:5:{i:0;s:24:"SHOW CREATE TABLE `menu`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.514679;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:24;a:5:{i:0;s:24:"SHOW CREATE TABLE `menu`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5152781;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:26;a:5:{i:0;s:114:"POST http://localhost/site-enseignant-chercheur/rest/web/index.php/admin/rubrique#353d74955af4617e13ee8ce77031d854";i:1;i:80;i:2;s:25:"yii\web\Curl::httpRequest";i:3;d:1418996383.5176711;i:4;a:2:{i:0;a:5:{s:4:"file";s:75:"/var/www/html/site-chercheur-enseignant-finale/librairies/FonctionsCurl.php";s:4:"line";i:49;s:8:"function";s:4:"post";s:5:"class";s:12:"yii\web\Curl";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:96;s:8:"function";s:14:"CreateRubrique";s:5:"class";s:28:"app\librairies\FonctionsCurl";s:4:"type";s:2:"::";}}}i:27;a:5:{i:0;s:114:"POST http://localhost/site-enseignant-chercheur/rest/web/index.php/admin/rubrique#353d74955af4617e13ee8ce77031d854";i:1;i:96;i:2;s:25:"yii\web\Curl::httpRequest";i:3;d:1418996383.671623;i:4;a:2:{i:0;a:5:{s:4:"file";s:75:"/var/www/html/site-chercheur-enseignant-finale/librairies/FonctionsCurl.php";s:4:"line";i:49;s:8:"function";s:4:"post";s:5:"class";s:12:"yii\web\Curl";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:96;s:8:"function";s:14:"CreateRubrique";s:5:"class";s:28:"app\librairies\FonctionsCurl";s:4:"type";s:2:"::";}}}}}s:2:"db";a:1:{s:8:"messages";a:8:{i:14;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `rubrique`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5077291;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:15;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `rubrique`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5089459;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:17;a:5:{i:0;s:28:"SHOW CREATE TABLE `rubrique`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5103531;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:18;a:5:{i:0;s:28:"SHOW CREATE TABLE `rubrique`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.511086;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:20;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `menu`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5124459;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:21;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `menu`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5135851;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:23;a:5:{i:0;s:24:"SHOW CREATE TABLE `menu`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.514679;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}i:24;a:5:{i:0;s:24:"SHOW CREATE TABLE `menu`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1418996383.5152781;i:4;a:1:{i:0;a:5:{s:4:"file";s:82:"/var/www/html/site-chercheur-enseignant-finale/controllers/RubriquesController.php";s:4:"line";i:95;s:8:"function";s:4:"load";s:5:"class";s:14:"yii\base\Model";s:4:"type";s:2:"->";}}}}}s:6:"assets";a:0:{}s:4:"mail";a:0:{}s:7:"summary";a:9:{s:3:"tag";s:13:"54942a9f799c2";s:3:"url";s:82:"http://localhost/site-chercheur-enseignant-finale/web/index.php?r=rubriques/create";s:4:"ajax";i:0;s:6:"method";s:4:"POST";s:2:"ip";s:9:"127.0.0.1";s:4:"time";i:1418996383;s:10:"statusCode";i:302;s:8:"sqlCount";i:4;s:9:"mailCount";i:0;}}

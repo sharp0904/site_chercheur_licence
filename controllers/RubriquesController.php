@@ -93,10 +93,14 @@ class RubriquesController extends Controller
 			$modelR = new Rubrique();
 			$modelM = new Menu();
 			if ($modelR->load(Yii::$app->request->post()) && $modelM->load(Yii::$app->request->post())) {
-			FonctionsCurl::CreateRubrique($token,$modelM->titre_fr,$modelM->titre_en,$modelM->actif,$modelM->position,$modelR->content_fr,$modelR->content_en);
-					return $this->redirect(['index']);
-
-
+				try
+				{
+					FonctionsCurl::CreateRubrique($token,$modelM->titre_fr,$modelM->titre_en,$modelM->actif,$modelM->position,$modelR->content_fr,$modelR->content_en);
+				}
+				catch()
+				{
+				}
+				return $this->redirect(['index']);
 			} else {
 				return $this->render('create', [
 					'modelR' => $modelR,

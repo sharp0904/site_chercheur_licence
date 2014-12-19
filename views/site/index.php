@@ -41,6 +41,7 @@ catch(Exception $e)
 <div class="site-index">
  
 </br></br></br>
+<div id="maRubrique">
 <?php
 
 if(isset($idPage))
@@ -84,5 +85,5 @@ else
 }
 
 ?>   
-   
+</div>
 </div>

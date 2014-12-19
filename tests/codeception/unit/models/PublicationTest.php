@@ -100,20 +100,6 @@ class PublicationTest extends TestCase
         });
     }
     
-    public function testPubliSansDate()
-    {
-		$model = new Publication([
-		'reference' => 'H42',
-		'auteurs' => 'un auteur',
-		'titre' => 'Au bord de l\'autoroute',
-		'categorie_id' => 1,
-            
-        ]);
-
-        $this->specify('La date est obligatoire', function () use ($model) {
-            $this->assertFalse($model->validate(['date']));
-        });
-    }
     
     public function testPubliDateIncorrect()
     {
@@ -148,18 +134,10 @@ class PublicationTest extends TestCase
         });
     }
     
-    /**
-     * @expectedException yii\web\NotFoundHttpException
-     */
-    /*public function testUploadBibtexTableauVide()
-    {
-		$bib = new Bibtex();
-		$fichier = null;
-		PublicationController::uploadBibtex($fichier);
-    }*/
     
 	/**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexAvecTableauNull()
     {
@@ -169,6 +147,7 @@ class PublicationTest extends TestCase
     
     /**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexSansTitre()
     {
@@ -178,6 +157,7 @@ class PublicationTest extends TestCase
     
     /**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexTitreNull()
     {
@@ -187,6 +167,7 @@ class PublicationTest extends TestCase
     
     /**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexSansAuteur()
     {
@@ -196,6 +177,7 @@ class PublicationTest extends TestCase
     
     /**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexAuteurNull()
     {
@@ -205,6 +187,7 @@ class PublicationTest extends TestCase
     
     /**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexSansCite()
     {
@@ -214,6 +197,7 @@ class PublicationTest extends TestCase
     
     /**
      * @expectedException yii\web\NotFoundHttpException
+     * @expectedExceptionMessage Le tableau est vide ou ses champs obligatoires le sont.
      */
     public function testMappingBibtexCiteNull()
     {
@@ -277,37 +261,38 @@ class PublicationTest extends TestCase
 		$this->assertEquals( "2011-01-01", $publiController->date);
     }
     
-    /**
-     * @expectedException yii\web\NotFoundHttpException
-     * @expectedExceptionMessage The requested page does not exist.
-     */
-    public function testFindModelNonExistant()
+    public function testMappingCategorieArticle()
     {
-		$publiController = PublicationController::findModel(1);
-	}
-	
-	public function testFindModelOK()
+		$tab = array('entryType' => 'article','cite' => 'S1NG', 'title' => '{Me, Myself and I}', 'author' => '{De La Soul}', 'year' => '{2011}', 'month' => '{}');
+		$publiController = PublicationController::mappingBibtex($tab);
+		$this->assertEquals(1, $publiController->categorie_id);
+    }
+    
+    public function testMappingCategorieInproceedings()
     {
-		$model = new Publication([
-		'reference' => 'C3PO',
-		'titre' => 'un titre',
-		'auteurs' => 'un auteur',
-		'date' => '2014-05-12',
-		'categorie_id' => 1,
-            
-        ]);
-        $model->save();
-		$publiController = PublicationController::findModel($model->ID);
-	}
-	
-	/*public function testDeleteMulti()
-	{
-		$model = new LoginForm();
-		$user = new User(['id' => '108', 'username' => 'admin', 'password'=> 'admin', 'authKey'=>'test108key','accessToken'=>'108-token']);
-
-		$model->login2($user);
-		$this->assertTrue(PublicationController::actionDeletemulti());
-		
-	}*/
+		$tab = array('entryType' => 'inproceedings','cite' => 'S1NG', 'title' => '{Me, Myself and I}', 'author' => '{De La Soul}', 'year' => '{2011}', 'month' => '{}');
+		$publiController = PublicationController::mappingBibtex($tab);
+		$this->assertEquals(2, $publiController->categorie_id);
+    }
+    
+	public function testMappingCategorieTechreport()
+    {
+		$tab = array('entryType' => 'techreport','cite' => 'S1NG', 'title' => '{Me, Myself and I}', 'author' => '{De La Soul}', 'year' => '{2011}', 'month' => '{}');
+		$publiController = PublicationController::mappingBibtex($tab);
+		$this->assertEquals(3, $publiController->categorie_id);
+    }
+    
+    public function testMappingCategoriePhdthesis()
+    {
+		$tab = array('entryType' => 'phdthesis','cite' => 'S1NG', 'title' => '{Me, Myself and I}', 'author' => '{De La Soul}', 'year' => '{2011}', 'month' => '{}');
+		$publiController = PublicationController::mappingBibtex($tab);
+		$this->assertEquals(4, $publiController->categorie_id);
+    }
+    public function testMappingCategorieAutre()
+    {
+		$tab = array('entryType' => 'conference','cite' => 'S1NG', 'title' => '{Me, Myself and I}', 'author' => '{De La Soul}', 'year' => '{2011}', 'month' => '{}');
+		$publiController = PublicationController::mappingBibtex($tab);
+		$this->assertEquals(5, $publiController->categorie_id);
+    }
 
 }

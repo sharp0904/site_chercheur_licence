@@ -24,7 +24,7 @@ class FonctionsCurl
 	public static function getAllCategories()
 	{
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/categories');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/categories');
  			return $response;
 	}
 
@@ -33,7 +33,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/categories/'.$id);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/categories/'.$id);
  			return $response;
 	}
 
@@ -46,7 +46,7 @@ class FonctionsCurl
             $donnes = array('a'=>$token,'titre_fr' => $titre_fr, 'titre_en' => $titre_en, 'actif'=>$actif, 'position'=>$position,'content_fr'=>$content_fr, 'content_en'=>$content_en);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->post(FonctionsCurl::cheminServeur().'rest/web/index.php/admin/rubrique', $tabJson);
+ 			$response = $curl->post(FonctionsCurl::cheminTest().'rest/web/index.php/admin/rubrique', $tabJson);
  			return $response;
 	}
 
@@ -56,7 +56,7 @@ class FonctionsCurl
             $donnes = array('a'=>$token,'id'=>$id,'titre_fr' => $titre_fr, 'titre_en' => $titre_en, 'actif'=>$actif, 'position'=>$position,'content_fr'=>$content_fr, 'content_en'=>$content_en);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->put(FonctionsCurl::cheminServeur().'rest/web/index.php/admin/rubriques/'.$id, $tabJson);
+ 			$response = $curl->put(FonctionsCurl::cheminTest().'rest/web/index.php/admin/rubriques/'.$id, $tabJson);
  			return $response;
 	}
 
@@ -66,7 +66,7 @@ class FonctionsCurl
 			$donnes = array('a'=>$token);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->delete(FonctionsCurl::cheminServeur().'rest/web/index.php/admin/rubriques/'.$id,$tabJson);
+ 			$response = $curl->delete(FonctionsCurl::cheminTest().'rest/web/index.php/admin/rubriques/'.$id,$tabJson);
  			return $response;
 	}
 
@@ -74,7 +74,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques');
  			return $response;
 	}
 
@@ -82,7 +82,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/'.$id);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/'.$id);
  			return $response;
 	}
 
@@ -91,7 +91,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriquesId/'.$id);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriquesId/'.$id);
  			return $response;
 	}
 
@@ -101,7 +101,7 @@ class FonctionsCurl
 		 $donnes = array('titre_en'=>$titre_en);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/titre_en', $tabJson);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/titre_en', $tabJson);
  			return $response;
 
 	}
@@ -112,7 +112,7 @@ class FonctionsCurl
              $donnes = array('titre_fr'=>$titre_fr);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/titre_fr', $tabJson);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/titre_fr', $tabJson);
  			return $response;
 	}
 
@@ -122,7 +122,7 @@ class FonctionsCurl
             $donnes = array('a'=>$token,'ID'=>$id,'titre_fr' => $titre_fr, 'titre_en' => $titre_en, 'actif'=>$actif, 'position'=>$position,'date_creation'=>$date_creation, 'date_modification'=>$date_modif,'content_fr'=>$content_fr, 'content_en'=>$content_en);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/admin/rubriques/filter', $tabJson);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/admin/rubriques/filter', $tabJson);
  			return $response;
 	}
 
@@ -130,7 +130,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/count');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/count');
  			return $response;
 	}
 
@@ -138,7 +138,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/asc');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/asc');
  			return $response;
 	}
 
@@ -146,7 +146,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/desc');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/desc');
  			return $response;
 	}
 
@@ -154,7 +154,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/rubriques/first');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/rubriques/first');
  			return $response;
 	}
 
@@ -171,7 +171,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/menus');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/menus');
  			return $response;
 	}
 
@@ -179,7 +179,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/menus/actif');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/menus/actif');
  			return $response;
 	}
 
@@ -187,7 +187,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/menus/'.$id);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/menus/'.$id);
  			return $response;
 	}
 
@@ -201,7 +201,7 @@ class FonctionsCurl
            $donnes = array('a'=>$token,'reference' => $reference, 'auteurs' => $auteurs, 'titre'=>$titre, 'date'=>$date,'journal'=>$journal, 'volume'=>$volume, 'number'=>$number,'pages'=>$pages,'note'=>$note,'abstract'=>$abstract,'keywords'=>$keywords,'series'=>$series,'localite'=>$localite,'publisher'=>$publisher,'editor'=>$editor,'pdf'=>$pdf,"date_display"=>$date_display,'categorie_id'=>$categorie_id);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->post(FonctionsCurl::cheminServeur().'rest/web/index.php/admin/publication', $tabJson);
+ 			$response = $curl->post(FonctionsCurl::cheminTest().'rest/web/index.php/admin/publication', $tabJson);
  			return $response;
 	}
 
@@ -211,7 +211,7 @@ class FonctionsCurl
             $donnes = array('a'=>$token,'ID'=>$id,'reference' => $reference, 'auteurs' => $auteurs, 'titre'=>$titre, 'date'=>$date,'journal'=>$journal, 'volume'=>$volume, 'number'=>$number,'pages'=>$pages,'note'=>$note,'abstract'=>$abstract,'keywords'=>$keywords,'series'=>$series,'localite'=>$localite,'publisher'=>$publisher,'editor'=>$editor,'pdf'=>$pdf,"date_display"=>$date_display,'categorie_id'=>$categorie_id);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->put(FonctionsCurl::cheminServeur().'rest/web/admin/publications/'.$id, $tabJson);
+ 			$response = $curl->put(FonctionsCurl::cheminTest().'rest/web/admin/publications/'.$id, $tabJson);
  			return $response;
 	}
 
@@ -220,7 +220,7 @@ class FonctionsCurl
 			$donnes = array('a'=>$token);
 		    $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->delete(FonctionsCurl::cheminServeur().'rest/web/admin/publications/'.$id, $tabJson);
+ 			$response = $curl->delete(FonctionsCurl::cheminTest().'rest/web/admin/publications/'.$id, $tabJson);
  			return $response;
 	}
 
@@ -228,7 +228,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/publications');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/publications');
  			return $response;
 	}
 
@@ -237,7 +237,7 @@ class FonctionsCurl
 			$donnes = array('a'=>$token);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/admin/publications/'.$id,$tabJson);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/admin/publications/'.$id,$tabJson);
  			return $response;
 	}
 
@@ -247,7 +247,7 @@ class FonctionsCurl
             $donnes = array('reference' => $reference, 'auteurs' => $auteurs, 'titre'=>$titre, 'date'=>$date,'journal'=>$journal, 'volume'=>$volume, 'number'=>$number,'pages'=>$pages,'note'=>$note,'abstract'=>$abstract,'keywords'=>$keywords,'series'=>$series,'localite'=>$localite,'publisher'=>$publisher,'editor'=>$editor,'pdf'=>$pdf,"date_display"=>$date_display,'categorie_id'=>$categorie_id);
             $tabJson = json_encode($donnes);
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/admin/publications/filter', $tabJson);
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/admin/publications/filter', $tabJson);
  			return $response;
 	}
 
@@ -255,7 +255,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/publications/date');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/publications/date');
  			return $response;
 	}
 
@@ -263,7 +263,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/publications/categorie');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/publications/categorie');
  			return $response;
 	}
 
@@ -271,7 +271,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/publications/count');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/publications/count');
  			return $response;
 	}
 
@@ -279,7 +279,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/publications/asc');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/publications/asc');
  			return $response;
 	}
 
@@ -287,7 +287,7 @@ class FonctionsCurl
 	{
 
             $curl = new Curl();
- 			$response = $curl->get(FonctionsCurl::cheminServeur().'rest/web/index.php/publications/desc');
+ 			$response = $curl->get(FonctionsCurl::cheminTest().'rest/web/index.php/publications/desc');
  			return $response;
 	}
 

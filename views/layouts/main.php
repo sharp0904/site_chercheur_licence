@@ -34,7 +34,7 @@ $rs = FonctionsMenus::getMenusActifs($language);
 }
 catch(Exception $e)
 {
-	echo"no menus";
+	
 }
 
 if($language=='fr')

@@ -125,6 +125,10 @@ background: gainsboro;
 	display: inline-block;
 }
 
+#maRubrique {
+	text-align: left;
+}
+
 #language {
 float: right;
 margin-top: 30px;

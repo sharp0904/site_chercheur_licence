@@ -5,7 +5,7 @@
 return [
     'components' => [
         'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=webchercheur',
+            'dsn' => 'mysql:host=localhost;dbname=webchercheurtest',
         ],
         'mailer' => [
             'useFileTransport' => true,
