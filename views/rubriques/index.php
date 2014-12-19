@@ -63,7 +63,7 @@ $cpt = 0;
     
     
 
-      <?= Html::submitButton('Delete' , ['class' => 'btn btn-delete', 'id' => 'deleteMulti']) ?>
+      <?= Html::submitButton('Delete' , ['class' => 'btn btn-danger', 'id' => 'deleteMulti']) ?>
 </br>
 <?php
 try{

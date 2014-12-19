@@ -31,10 +31,6 @@ body {
         max-width: 100%;
     }
     
-    #check td {
-		max-width : inherit;
-		overflow : scroll;
-    }
     
     /* conserver le ratio des images */
 
@@ -74,7 +70,7 @@ body {
 
 #gestion-table {
 	max-width : inherit;
-	overflow : scroll;
+	overflow-x : scroll;
 }
 
 
