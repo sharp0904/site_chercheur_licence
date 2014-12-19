@@ -23,22 +23,21 @@ $cpt = 0;
          <?= Html::a('Create Rubrique', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <table id ="check">
-			<tbody>
+    <div id="check">
 		<?php foreach(Rubrique::getLabels() as $colonne)
 				{
 					$colonne = str_replace(" ", "", $colonne);
 					if($colonne == "ContentFr")
 					{
-						echo("<td><span>");
+						echo("<span id='elmtCheck'>");
 						echo("<input type='checkbox' id='select".$colonne."' checked=true>".$colonne);
-						echo("</span></td>");
+						echo("</span>");
 					}
 					else if($colonne != "MenuID"&&$colonne != "Position"&& $colonne != "ID")
 					{
-						echo("<td><span>");
+						echo("<span id='elmtCheck'>");
 						echo("<input type='checkbox' id='select".$colonne."'>".$colonne);
-						echo("</span></td>");
+						echo("</span>");
 					}
 				}
 		?>
@@ -47,20 +46,19 @@ $cpt = 0;
 					$colonne = str_replace(" ", "", $colonne);
 					if($colonne == "TitreFr")
 					{
-						echo("<td><span>");
+						echo("<span id='elmtCheck'>");
 						echo("<input type='checkbox' id='select".$colonne."' checked=true>".$colonne);
-						echo("</span></td>");
+						echo("</span>");
 					}
 					else if($colonne!="Actif" && $colonne!="Position" )
 					{
-						echo("<td><span>");
+						echo("<span id='elmtCheck'>");
 						echo("<input type='checkbox' id='select".$colonne."'>".$colonne);
-						echo("</span></td>");
+						echo("</span>");
 					}
 				}
 		?>
-			</tbody>
-		</table>
+		</div>
     </br></br>
     
     
