@@ -97,8 +97,9 @@ class RubriquesController extends Controller
 				{
 					FonctionsCurl::CreateRubrique($token,$modelM->titre_fr,$modelM->titre_en,$modelM->actif,$modelM->position,$modelR->content_fr,$modelR->content_en);
 				}
-				catch()
+				catch(Exception $e)
 				{
+					echo('YOLO');
 				}
 				return $this->redirect(['index']);
 			} else {

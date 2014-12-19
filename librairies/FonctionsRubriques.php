@@ -1,6 +1,5 @@
 <?php
-
- namespace app\librairies;
+namespace app\librairies;
 use app\models\Rubrique;
 use Yii;
 class FonctionsRubriques

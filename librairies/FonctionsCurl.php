@@ -1,6 +1,5 @@
 <?php
-
- namespace app\librairies;
+namespace app\librairies;
 
 use yii\web\Curl;
 use Yii;	
@@ -294,5 +293,3 @@ class FonctionsCurl
 	
 
 }
-
-

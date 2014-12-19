@@ -1,6 +1,5 @@
 <?php
-
- namespace app\librairies;
+namespace app\librairies;
 use app\models\Publication;
 use app\models\Categorie;
 use Yii;
@@ -156,4 +155,3 @@ class FonctionsPublications
 }
 
 ?>
-

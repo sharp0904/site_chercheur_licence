@@ -1,6 +1,5 @@
 <?php
-
- namespace app\librairies;
+namespace app\librairies;
 use app\models\Menu;
 use Yii;
 class FonctionsMenus 
@@ -66,5 +65,3 @@ static function getMenuById($id)
 	
 
 }
-
-
