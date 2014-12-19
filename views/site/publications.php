@@ -86,6 +86,8 @@ $this->title = 'Site enseignant chercheur';
 
 ?>
 </div></div>
+
+
 <?php Dialog::begin([
 	'id' => 'dial-tex',
     'clientOptions' => [
@@ -100,6 +102,7 @@ $this->title = 'Site enseignant chercheur';
 ]);
 Dialog::end();
 ?>
+
 
 <?php
 Dialog::begin([

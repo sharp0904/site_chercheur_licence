@@ -57,18 +57,18 @@ function getPubliByAnnee($annee)
 function afficheBibTex($publication)
 {
 	$tex = '$("#dial-tex").text("");$("#dial-tex").html("@"+$(this).parent().parent().parent().find(".publi-cat").html() +"{");'; 
-			$tex .= '$("#dial-tex").append($(this).parent().parent().parent().find(".publi-ref").html() +"<br/>");';
-			$tex .= '$("#dial-tex").append("Authors = {" +$(this).parent().parent().parent().find(".publi-authors").html() +"}<br/>");';
-			$tex .= '$("#dial-tex").append("Title = {" +$(this).parent().parent().parent().find(".publi-titre").html() +"}<br/>");'; 
+	$tex .= '$("#dial-tex").append($(this).parent().parent().parent().find(".publi-ref").html() +"<br/>");';
+	$tex .= '$("#dial-tex").append("Authors = {" +$(this).parent().parent().parent().find(".publi-authors").html() +"}<br/>");';
+	$tex .= '$("#dial-tex").append("Title = {" +$(this).parent().parent().parent().find(".publi-titre").html() +"}<br/>");'; 
 	if($publication['journal'] != null)
-			{
-				if($publication['categorie_id'] == 1){
-					$tex .= '$("#dial-tex").append("Journal = {" +$(this).parent().parent().parent().find(".publi-journal").html() +"},<br/>");';
-				} 
-				elseif($publication['categorie_id'] == 2){
-					$tex .= '$("#dial-tex").append("Booktitle = {" +$(this).parent().parent().parent().find(".publi-journal").html() +"},<br/>");';
-				}
+		{
+			if($publication['categorie_id'] == 1){
+				$tex .= '$("#dial-tex").append("Journal = {" +$(this).parent().parent().parent().find(".publi-journal").html() +"},<br/>");';
+			} 
+			elseif($publication['categorie_id'] == 2){
+				$tex .= '$("#dial-tex").append("Booktitle = {" +$(this).parent().parent().parent().find(".publi-journal").html() +"},<br/>");';
 			}
+		}
 	if($publication['volume'] != null)
 	{
 		$tex .= '$("#dial-tex").append("Volume = {" +$(this).parent().parent().parent().find(".publi-volume").html() +"}<br/>");'; 
@@ -455,9 +455,10 @@ function triPubliParDate()
 			echo Html::a('Détails de la publication', '#', array(
 						   'onclick'=>'$("#detail-publi").text("");'.$detail.'$("#detail-publi").dialog("open"); return false', 
 			));
+			
 			echo Html::a('<img src="images/icon-tex.png" class="cursor-pointer">', '#', array(
 			   'onclick'=>$tex.'$("#dial-tex").append(",}");$("#dial-tex").dialog("open"); return false', 
-));
+			));
 			
 				echo"</td></div></div></td></tr>";
 				echo"</table></td></tr></tbody>";

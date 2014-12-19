@@ -1,8 +1,12 @@
 $(document).ready(function(){
 	$( "#publication-reference" ).attr( "required", "required" );
+	$( "#publication-reference" ).attr( "title", "Please inform this field" );
 	$( "#publication-auteurs" ).attr( "required", "required" );
+	$( "#publication-auteurs" ).attr( "title", "Please inform this field" );
 	$( "#publication-titre" ).attr( "required", "required" );
+	$( "#publication-titre" ).attr( "title", "Please inform this field" );
 	$( "#publication-date" ).attr( "required", "required" );
+	$( "#publication-date" ).attr( "title", "Please inform this field" );
 	
 	$( "#year" ).change(function() {
 		if( $('#year option:selected').val() == 'Autre')
@@ -56,6 +60,7 @@ $(document).ready(function(){
 		if(str == 'Article')
 		{
 			$( "#publication-journal" ).attr( "required", "required" );
+			$( "#publication-journal" ).attr( "title", "Please inform this field" );
 			for (var key in data )
 			{
 				var col = data[key].toLowerCase();
@@ -73,6 +78,7 @@ $(document).ready(function(){
 		  else if(str == 'Conference')
 		  {
 			  $( "#publication-journal" ).attr( "required", "required" );
+			  $( "#publication-journal" ).attr( "title", "Please inform this field" );
 			  for (var key in data )
 			  {
 				var col = data[key].toLowerCase();

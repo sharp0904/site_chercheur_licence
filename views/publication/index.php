@@ -38,37 +38,28 @@ $cpt = 0;
         </br></br>
         <?php ActiveForm::end(); ?>       
         
-		<table id ="check">
-			<tbody>
-		<?php foreach(Publication::getLabels() as $colonne)
-				{
-					if($cpt==0)
+
+		<div id="check">
+			<?php foreach(Publication::getLabels() as $colonne)
 					{
-						echo("<tr>");
+
+						if($colonne == "Reference"||$colonne == "Auteurs"||$colonne == "Titre"||$colonne == "Date"||$colonne == "Journal")
+						{
+							echo("<span id='elmtCheck'>");
+							echo("<input type='checkbox' id='select".$colonne."' checked=true>".$colonne);
+							echo("</span>");
+						}
+						else if($colonne != "ID" && $colonne !="Date Display" && $colonne != "Pdf" && $colonne != "Categorie ID")
+						{
+							echo("<span id='elmtCheck'>");
+							echo("<input type='checkbox' id='select".$colonne."'>".$colonne);
+							echo("</span>");
+						}
+						
 					}
-					if($colonne == "Reference"||$colonne == "Auteurs"||$colonne == "Titre"||$colonne == "Date"||$colonne == "Journal")
-					{
-						echo("<td><span>");
-						echo("<input type='checkbox' id='select".$colonne."' checked=true>".$colonne);
-						echo("</span></td>");
-						$cpt++;
-					}
-					else if($colonne != "ID" && $colonne !="Date Display" && $colonne != "Pdf" && $colonne != "Categorie ID")
-					{
-						echo("<td><span>");
-						echo("<input type='checkbox' id='select".$colonne."'>".$colonne);
-						echo("</span></td>");
-						$cpt++;
-					}
-					if($cpt==4)
-					{
-						echo("</tr>");
-						$cpt = 0;
-					}
-				}
-		?>
-			</tbody>
-		</table>
+			?>
+		</div>
+
 		
 		 </br></br>
 			<?= Html::submitButton('Delete' , ['class' => 'btn btn-delete', 'id' => 'deleteMulti']) ?>
