@@ -97,22 +97,22 @@ class FonctionsPublications
 	    foreach($publications as $unePubli)
 	    {
 	    	echo"<tr>";
-	    	echo"<td class='ref'>".$unePubli['reference']."</td>";
-	    	echo"<td class='auteurs'>".substr($unePubli['auteurs'], 0,30)."</td>";
-	    	echo"<td class='titre'>".substr($unePubli['titre'], 0,30)."</td>";
+	    	echo"<td class='ref'>".addslashes($unePubli['reference'])."</td>";
+	    	echo"<td class='auteurs'>".addslashes(substr($unePubli['auteurs'], 0,30))."</td>";
+	    	echo"<td class='titre'>".addslashes(substr($unePubli['titre'], 0,30))."</td>";
 	    	echo"<td class='date'>".$unePubli['date']."</td>";
-	    	echo"<td class='journal'>".substr($unePubli['journal'], 0,30)."</td>";
-	    	echo"<td class='volume'>".$unePubli['volume']."</td>";
-	    	echo"<td class='number'>".$unePubli['number']."</td>";
-	    	echo"<td class='pages'>".$unePubli['pages']."</td>";
-	    	echo"<td class='note'>".substr($unePubli['note'], 0, 30)."</td>";
-	    	echo"<td class='abstract'>".$unePubli['abstract']."</td>";
-	    	echo"<td class='keywords'>".substr($unePubli['keywords'], 0, 30)."</td>";
-	    	echo"<td class='series'>".$unePubli['series']."</td>";
-	    	echo"<td class='localite'>".$unePubli['localite']."</td>";
-	    	echo"<td class='publisher'>".$unePubli['publisher']."</td>";
-	    	echo"<td class='editor'>".$unePubli['editor']."</td>";
-	    	echo"<td class='date_display'>".$unePubli['date_display']."</td>";
+	    	echo"<td class='journal'>".addslashes(substr($unePubli['journal'], 0,30))."</td>";
+	    	echo"<td class='volume'>".addslashes($unePubli['volume'])."</td>";
+	    	echo"<td class='number'>".addslashes($unePubli['number'])."</td>";
+	    	echo"<td class='pages'>".addslashes($unePubli['pages'])."</td>";
+	    	echo"<td class='note'>".addslashes(substr($unePubli['note'], 0, 30))."</td>";
+	    	echo"<td class='abstract'>".addslashes($unePubli['abstract'])."</td>";
+	    	echo"<td class='keywords'>".addslashes(substr($unePubli['keywords'], 0, 30))."</td>";
+	    	echo"<td class='series'>".addslashes($unePubli['series'])."</td>";
+	    	echo"<td class='localite'>".addslashes($unePubli['localite'])."</td>";
+	    	echo"<td class='publisher'>".addslashes($unePubli['publisher'])."</td>";
+	    	echo"<td class='editor'>".addslashes($unePubli['editor'])."</td>";
+	    	echo"<td class='date_display'>".addslashes($unePubli['date_display'])."</td>";
 	    	echo"<td class='categorie_id'>".$unePubli['categorie_id']."</td>";
 	    	echo"<td>";
 	    	echo"<a href=index.php?r=publication/view&id=$unePubli[ID]><img src='images/loupe.png'/></a>";

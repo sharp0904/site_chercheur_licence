@@ -76,10 +76,10 @@ class FonctionsRubriques
 	    {
 	    	echo"<tr>";
 	    	echo"<td class='lalign'>".$uneRubrique['ID']."</td>";
-	    	echo"<td class='titrefr'>".$uneRubrique['titre_fr']."</td>";
-	    	echo"<td class='titreen'>".$uneRubrique['titre_en']."</td>";
-	    	echo"<td class='contentfr'>".substr($uneRubrique['content_fr'], 0,30)."</td>";
-	    	echo"<td class='contenten'>".substr($uneRubrique['content_en'],0,30)."</td>";
+	    	echo"<td class='titrefr'>".addslashes($uneRubrique['titre_fr'])."</td>";
+	    	echo"<td class='titreen'>".addslashes($uneRubrique['titre_en'])."</td>";
+	    	echo"<td class='contentfr'>".addslashes(substr($uneRubrique['content_fr'], 0,100))."</td>";
+	    	echo"<td class='contenten'>".addslashes(substr($uneRubrique['content_en'],0,100))."</td>";
 	    	echo"<td class='dateCreation'>".$uneRubrique['date_creation']."</td>";
 	    	echo"<td class='dateModification'>".$uneRubrique['date_modification']."</td>";
 	    	echo"<td>";
