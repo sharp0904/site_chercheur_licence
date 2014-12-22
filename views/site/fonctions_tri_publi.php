@@ -276,7 +276,7 @@ function triPubliParCategorie($language)
 		{
 			echo"<tbody><tr><td align='left' style='vertical-align: top;'><table cellspacing='0' cellpadding='0' class='publications-item'>";
 			echo"<tbody><tr><td align='left' style='vertical-align: top;'>";
-			echo "<div><span class='publi-ref'>".$publication['reference']."</span>";
+			echo "<div><span class='publi-ref'>[".$publication['reference']."]</span> ";
 			echo"<span class='publi-authors'>".$publication['auteurs']."</span>, ";
 			echo"<span class='publi-titre'>".$publication['titre']."</span>, ";
 			echo"<span class='publi-cat' type ='hidden'>".getCategoriePubli($publication['categorie_id'])."</span>, ";
@@ -386,12 +386,12 @@ function triPubliParDate()
 		
 			echo"<tbody><tr><td align='left' style='vertical-align: top;'><table cellspacing='0' cellpadding='0' class='publications-item-date'>";
 			echo"<tbody><tr><td align='left' style='vertical-align: top;'><div class='gwt-HTML' style='white-space: normal;'>";
-			echo "[<span class='publi-ref'>".$publication['reference']."</span>]";
+			echo "<span class='publi-ref'>[".$publication['reference']."]</span> ";
 			echo"<span class='publi-authors'>".$publication['auteurs']."</span>, ";
-			echo"<span class='publi-titre'>".$publication['titre']."</span>";
-			echo"<span class='publi-cat'>".getCategoriePubli($publication['categorie_id'])."</span>, ";
-			echo"<span class='publi-year' type ='hidden'>".substr($publication['date'], 0, 4)."</span>, ";
-			echo"<span class='publi-month' type ='hidden'>".substr($publication['date'], 5, 2)."</span>, ";
+			echo"<span class='publi-titre'>".$publication['titre']." </span>";
+			echo"<span class='publi-cat'>".getCategoriePubli($publication['categorie_id'])." </span>, ";
+			echo"<span class='publi-year' type ='hidden'>".substr($publication['date'], 0, 4). "</span>, ";
+			echo"<span class='publi-month' type ='hidden'>".substr($publication['date'], 5, 2). "</span>, ";
 			
 			
 			if($publication['journal'] != null)
@@ -452,7 +452,7 @@ function triPubliParDate()
 			}
 			$tex = afficheBibTex($publication);
 			$detail = afficheDetailPubliFR($publication);
-			echo Html::a('Détails de la publication', '#', array(
+			echo Html::a('DETAILS', '#', array(
 						   'onclick'=>'$("#detail-publi").text("");'.$detail.'$("#detail-publi").dialog("open"); return false', 
 			));
 			
@@ -467,6 +467,7 @@ function triPubliParDate()
 			echo"</div>";
 	}
 	echo"</div>";
+	echo"<script>$('.publications-section :first').show();</script>";
 
 }
 ?>

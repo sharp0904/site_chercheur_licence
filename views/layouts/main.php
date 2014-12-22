@@ -173,6 +173,7 @@ else
                 'options' => ['class' => 'navbar-nav navbar-left'],
                 'items' => [
 					['label' => 'Publications', 'url' => ['/site/publications']],
+					['label' => '|'],
 					['label' => $logo, 'url' => ['/site/logo']],
 					['label' => $GRubriques, 'url' => ['/rubriques/index']],
 					['label' => $GPublications, 'url' => ['/publication/index']], 

@@ -11,7 +11,7 @@ $this->title = $model->ID;
 ?>
 <div class="site-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode('Détail de la rubrique : '.$this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->ID], ['class' => 'btn btn-primary']) ?>

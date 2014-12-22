@@ -62,11 +62,17 @@ class FonctionsPublications
 	}
 
 
-	static function getTabPublications()
+	static function getTabPublications($language)
 	{
 		$publications = json_decode(FonctionsCurl::getAllPublications(),true);
-
+		if($language=='fr')
+		{
 		echo"Supprimer toutes les publications: <input type='checkbox' id='select-all'>";
+		}
+		else
+		{
+		echo"delete all publications: <input type='checkbox' id='select-all'>";
+		}
 		echo"<div id='gestion-table'>";
 		echo"<table id='keywords' cellspacing='0' cellpadding='0'>";
 	    echo"<thead>";

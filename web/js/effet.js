@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-
+	
 	$('.publications-section-title').click(function()
 	{
 		var text = $(this).next('.publications-section').children('.publications-item-date');

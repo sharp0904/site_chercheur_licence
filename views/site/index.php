@@ -30,20 +30,27 @@ if (isset($_GET["page"])) {
 }
 $menu = new Menu(['ID' => '108', 'titre_fr' => 'Aucune rubrique', 'titre_en'=> 'No section', 'actif'=>0]);
 $rubrique = new Rubrique(['ID'=>'108', 'content_fr'=>'Aucune rubrique', 'content_en'=>"No section"]);
-try{
-	$rubrique = FonctionsRubriques::getFirstRubrique();
-}
-catch(Exception $e)
-{
-	echo 'Aucune rubrique';
-}
+
 ?>
 <div class="site-index">
  
 </br></br></br>
 <div id="maRubrique">
 <?php
-
+try{
+	$rubrique = FonctionsRubriques::getFirstRubrique();
+}
+catch(Exception $e)
+{
+	if($language =='fr')
+	{
+		echo 'Aucune rubrique';
+	}
+	else
+	{
+		echo 'No section';
+	}
+}
 if(isset($idPage))
 {
 	try{

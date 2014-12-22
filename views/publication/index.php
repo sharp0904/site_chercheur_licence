@@ -15,6 +15,17 @@ use yii\jui\DatePicker;
 
 $this->title = 'Publications';
 $cpt = 0;
+$session = Yii::$app->session;
+
+if(isset($session['language']))
+{
+$language = $session->get('language');
+}
+else
+{
+    $session->set('language', 'fr');
+    $language = $session->get('language');
+}
 ?>
 
 <script type="text/javascript" src="../vendor/bower/jquery/dist/jquery.js"></script>
@@ -75,11 +86,18 @@ $cpt = 0;
 <?php
 try
 {
-	FonctionsPublications::getTabPublications();
+	FonctionsPublications::getTabPublications($language);
 }
 catch(Exception $e)
 {
+	if($language=='fr"')
+	{
 	echo("Aucune publication");
+	}
+	else
+	{
+		echo"No publication";
+	}
 }
 ?>
 
