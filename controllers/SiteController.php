@@ -88,7 +88,8 @@ class SiteController extends Controller
 
 			$session = Yii::$app->session;
 			$session->open();
-			$session->set('user', $user);
+            $_SESSION['KCFINDER'] = array('disabled' => false);
+    		$session->set('user', $user);
 			$session->set('token','WU8nb/rCD6JgtiyxTW3ZP+s4n9Vg9liUllh5bZLoLQhAMMoCaHE72nYLQSsw12uhkgWJLDmgMmZVD+aIk6BsZw==');
 			$model->login2($user);
 			return $this->goHome();

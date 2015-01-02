@@ -112,132 +112,7 @@ function afficheBibTex($publication)
 	return $tex;
 }
 
-function afficheDetailPubliFR($publication)
-{
 
-	$detail = '$("#detail-publi").append("<div id = \'titre-content-popup\'>Référence: </div>"+$(this).parent().parent().parent().find(".publi-ref").html());';
-	$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Auteurs: </div>"+$(this).parent().parent().parent().find(".publi-authors").html());';
-	$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Titre: </div>"+$(this).parent().parent().parent().find(".publi-titre").html());';
-	if($publication['journal'] != null)
-			{
-				if($publication['categorie_id'] == 1){
-					$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Titre du journal: </div>"+$(this).parent().parent().parent().find(".publi-journal").html());';
-				} 
-				elseif($publication['categorie_id'] == 2){
-					$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Titre du livre: </div>"+$(this).parent().parent().parent().find(".publi-journal").html());';
-				}
-			}
-	if($publication['volume'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Volume: </div>"+$(this).parent().parent().parent().find(".publi-volume").html());';
-	}
-	if($publication['number'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Numéro: </div>"+$(this).parent().parent().parent().find(".publi-number").html());';
-
-	}
-	if($publication['pages'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Pages: </div>"+$(this).parent().parent().parent().find(".publi-pages").html());';
-
-	}
-	if($publication['editor'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Editeur: </div>"+$(this).parent().parent().parent().find(".publi-editor").html());';
-
-	}
-	if($publication['series'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Serie: </div>"+$(this).parent().parent().parent().find(".publi-series").html());';
-
-	}
-	if($publication['localite'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Adresse: </div>"+$(this).parent().parent().parent().find(".publi-localite").html());'; 
-	}
-	if($publication['publisher'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Maison d\'édition: </div>"+$(this).parent().parent().parent().find(".publi-publisher").html());';
-
-	}
-	if($publication['note'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Note: </div>"+$(this).parent().parent().parent().find(".publi-note").html());'; 
-	}
-	if($publication['abstract'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Résumé: </div>"+$(this).parent().parent().parent().find(".publi-abstract").html());';
-	}
-	if($publication['keywords'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Mots-clés: </div>"+$(this).parent().parent().parent().find(".publi-keywords").html());';
-	}
-	return $detail;
-
-}
-function afficheDetailPubliEN($publication)
-{
-
-	$detail = '$("#detail-publi").append("<div id = \'titre-content-popup\'>Reference: </div>"+$(this).parent().parent().parent().find(".publi-ref").html());';
-	$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Authors: </div>"+$(this).parent().parent().parent().find(".publi-authors").html());';
-	$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Title: </div>"+$(this).parent().parent().parent().find(".publi-titre").html());';
-	if($publication['journal'] != null)
-			{
-				if($publication['categorie_id'] == 1){
-					$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Newstitle: </div>"+$(this).parent().parent().parent().find(".publi-journal").html());';
-				} 
-				elseif($publication['categorie_id'] == 2){
-					$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Booktitle: </div>"+$(this).parent().parent().parent().find(".publi-journal").html());';
-				}
-			}
-	if($publication['volume'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Volume: </div>"+$(this).parent().parent().parent().find(".publi-volume").html());';
-	}
-	if($publication['number'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Number: </div>"+$(this).parent().parent().parent().find(".publi-number").html());';
-
-	}
-	if($publication['pages'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Pages: </div>"+$(this).parent().parent().parent().find(".publi-pages").html());';
-
-	}
-	if($publication['editor'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Editor: </div>"+$(this).parent().parent().parent().find(".publi-editor").html());';
-
-	}
-	if($publication['series'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Series: </div>"+$(this).parent().parent().parent().find(".publi-series").html());';
-
-	}
-	if($publication['localite'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Adress: </div>"+$(this).parent().parent().parent().find(".publi-localite").html());'; 
-	}
-	if($publication['publisher'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Publisher: </div>"+$(this).parent().parent().parent().find(".publi-publisher").html());';
-
-	}
-	if($publication['note'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Note: </div>"+$(this).parent().parent().parent().find(".publi-note").html());'; 
-	}
-	if($publication['abstract'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Abstract: </div>"+$(this).parent().parent().parent().find(".publi-abstract").html());';
-	}
-	if($publication['keywords'] != null)
-	{
-		$detail .= '$("#detail-publi").append("<div id = \'titre-content-popup\'>Keywords: </div>"+$(this).parent().parent().parent().find(".publi-keywords").html());';
-	}
-	return $detail;
-
-}
 function triPubliParCategorie($language)
 {
 	$categories = getCategories();
@@ -334,18 +209,11 @@ function triPubliParCategorie($language)
 				echo"<td align='left' style='vertical-align: top;'><a href='uploads/".$publication['pdf'].".pdf'><img border='0' src='images/icon-pdf.png' alt='Download PDF'></a></td>";
 			}
 			$tex = afficheBibTex($publication);
-			if($language=='fr')
-			{
-				$detail = afficheDetailPubliFR($publication);
-			}
-			else
-			{
-				$detail = afficheDetailPubliEN($publication);
-			}
+			echo"<div class='bouttonResume'>";
+				echo"DETAILS";
+			echo"</div>";
 			echo '<br/>';
-			echo Html::a('DETAILS', '#', array(
-						   'onclick'=>'$("#detail-publi").text("");'.$detail.'$("#detail-publi").dialog("open"); return false', 
-			));
+			
 			echo Html::a('<img src="images/icon-tex.png" class="cursor-pointer">', '#', array(
 			   'onclick'=>$tex.'$("#dial-tex").append(",}");$("#dial-tex").dialog("open"); return false', 
 			));
@@ -430,7 +298,7 @@ function triPubliParDate()
 			
 			if($publication['note'] != null)
 			{
-				echo"<div class='publi-note' style='display:none'><br/>".$publication['note']."</div>, ";
+				echo"<div class='publi-note'><br/>".$publication['note']."</div>, ";
 			}
 			if($publication['abstract'] != null)
 			{
@@ -451,11 +319,13 @@ function triPubliParDate()
 				echo"<td align='left' style='vertical-align: top;'><a href='uploads/".$publication['pdf'].".pdf'><img border='0' src='images/icon-pdf.png' alt='Download PDF'></a></td>";
 			}
 			$tex = afficheBibTex($publication);
-			$detail = afficheDetailPubliFR($publication);
-			echo Html::a('DETAILS', '#', array(
-						   'onclick'=>'$("#detail-publi").text("");'.$detail.'$("#detail-publi").dialog("open"); return false', 
-			));
+			echo"<div class='bouttonResume'>";
+				echo"DETAILS";
+			echo"</div>";
 			
+
+
+
 			echo Html::a('<img src="images/icon-tex.png" class="cursor-pointer">', '#', array(
 			   'onclick'=>$tex.'$("#dial-tex").append(",}");$("#dial-tex").dialog("open"); return false', 
 			));
@@ -467,6 +337,7 @@ function triPubliParDate()
 			echo"</div>";
 	}
 	echo"</div>";
+	echo"<script>$('.publi-note').hide()</script>";
 	echo"<script>$('.publications-section :first').show();</script>";
 
 }
