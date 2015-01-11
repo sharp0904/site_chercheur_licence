@@ -39,6 +39,10 @@ $rubrique = new Rubrique(['ID'=>'108', 'content_fr'=>'Aucune rubrique', 'content
 <?php
 try{
 	$rubrique = FonctionsRubriques::getFirstRubrique();
+	if($rubrique == false)
+	{
+		echo"Erreur lors de la connexion à la BDD";
+	}
 }
 catch(Exception $e)
 {

@@ -27,7 +27,10 @@ class FonctionsRubriques
 	{
 
 		$rubrique = json_decode(FonctionsCurl::getFirstRubrique(),true);
-		
+		if($rubrique == false)
+		{
+			return $rubrique;
+		}
 		return new Rubrique(['ID'=>$rubrique[0]['ID'],'date_creation'=>$rubrique[0]['date_creation'],'date_modification'=>$rubrique[0]['date_modification'],'content_fr'=>$rubrique[0]['content_fr'],'content_en'=>$rubrique[0]['content_en'],'menu_id'=>$rubrique[0]['menu_id']]);
 	}
 

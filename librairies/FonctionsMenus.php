@@ -10,6 +10,7 @@ static function getMenusActifs($locale = 'fr')
 {
 
 	$list = json_decode(FonctionsCurl::getAllMenusActifs(),true);
+	
 	$rs=array();
 	if($locale == 'fr')
 	{

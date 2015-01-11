@@ -55,6 +55,7 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
 	
 	public function actionPublications()
     {
@@ -76,10 +77,13 @@ class SiteController extends Controller
             $tabJson = json_encode($form);
             $curl = new Curl();
 			$r = $curl->post(
-				'http://localhost/site-enseignant-chercheur/rest/web/index.php/login', $tabJson
+				$_SERVER['SERVER_NAME'].''.dirname(dirname($_SERVER['PHP_SELF'])).'/rest/web/index.php/login', $tabJson
         );
- 
-       
+            if($r == false)
+            {
+                return $this->render('erreurBDD');
+            }
+            
 
 
 

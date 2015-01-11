@@ -9,26 +9,17 @@ use app\assets\AppAsset;
 use app\models\Menu;
 use app\librairies\FonctionsCurl;
 use app\librairies\FonctionsMenus;
-
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 AppAsset::register($this);
-
 $session = Yii::$app->session;
-
 $session->open();
 $language = $session->get('language');
-
 if(!isset($language))
 {
 $language='fr';
 }
-
-
-
 $rs = array();
-
 try{
 $rs = FonctionsMenus::getMenusActifs($language);
 }
@@ -36,7 +27,6 @@ catch(Exception $e)
 {
 	
 }
-
 if($language=='fr')
 {
 	$connexion = 'Connexion';
@@ -53,8 +43,6 @@ else
 	$GPublications = 'Publications management';
 	$logo = 'Manage logo';
 }
-
-
 ?>
 <?php $this->beginPage() ?>
 
@@ -93,44 +81,36 @@ else
             ]);
 			if(Yii::$app->user->isGuest)
 			{
-				if($language == 'fr')
-				{
+				
+					try{
 					foreach($rs as $titre)
 					{
+						
 					echo Nav::widget([
 						'options' => ['class' => 'navbar-nav navbar-left'],
 						'items' => [
 						
 						FonctionsMenus::listerRubriques($rs, $titre, $language)
-
+						
 						],
 					]);
 						
 					}
-				}
-				elseif($language =='en')
-				{
-					foreach($rs as $titre)
+					}
+					catch(Exception $e)
 					{
-					echo Nav::widget([
-						'options' => ['class' => 'navbar-nav navbar-left'],
-						'items' => [					
-						
-						FonctionsMenus::listerRubriques($rs, $titre, $language)
-						
-						],
-					]);
-						
+						?>
+						<script>
+						alert("Problème avec les services REST, la base de données contient des données corrompues \n Problem with the REST services, the database contains corrupt data");
+						</script>
+						<?php
 					}
-				}
-
+				
 				echo Nav::widget([
 					'options' => ['class' => 'navbar-nav navbar-left'],
 					'items' => [
 						['label' => 'Publications', 'url' => ['/site/publications']],
-
 						['label' => $connexion, 'url' => ['/site/login']],						
-
 					],
 				]);
 				NavBar::end();
@@ -138,23 +118,7 @@ else
 			else
 			{
 			
-			if($language == 'fr')
-			{
-				foreach($rs as $titre)
-				{
-				echo Nav::widget([
-					'options' => ['class' => 'navbar-nav navbar-left'],
-					'items' => [
-					
-					FonctionsMenus::listerRubriques($rs, $titre, $language)
-
-					],
-				]);
-					
-				}
-			}
-			elseif($language =='en')
-			{
+				try{
 				foreach($rs as $titre)
 				{
 				echo Nav::widget([
@@ -167,8 +131,17 @@ else
 				]);
 					
 				}
-			}
+				}
+				catch(Exception $e)
+					{
+						?>
+						<script>
+						alert("Problème avec les services REST, la base de données contient des données corrompues \n Problem with the REST services, the database contains corrupt data");
+						</script>
+						<?php
+					}
 
+			
 			echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-left'],
                 'items' => [
@@ -196,12 +169,7 @@ else
         </div>
     </div>
 </br></br>
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
-    </footer>
+    
 
 <?php $this->endBody() ?>
 </body>
