@@ -1,9 +1,9 @@
 
-Yii 2 Basic Application Template
+Yii 2 Basic Application template
 
 site_chercheur_licence
 
-projet de licence qui consiste à créer un site pour les enseignants chercheurs grâce principalement, au framework PHP Yii
+license project which consists of creating a site for teacher-researchers, mainly using the Yii PHP framework
 
 
 
